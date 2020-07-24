@@ -9,7 +9,7 @@
 	
   <test name="Pega DSS Regression Test">
     <classes>
-      <class name="Mccm.Pega.Outbound.PegaTest.LoginPageTest"/> 
+      <class name="DemoEtEFlow.Inbound.PageMrktEtoEFlowTest"/> 
       </classes>
    </test> <!-- Test -->
 </suite> <!-- Suite -->

@@ -37,7 +37,7 @@
            <executable>C:\Program Files\Java\jdk1.8.0_251\bin\javac.exe</executable>
            <suiteXmlFiles>
                 <!-- TestNG suite XML files -->
-                 <suiteXmlFiles>src/test/resources/TestSuite/RegressionSuite.Outbound.xml</suiteXmlFiles>
+                 <suiteXmlFiles>src/test/resources/TestSuite/RegressionSuite.Outbound1.xml</suiteXmlFiles>
               </suiteXmlFiles>                                                       
           </configuration>
         </plugin>
