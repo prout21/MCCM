@@ -2,16 +2,20 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="82314" started-at="2020-07-24T15:55:10 IST" finished-at="2020-07-24T15:56:32 IST">
+  <suite name="Default suite" duration-ms="64344" started-at="2020-07-27T17:06:35 IST" finished-at="2020-07-27T17:07:39 IST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="82314" started-at="2020-07-24T15:55:10 IST" finished-at="2020-07-24T15:56:32 IST">
-      <class name="DemoEtEFlow.Inbound.PageMrktEtoEFlowTest">
-        <test-method status="PASS" signature="NBABatchCampaignInboundSuccessfull()[pri:0, instance:DemoEtEFlow.Inbound.PageMrktEtoEFlowTest@51cdd8a]" name="NBABatchCampaignInboundSuccessfull" duration-ms="82258" started-at="2020-07-24T15:55:10 IST" finished-at="2020-07-24T15:56:32 IST">
+    <test name="Default test" duration-ms="64344" started-at="2020-07-27T17:06:35 IST" finished-at="2020-07-27T17:07:39 IST">
+      <class name="Mccm.Pega.Inbound.PegaTest.PegamarktIntrctnHistoryTest">
+        <test-method status="PASS" signature="setup()[pri:0, instance:Mccm.Pega.Inbound.PegaTest.PegamarktIntrctnHistoryTest@1f7030a6]" name="setup" is-config="true" duration-ms="13503" started-at="2020-07-27T17:06:35 IST" finished-at="2020-07-27T17:06:48 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- NBABatchCampaignInboundSuccessfull -->
-      </class> <!-- DemoEtEFlow.Inbound.PageMrktEtoEFlowTest -->
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="VerifyIntractionHistoryRunSuccessfully()[pri:1, instance:Mccm.Pega.Inbound.PegaTest.PegamarktIntrctnHistoryTest@1f7030a6]" name="VerifyIntractionHistoryRunSuccessfully" duration-ms="50781" started-at="2020-07-27T17:06:48 IST" finished-at="2020-07-27T17:07:39 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyIntractionHistoryRunSuccessfully -->
+      </class> <!-- Mccm.Pega.Inbound.PegaTest.PegamarktIntrctnHistoryTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
