@@ -2,20 +2,16 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="64344" started-at="2020-07-27T17:06:35 IST" finished-at="2020-07-27T17:07:39 IST">
+  <suite name="Default suite" duration-ms="14544" started-at="2020-07-28T19:03:40 IST" finished-at="2020-07-28T19:03:54 IST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="64344" started-at="2020-07-27T17:06:35 IST" finished-at="2020-07-27T17:07:39 IST">
-      <class name="Mccm.Pega.Inbound.PegaTest.PegamarktIntrctnHistoryTest">
-        <test-method status="PASS" signature="setup()[pri:0, instance:Mccm.Pega.Inbound.PegaTest.PegamarktIntrctnHistoryTest@1f7030a6]" name="setup" is-config="true" duration-ms="13503" started-at="2020-07-27T17:06:35 IST" finished-at="2020-07-27T17:06:48 IST">
+    <test name="Default test" duration-ms="14544" started-at="2020-07-28T19:03:40 IST" finished-at="2020-07-28T19:03:54 IST">
+      <class name="Mccm.Unix.Inbound.App_Inbound_KIASEPOS_Test">
+        <test-method status="PASS" signature="VerifyKIASEPOSFileLoadSuccessfully()[pri:0, instance:Mccm.Unix.Inbound.App_Inbound_KIASEPOS_Test@34c4973]" name="VerifyKIASEPOSFileLoadSuccessfully" duration-ms="14491" started-at="2020-07-28T19:03:40 IST" finished-at="2020-07-28T19:03:54 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method status="PASS" signature="VerifyIntractionHistoryRunSuccessfully()[pri:1, instance:Mccm.Pega.Inbound.PegaTest.PegamarktIntrctnHistoryTest@1f7030a6]" name="VerifyIntractionHistoryRunSuccessfully" duration-ms="50781" started-at="2020-07-27T17:06:48 IST" finished-at="2020-07-27T17:07:39 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- VerifyIntractionHistoryRunSuccessfully -->
-      </class> <!-- Mccm.Pega.Inbound.PegaTest.PegamarktIntrctnHistoryTest -->
+        </test-method> <!-- VerifyKIASEPOSFileLoadSuccessfully -->
+      </class> <!-- Mccm.Unix.Inbound.App_Inbound_KIASEPOS_Test -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
