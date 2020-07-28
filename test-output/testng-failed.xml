@@ -3,11 +3,12 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Mccm.Unix.Inbound.App_Inbound_KIASEPOS_Test">
+      <class name="Mccm.Pega.Outbound.PegaTest.PegamarktingTest">
         <methods>
-          <include name="VerifyKIASEPOSFileLoadSuccessfully"/>
+          <include name="VerifyNBACampaignRunSuccessfully"/>
+          <include name="setup"/>
         </methods>
-      </class> <!-- Mccm.Unix.Inbound.App_Inbound_KIASEPOS_Test -->
+      </class> <!-- Mccm.Pega.Outbound.PegaTest.PegamarktingTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
