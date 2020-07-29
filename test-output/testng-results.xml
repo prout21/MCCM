@@ -2,16 +2,16 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="1451737" started-at="2020-07-28T20:07:17 IST" finished-at="2020-07-28T20:31:29 IST">
+  <suite name="Default suite" duration-ms="16747" started-at="2020-07-29T16:37:08 IST" finished-at="2020-07-29T16:37:25 IST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="1451737" started-at="2020-07-28T20:07:17 IST" finished-at="2020-07-28T20:31:29 IST">
-      <class name="Mccm.Unix.Outbound.App_Unix_Outbound_Test">
-        <test-method status="PASS" signature="VerifyDataLoadSuccessfully()[pri:0, instance:Mccm.Unix.Outbound.App_Unix_Outbound_Test@34c4973]" name="VerifyDataLoadSuccessfully" duration-ms="1451672" started-at="2020-07-28T20:07:17 IST" finished-at="2020-07-28T20:31:29 IST">
+    <test name="Default test" duration-ms="16747" started-at="2020-07-29T16:37:08 IST" finished-at="2020-07-29T16:37:25 IST">
+      <class name="Mccm.Unix.Inbound.FileExistChk_Inbound_OnlineShop">
+        <test-method status="PASS" signature="VerifyONLINESHOPFileLoadSuccessfully()[pri:0, instance:Mccm.Unix.Inbound.FileExistChk_Inbound_OnlineShop@30a3107a]" name="VerifyONLINESHOPFileLoadSuccessfully" duration-ms="16688" started-at="2020-07-29T16:37:08 IST" finished-at="2020-07-29T16:37:25 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- VerifyDataLoadSuccessfully -->
-      </class> <!-- Mccm.Unix.Outbound.App_Unix_Outbound_Test -->
+        </test-method> <!-- VerifyONLINESHOPFileLoadSuccessfully -->
+      </class> <!-- Mccm.Unix.Inbound.FileExistChk_Inbound_OnlineShop -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
