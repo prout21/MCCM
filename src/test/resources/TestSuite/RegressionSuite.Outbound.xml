@@ -6,7 +6,12 @@
 		<listener class-name="Mccm.Pega.ExtentReportListner.TestListener" />
 	</listeners>
 
-
+   <test name="Unix filechk and DB load Regression Test">
+    <classes>
+      <class name="Mccm.Unix.Outbound.App_Unix_Outbound_Test"/> 
+    </classes>
+  </test> <!-- Test -->
+  
   <test name="Pega DSS Regression Test">
     <classes>
       <class name="Mccm.Pega.Outbound.PegaTest.LoginPageTest"/> 

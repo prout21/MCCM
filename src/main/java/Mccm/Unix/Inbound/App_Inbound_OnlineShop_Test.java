@@ -149,7 +149,7 @@ public class App_Inbound_OnlineShop_Test extends MyAutomationConstants {
                ChannelSftp.LsEntry lsEntry = (ChannelSftp.LsEntry) fileList.get(i);
                System.out.println(lsEntry.getFilename()); 
            		}              
-           String[] name = {"TESTCYCL_1704_TC096_Validate_Onlineshop_Response_IP_Correct"};
+           String[] name = {"TESTCYCL_1704_TC096_Validate_Onlineshop_Response_IP_Correct.txt"};
            
            for (int i = 0; i < name.length; i++) 
            {

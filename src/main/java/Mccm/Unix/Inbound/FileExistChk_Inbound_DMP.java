@@ -26,12 +26,13 @@ static String password = "unix11";
 
 public static void main(String[] args) {
 	
-//String filename = "file_list_oracle1.lst";
-	String[] filename = {"TESTCYCL_1669_TC001_Validate_DMP_Response_IP_Correct-3"};//, "file_list_oracle.lst";
+ //String filename = "file_list_oracle1.lst";
+	String[] filename = {"TESTCYCL_1669_TC001_Validate_DMP_Response_IP_Correct-3.txt"};//, "file_list_oracle.lst";
 //pr	String[] filename = {"SCA_cass_20200722010201.csv.gz", "FCA_cass_202007220010201.csv.gz"};//, "file_list_oracle.lst";
-
-    String filepath = "/opt/SP/mccm/SYSN/input/DMP";
+	 
+    String filepath = "/opt/SP/mccm/SYSN/input/DMP/";
   //pr  String filepath = "/opt/SP/mccm/SYSN/mccm_data/csv_cassandrafile/";
+  
     try {
     	
         Channel  channel = getChannelSftp(host, user, password);

@@ -27,7 +27,7 @@ static String password = "unix11";
 public static void main(String[] args) {
 	
 //String filename = "file_list_oracle1.lst";
-	String[] filename = {"TESTCYCL_1704_TC096_Validate_Onlineshop_Response_IP_Correct"};//, "file_list_oracle.lst";
+	String[] filename = {"TESTCYCL_1704_TC096_Validate_Onlineshop_Response_IP_Correct.txt"};//, "file_list_oracle.lst";
 //pr	String[] filename = {"SCA_cass_20200722010201.csv.gz", "FCA_cass_202007220010201.csv.gz"};//, "file_list_oracle.lst";
 
     String filepath = "/opt/SP/mccm/SYSN/input/OnlineShop";

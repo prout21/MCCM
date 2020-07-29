@@ -118,6 +118,7 @@ public class App_Inbound_DMP_Test extends MyAutomationConstants {
         int k;
          
         //String host1 = "46.190.224.85";
+        
         Upload_Inbound_DMP.main(null);//main();
   
         JSch jSch = new JSch();
@@ -152,7 +153,7 @@ public class App_Inbound_DMP_Test extends MyAutomationConstants {
                ChannelSftp.LsEntry lsEntry = (ChannelSftp.LsEntry) fileList.get(i);
                System.out.println(lsEntry.getFilename()); 
            		}              
-           String[] name = {"TESTCYCL_1669_TC001_Validate_DMP_Response_IP_Correct-3"};
+           String[] name = {"TESTCYCL_1669_TC001_Validate_DMP_Response"};
            
            for (int i = 0; i < name.length; i++) 
            {
@@ -305,8 +306,12 @@ public class App_Inbound_DMP_Test extends MyAutomationConstants {
 	    //pr    Upload_Cassandra.main(null);
 		   System.out.println("Case 2:"); 
 		///pr  FilesAvailabilityCheck_Cassandra.main(null);
-		  FileExistChk_Inbound_DMP.main(null);
-		 
+		   
+//		   Thread.sleep(8000);
+		   
+ 	 	  FileExistChk_Inbound_DMP.main(null);
+		   
+	 	 
 			
      		  System.out.println(""); System.out.println("Case 3:"); //
 			  
