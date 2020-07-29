@@ -6,7 +6,8 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import Mccm.Pega.Outbound.PegaSubClass.HomePageDetails;
+//import Mccm.Pega.Outbound.PegaSubClass.HomePageDetails;
+import Mccm.Pega.Outbound.PegaMain.HomePageDetails;
 import Mccm.Pega.Outbound.PegaTestBase.TestBase;
 
 public class HomePage extends TestBase {

@@ -12,7 +12,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import Mccm.Pega.Outbound.PegaMain.HomePage;
 import Mccm.Pega.Outbound.PegaMain.PegaMarketPage;
-import Mccm.Pega.Outbound.PegaSubClass.HomePageDetails;
+import Mccm.Pega.Outbound.PegaMain.HomePageDetails;
+//import Mccm.Pega.Outbound.PegaSubClass.HomePageDetails;
 import Mccm.Pega.QAUtil.TestUtil;
 
 public class TestBase {

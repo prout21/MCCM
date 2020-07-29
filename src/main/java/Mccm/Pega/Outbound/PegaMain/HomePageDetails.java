@@ -1,4 +1,4 @@
-package Mccm.Pega.Outbound.PegaSubClass;
+package Mccm.Pega.Outbound.PegaMain;
 
 import java.util.Iterator;
 import java.util.Set;

@@ -9,7 +9,8 @@ import org.testng.annotations.Test;
 import Mccm.Pega.Outbound.PegaMain.HomePage;
 import Mccm.Pega.Outbound.PegaMain.LoginPage;
 import Mccm.Pega.Outbound.PegaMain.PegaMarketPage;
-import Mccm.Pega.Outbound.PegaSubClass.HomePageDetails;
+import Mccm.Pega.Outbound.PegaMain.HomePageDetails;
+//import Mccm.Pega.Outbound.PegaSubClass.HomePageDetails;
 import Mccm.Pega.Outbound.PegaTestBase.TestBase;
 import Mccm.Pega.QAUtil.TestUtil;
 

@@ -3,12 +3,11 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Mccm.Pega.Outbound.PegaTest.PegamarktingTest">
+      <class name="DemoEtEFlow.Inbound.PageMrktEtoEFlowTest">
         <methods>
-          <include name="VerifyNBACampaignRunSuccessfully"/>
-          <include name="setup"/>
+          <include name="NBABatchCampaignInboundSuccessfull"/>
         </methods>
-      </class> <!-- Mccm.Pega.Outbound.PegaTest.PegamarktingTest -->
+      </class> <!-- DemoEtEFlow.Inbound.PageMrktEtoEFlowTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
