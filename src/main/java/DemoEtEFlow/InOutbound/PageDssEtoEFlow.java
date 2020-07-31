@@ -1,4 +1,4 @@
-package DemoEtEFlow.Outbound;
+package DemoEtEFlow.InOutbound;
 
 import java.awt.AWTException;
 import java.awt.List;

@@ -1,4 +1,4 @@
-package DemoEtEFlow.Inbound;
+package DemoEtEFlow.InOutbound;
 
 import static org.testng.Assert.assertEquals;
 
@@ -32,7 +32,7 @@ import org.testng.asserts.SoftAssert;
 import Mccm.Pega.Outbound.PegaMain.HomePage;
 import Mccm.Pega.Outbound.PegaTestBase.TestBase;
 
-public class PageMrktEtoEFlowTest  {
+public class PageMrktEtoEFlowIntraHistry  {
  
 
 

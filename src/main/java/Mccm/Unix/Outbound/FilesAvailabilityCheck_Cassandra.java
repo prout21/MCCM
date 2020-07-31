@@ -26,7 +26,7 @@ static String password = "unix11";
 public static void main(String[] args) {
 	
 //String filename = "file_list_oracle1.lst";
-	String[] filename = {"SCA_cass_20200722010201.csv.gz", "FCA_cass_202007220010201.csv.gz"};//, "file_list_oracle.lst";
+	String[] filename = {"SCA_cass_20200730010201.csv.gz", "FCA_cass_202007300010201.csv.gz"};//, "file_list_oracle.lst";
 
     String filepath = "/opt/SP/mccm/SYSN/mccm_data/csv_cassandrafile/";
     try {
@@ -47,7 +47,7 @@ public static void main(String[] args) {
         	//            System.out.println("");            
            // System.out.println("Case 2: File exist at the path -/opt/SP/mccm/SYSN/mccm_dataload/import/input.---  " + filename);
         dir  = channelSftp.pwd().toString();
-        System.out.println("File: " + filename[i] + "exist at the path ---  " + dir);        
+        System.out.println("File: " + filename[i] + " exist at the path ---  " + dir);        
            // System.out.println("---  " + filename[i]);
 		}
 

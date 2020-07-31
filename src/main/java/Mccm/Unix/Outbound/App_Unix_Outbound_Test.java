@@ -300,6 +300,7 @@ public class App_Unix_Outbound_Test extends MyAutomationConstants {
 		  ScriptsExecution.main(args); // // Cassandra
 		  //load start System.out.println(""); System.out.println("Case 4-5-6:");
 		  DBCheck_Mccm.main(args); // ////////////////////////////
+		  
 		  System.out.println("Cassandra load start"); System.out.println("");
 		 
 	        Upload_Cassandra.main(null);
@@ -315,7 +316,7 @@ public class App_Unix_Outbound_Test extends MyAutomationConstants {
 			//  System.out.println("Case 3:"); 
 			  //ZippingFiles_Cassandra.main(args);
 			  System.out.println(""); //// System.out.println("Case 4:");
-		//	  DBCheck_Cassandra.main(args); //// //  prafulla commeted
+	     	  DBCheck_Cassandra.main(args);  
 			  
 			  ScriptsExecution_Cassandra.main(args); //// //
 			 			
