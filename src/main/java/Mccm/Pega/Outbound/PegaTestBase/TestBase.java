@@ -10,6 +10,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import Mccm.Pega.DMP.RealTime.PegaMarktDMPRealTime;
 import Mccm.Pega.Outbound.PegaMain.HomePage;
 import Mccm.Pega.Outbound.PegaMain.PegaMarketPage;
 import Mccm.Pega.Outbound.PegaMain.HomePageDetails;
@@ -34,6 +35,8 @@ public class TestBase {
 	   PegaMarketPage.ExcelFilePath = System.getProperty("user.dir");
 	   
 	   HomePageDetails.ExcelFilePath = System.getProperty("user.dir");
+	   
+	   PegaMarktDMPRealTime.ExcelFilePath = System.getProperty("user.dir");
 	    	      
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
