@@ -1,12 +1,11 @@
 /**
  * 
  */
-package DemoEtEFlow.InOutbound;
+package Mccm.Pega.DMP.RealTime;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.PrintWriter;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.ClientProtocolException;
@@ -24,7 +23,7 @@ import org.testng.annotations.Test;
  * @author p.rout 
  *
  */
-public class Restfulrequest {
+public class RestfulGETrequest {
 	
 
            
@@ -51,14 +50,9 @@ public class Restfulrequest {
 		
     //	System.out.println(response.getStatusLine().getStatusCode());
     	
-		  System.out.println(sb);
+		// System.out.println(sb);
     	
       	Assert.assertEquals(StatusCode, 200);
-      	
-//      	PrintWriter pw = new PrintWriter(System.getProperty("user.dir")+"//Response//DML.json");
-//      			pw.write(sb.toString());
-//      			pw.close();
-//      			pw.flush();
   
     	
 		}

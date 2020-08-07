@@ -1,7 +1,7 @@
 /**
  * 
  */
-package Mccm.Pega.DMP.RealTime;
+package Mccm.Pega.DMPRealTime.PegaTest;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -13,29 +13,25 @@ import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 
 
 
 /**
- * @author prout21
+ * @author p.rout 
  *
  */
-public class Restfulrequest {
+public class RestfulGETrequestTest {
 	
 
            
       String endpoint = "http://mccm-191102761.eu-central-1.elb.amazonaws.com:8171/prweb/PRRestService/CSM/customerMarketingProductAPI/processNextBestAction" ;
 	  
-
-	  
-	
-
- 
 	@Test
 	
-	public void Getresoponce() throws ClientProtocolException, IOException {
+	public void VerifyHitRESTfulGETRequestResponseSuccessfully() throws ClientProtocolException, IOException {
 		
 		//HttpClient client =  HttpClientBuilder.create().build(); 
 		HttpClient client = new DefaultHttpClient();
@@ -48,8 +44,17 @@ public class Restfulrequest {
 		{
 		sb.append(line);
 		}
-		System.out.println(response.getStatusLine());
-		 System.out.println(sb);
+    	System.out.println(response.getStatusLine());
+		
+		int StatusCode = (response.getStatusLine().getStatusCode());
+		
+    // 	System.out.println(response.getStatusLine().getStatusCode());
+    	
+		// System.out.println(sb);
+    	
+      	Assert.assertEquals(StatusCode, 200);
+  
+    	
 		}
 	 
 	}

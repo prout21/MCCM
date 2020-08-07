@@ -6,10 +6,16 @@
 		<listener class-name="Mccm.Pega.ExtentReportListner.TestListener" />
 	</listeners>
  
-
-  <test name="Pega DMP Real Time Regression Test">
+      <test name="Pega DMP Real Time Regression Test">
     <classes>
       <class name="Mccm.Pega.DMPRealTime.PegaTest.PegamarktDMPrealtimeTest"/>  
+    </classes>
+  </test> <!-- Test -->
+
+  
+   <test name="Pega Restful GET Request Response Regression Test">
+    <classes>
+      <class name="Mccm.Pega.DMPRealTime.PegaTest.RestfulGETrequestTest"/>  
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

@@ -4,14 +4,13 @@
   <listeners>
     <listener class-name="Mccm.Pega.ExtentReportListner.TestListener"/>
   </listeners>
-  <test thread-count="5" name="Pega Intraction Recent History Regression Test(failed)">
+  <test thread-count="5" name="Pega Restful GET Request Response Regression Test(failed)">
     <classes>
-      <class name="Mccm.Pega.Inbound.PegaTest.PegamarktIntrctnHistoryTest">
+      <class name="Mccm.Pega.DMPRealTime.PegaTest.RestfulGETrequestTest">
         <methods>
-          <include name="VerifyIntractionHistoryRunSuccessfully"/>
-          <include name="setup"/>
+          <include name="VerifyHitRESTfulGETRequestResoponceSuccessfully"/>
         </methods>
-      </class> <!-- Mccm.Pega.Inbound.PegaTest.PegamarktIntrctnHistoryTest -->
+      </class> <!-- Mccm.Pega.DMPRealTime.PegaTest.RestfulGETrequestTest -->
     </classes>
-  </test> <!-- Pega Intraction Recent History Regression Test(failed) -->
+  </test> <!-- Pega Restful GET Request Response Regression Test(failed) -->
 </suite> <!-- Failed suite [Mccm Automation Regression Suite] -->

@@ -3,11 +3,11 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="DemoEtEFlow.InOutbound.rest">
+      <class name="DemoEtEFlow.InOutbound.Restfulrequest">
         <methods>
-          <include name="test"/>
+          <include name="VerifyHitRESTfulGETRequestResoponceSuccessfully"/>
         </methods>
-      </class> <!-- DemoEtEFlow.InOutbound.rest -->
+      </class> <!-- DemoEtEFlow.InOutbound.Restfulrequest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
