@@ -120,7 +120,7 @@ public class App_Inbound_DMP_Test extends MyAutomationConstants {
         //String host1 = "46.190.224.85";
         
         Upload_Inbound_DMP.main(null);//main();
-  
+      
         JSch jSch = new JSch();
         Session session = jSch.getSession(user,host,9022);
         //Session session = jSch.getSession(user1,host1,22);
@@ -135,7 +135,7 @@ public class App_Inbound_DMP_Test extends MyAutomationConstants {
       
         System.out.println("Session connected: "+session.isConnected());
         System.out.println("");            
-
+      
         Vector fileList = channelSftp.ls("/opt/SP/mccm/SYSN/input/DMP");
         
 //        for (int i = 0; i < fileList.size(); i++) {
@@ -307,7 +307,7 @@ public class App_Inbound_DMP_Test extends MyAutomationConstants {
 		   System.out.println("Case 2:"); 
 		///pr  FilesAvailabilityCheck_Cassandra.main(null);
 		   
-//		   Thread.sleep(8000);
+ 		   Thread.sleep(8000);
 		   
  	 	  FileExistChk_Inbound_DMP.main(null);
 		   
@@ -320,7 +320,7 @@ public class App_Inbound_DMP_Test extends MyAutomationConstants {
 			//  System.out.println("Case 3:"); 
 			  //ZippingFiles_Cassandra.main(args);
 			  System.out.println(""); //// System.out.println("Case 4:");
-		//	  DBCheck_Cassandra.main(args); //// //  prafulla commeted
+		//	  DBCheck_Cassandra.main(args); //// //  pr commeted
 			  
 		//pr	  ScriptsExecution_Cassandra.main(args); //// //
 			 			

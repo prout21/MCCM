@@ -71,7 +71,7 @@ public class PegamarktDMPrealtimeTest extends TestBase {
 	 pegamarktDMPrealtime.SaveCampgn();
 	 pegamarktDMPrealtime.RunCampgn();
 	 pegamarktDMPrealtime.ConfirmCampgn();
-	 pegamarktDMPrealtime.RefreshCampgn();
+	// pegamarktDMPrealtime.RefreshCampgn();
 	 
  }
  

@@ -4,14 +4,14 @@
   <listeners>
     <listener class-name="Mccm.Pega.ExtentReportListner.TestListener"/>
   </listeners>
-  <test thread-count="5" name="Pega Marketing Regression Test(failed)">
+  <test thread-count="5" name="Pega Intraction Recent History Regression Test(failed)">
     <classes>
-      <class name="Mccm.Pega.Outbound.PegaTest.PegamarktingTest">
+      <class name="Mccm.Pega.Inbound.PegaTest.PegamarktIntrctnHistoryTest">
         <methods>
-          <include name="VerifyNBACampaignRunSuccessfully"/>
+          <include name="VerifyIntractionHistoryRunSuccessfully"/>
           <include name="setup"/>
         </methods>
-      </class> <!-- Mccm.Pega.Outbound.PegaTest.PegamarktingTest -->
+      </class> <!-- Mccm.Pega.Inbound.PegaTest.PegamarktIntrctnHistoryTest -->
     </classes>
-  </test> <!-- Pega Marketing Regression Test(failed) -->
+  </test> <!-- Pega Intraction Recent History Regression Test(failed) -->
 </suite> <!-- Failed suite [Mccm Automation Regression Suite] -->

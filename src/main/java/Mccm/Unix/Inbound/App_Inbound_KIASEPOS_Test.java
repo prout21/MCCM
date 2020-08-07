@@ -119,6 +119,7 @@ public class App_Inbound_KIASEPOS_Test extends MyAutomationConstants {
          
         //String host1 = "46.190.224.85";
         Upload_Inbound_KIASEPOS.main(null);//main();
+      
   
         JSch jSch = new JSch();
         Session session = jSch.getSession(user,host,9022);
@@ -134,7 +135,7 @@ public class App_Inbound_KIASEPOS_Test extends MyAutomationConstants {
       
         System.out.println("Session connected: "+session.isConnected());
         System.out.println("");            
-
+   
         Vector fileList = channelSftp.ls("/opt/SP/mccm/SYSN/input/KIASEPOS");
         
 //        for (int i = 0; i < fileList.size(); i++) {
@@ -305,6 +306,9 @@ public class App_Inbound_KIASEPOS_Test extends MyAutomationConstants {
 	    //pr    Upload_Cassandra.main(null);
 		   System.out.println("Case 2:"); 
 		///pr  FilesAvailabilityCheck_Cassandra.main(null);
+		   
+		   Thread.sleep(8000);
+		   
 		  FileExistChk_Inbound_KIASEPOS.main(null);
 		 
 			

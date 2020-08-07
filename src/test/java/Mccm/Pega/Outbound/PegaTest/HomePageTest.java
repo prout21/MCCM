@@ -36,7 +36,7 @@ public class HomePageTest extends TestBase {
 	    HomePageDetails1=homepage.ClickHomepage();
  }
  @Test (priority=1)
- public void VerifyDynamicSystemSettingSuccessfully() throws InterruptedException { 
+ public void VerifyDSSandNBACampaignRunSuccessfully() throws InterruptedException { 
 	 HomePageDetails1.Recordclk();
 	 HomePageDetails1.SysAdmin();
 	 HomePageDetails1.javaexictor4();

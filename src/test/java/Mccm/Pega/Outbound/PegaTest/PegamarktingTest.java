@@ -3,6 +3,7 @@ package Mccm.Pega.Outbound.PegaTest;
 import java.awt.AWTException;
 
 import org.openqa.selenium.WebElement;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -77,10 +78,11 @@ public class PegamarktingTest extends TestBase {
 	 pegamarketpage.ConfirmCampgn();
 	 pegamarketpage.RefreshCampgn();
 	 pegamarketpage.Runstatus();
+}
 	 
 	 
 	 
  }
  
 
-}
+

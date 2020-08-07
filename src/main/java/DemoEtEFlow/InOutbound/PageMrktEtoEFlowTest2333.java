@@ -26,18 +26,17 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
 import Mccm.Pega.Outbound.PegaMain.HomePage;
 import Mccm.Pega.Outbound.PegaTestBase.TestBase;
 
-public class PageMrktEtoEFlowTest extends TestBase  {
+public class PageMrktEtoEFlowTest2333 extends TestBase  {
  
 
 
-
-//private static final WebElement element10 = null;
 
 @Test  
      public void NBABatchCampaignSuccessfull() throws InterruptedException, AWTException {
@@ -106,7 +105,7 @@ public class PageMrktEtoEFlowTest extends TestBase  {
 	  System.out.println("i am ineer frame no ");
 	  Thread.sleep(8000);
 	  
-	  driver.findElement(By.xpath("//input[@type='text'][@name='$PpyWorkPage$ppyLabel']")).sendKeys("NBABatchCampaig23");
+	  driver.findElement(By.xpath("//input[@type='text'][@name='$PpyWorkPage$ppyLabel']")).sendKeys("NBABatchCam7");
 	  Thread.sleep(8000);
       driver.findElement(By.xpath("//span[text()='Build']")).click( );
       Thread.sleep(8000);
@@ -273,127 +272,144 @@ public class PageMrktEtoEFlowTest extends TestBase  {
 	///--------------------------------------------------------------------------------------------------------------//	 
 		 
 	 FluentWait<WebDriver> wait = new FluentWait<WebDriver>(driver).withTimeout(15000, TimeUnit.SECONDS).pollingEvery(30, TimeUnit.SECONDS).ignoring(NoSuchElementException.class);
-	 
-	 WebElement ele = wait.until(new Function<WebDriver, WebElement>()
+	  
+			 Function < WebDriver, Boolean > function = new Function < WebDriver, Boolean > () {
 
-	 {
-
-	 public WebElement apply(WebDriver driver)
-
-	             {  
-		 
-		 try
-		 {
-		 Thread.sleep(6000);
-		 driver.findElement(By.xpath("//*[@class='pi pi-refresh']")).click( );
-		 Thread.sleep(6000);
-		 JavascriptExecutor js6 = (JavascriptExecutor) driver;
-		 WebElement element7 = driver.findElement(By.xpath("//h2[text()='Run schedule']"));
-	     js6.executeScript("arguments[0].scrollIntoView();", element7);	
-		 }catch(Exception e){
+		 public Boolean apply(WebDriver driver) {
 			 
-		 }
-         
-		String getTextOnPage1 = "",getTextOnPage2 = "",getTextOnPage = "";
-		
-		try {
-			
-	     	 WebElement element10 = driver.findElement(By.xpath("//span[text()='Completed']"));
-				
-		        getTextOnPage = element10.getText();
-		        			 
-			}catch(Exception e2){
-			e2.printStackTrace();
-		
-			}
-		
-		try {
-			
-		
-		 WebElement element11 = driver.findElement(By.xpath("//span[text()='Failed']"));
-         	 
-	      getTextOnPage1 = element11.getText();
-		 
-		}catch(Exception e){
-		e.printStackTrace();
-		
-		}
-		
-		try {
-			 WebElement element12 = driver.findElement(By.xpath("//span[text()='Stopped']"));
-
-			 getTextOnPage2 = element12.getText();
-	 
-		}catch(Exception e1){
-			e1.printStackTrace();{
-	                  	}
-	             }
-	 
-	 if(getTextOnPage.equals("COMPLETED")) 
-		 
-	 {
-
-	 System.out.println("Test Case Passed");
-	 
-	Assert.assertEquals(getTextOnPage, "COMPLETED"); 
-	
-
-	 
-     System. exit(1);
-	// return HomePage11();
-	   return null;
-	 	 
- 	 }  
-	
- 
-	 else if (getTextOnPage1.equals("FAILED"))
-			 
-	    {
-
-	 System.out.println("Test Case Failed");
-	
-	 Assert.assertEquals(getTextOnPage1, "COMPLETED"); 
-	 
-	 return null;
-	    }
- 		 
-     	 else if(getTextOnPage2.equals("STOPPED"))
+			 try
+			 {
+			 Thread.sleep(6000);
+			 driver.findElement(By.xpath("//*[@class='pi pi-refresh']")).click( );
+			 Thread.sleep(6000);
+			 JavascriptExecutor js6 = (JavascriptExecutor) driver;
+			 WebElement element7 = driver.findElement(By.xpath("//h2[text()='Run schedule']"));
+		     js6.executeScript("arguments[0].scrollIntoView();", element7);	
+			 }catch(Exception e){
 				 
-    	    {
+			 }
+			 
+			 String getTextOnPage1 = "",getTextOnPage2 = "",getTextOnPage = "";
+				
+				try {
+					
+			     	 WebElement element10 = driver.findElement(By.xpath("//span[text()='Completed']"));
+						
+				        getTextOnPage = element10.getText();
+				        			 
+					}catch(Exception e2){
+					e2.printStackTrace();
+				
+					}
+				
+				try {
+					
+					
+					 WebElement element11 = driver.findElement(By.xpath("//span[text()='Failed']"));
+			         	 
+				      getTextOnPage1 = element11.getText();
+					 
+					}catch(Exception e){
+					e.printStackTrace();
+					
+					}
+					
+					try {
+						 WebElement element12 = driver.findElement(By.xpath("//span[text()='Stopped']"));
 
-		 System.out.println("Test Case Stopped");
-	 
-	     Assert.assertEquals(getTextOnPage2, "COMPLETED"); 
+						 getTextOnPage2 = element12.getText();
+				 
+					}catch(Exception e1){
+						e1.printStackTrace();{
+				                  	}
+				             }
+				 
+				 if(getTextOnPage.equals("COMPLETED")) 
+					 
+				 {
+					 
+                
+				 System.out.println("Test Case Passed");
+				 
+				 Assert.assertEquals(getTextOnPage, "COMPLETED"); 
+				 
 
-	    return null;
-		    
-		    } 
+				   return true;
+				
+				 	 
+			 	 }  
+				
+			 
+				 else if (getTextOnPage1.equals("FAILED"))
+						 
+				    {
+
+				 System.out.println("Test Case Failed");
+				
+				 Assert.assertEquals(getTextOnPage1, "COMPLETED"); 
+				 
+				 return null;
+				    }
+			 		 
+			     	 else if(getTextOnPage2.equals("STOPPED"))
+							 
+			    	    {
+
+					 System.out.println("Test Case Stopped");
+				 
+				     Assert.assertEquals(getTextOnPage2, "COMPLETED"); 
+
+				    return null;
+					    
+					    } 
+					 
+				          else{
+				            	 System.out.println("Test Case Running");
+				            	 
+				            	 return null;
+				            	
+				            	 }
+				         
+
+				
+		 }
+
+		
 		 
-	          else{
-	            	 System.out.println("Test Case Running");
-	            	 return null;
-	            	
-	            	 }
-	            	 }
-	 
-	            	 });
+			 
+			 
+		  
+		 
+
+		};
+
+      }
+
+
+ 
+
+	         
+		 
+		
+         
+		
+		
+		
 	 
 	 	 
 	 // main code bracket below
+ 
       }
-      }
-      }
-//@Test
-//public WebElement HomePage11() {
-//	System.out.println("Execution stop");
-//	 System. exit(1);
-//	 
-//	 return element10;
-//	
 }
+}
+    
+  
 
 
+ 
 //}
+
+ 
 
 
     	
