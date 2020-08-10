@@ -1,263 +1,277 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>MCCM</groupId>
-  <artifactId>MCCM</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-   <name>MCCM</name>
-  <url>http://maven.apache.org</url>
-  <properties>
-  <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  <jre.level>1.8</jre.level>
-  <jdk.level>1.8</jdk.level>
-  <maven.compiler.source>1.8</maven.compiler.source>
-  <maven.compiler.target>1.8</maven.compiler.target>
-      <!-- This property will be set by the Maven Dependency plugin -->
-      <annotatedJdk>${org.checkerframework:jdk8:jar}</annotatedJdk>
-    </properties>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>MCCM</groupId>
+	<artifactId>MCCM</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>MCCM</name>
+	<url>http://maven.apache.org</url>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<jre.level>1.8</jre.level>
+		<jdk.level>1.8</jdk.level>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<!-- This property will be set by the Maven Dependency plugin -->
+		<annotatedJdk>${org.checkerframework:jdk8:jar}</annotatedJdk>
+	</properties>
 
 
- <build>
-    <plugins>
-       <!-- Compiler plug-in -->
-      
-       <plugin>
-           <groupId>org.apache.maven.plugins</groupId>
-           <artifactId>maven-compiler-plugin</artifactId>
-           <version>3.6.0</version>
-            <configuration>
-                <source>${jdk.level}</source>
-                <target>${jdk.level}</target>
-          </configuration>
-      </plugin>
-       
-     <!-- Below plug-in is used to execute tests-->
-     <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-surefire-plugin</artifactId>
-            <version>2.21.0</version>
-           <configuration>
-           <executable>C:\Program Files\Java\jdk1.8.0_251\bin\javac.exe</executable>
-           <suiteXmlFiles>
-                <!-- TestNG suite XML files -->
-                 <suiteXmlFiles>src/test/resources/TestSuite/RegressionSuite.Inbound.xml</suiteXmlFiles>
-                  <suiteXmlFiles>src/test/resources/TestSuite/RegressionSuite.Outbound.xml</suiteXmlFiles>
-                 </suiteXmlFiles>                                                       
-          </configuration>
-        </plugin>
-        
-        <!-- -Unix plug-in here -->
-        <plugin>
-	          <groupId>org.codehaus.mojo</groupId>
-	          <artifactId>exec-maven-plugin</artifactId>
-	          <version>1.2.1</version>
-	           <executions>
-	          <execution>
-	          <goals>
-	          <goal>java</goal>
-	          </goals>
-	          </execution>
-	          </executions>
-	          <configuration>
-	          <mainClass>com.mccm.automation.App</mainClass>
-	           <arguments>
-	           <argument>argument1</argument>
-	            </arguments>
-	            </configuration>
-                </plugin>
-         <plugin>
-	<groupId>org.apache.maven.plugins</groupId>
-	<artifactId>maven-shade-plugin</artifactId>
-	<version>2.1</version>
-	<executions>
-	  <execution>
-	    <phase>package</phase>
-	    <goals>
-	      <goal>shade</goal>
-	    </goals>
-	    <configuration>
-	      <transformers>
-		<transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-		  <mainClass>com.mccm.automation.App</mainClass>
-		</transformer>
-	      </transformers>
-	    </configuration>
-	  </execution>
-	</executions>
-      </plugin>
-      <plugin>
-          <!-- This plugin will set the properties values using dependency information -->
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-dependency-plugin</artifactId>
-          <version>2.3</version>
+	<build>
+		<plugins>
+			<!-- Compiler plug-in -->
 
-      </plugin>
-      <plugin>
-          <artifactId>maven-compiler-plugin</artifactId>
-          <configuration>
-              <source>1.8</source>
-              <target>1.8</target>
-              <fork>true</fork>
-              <!-- Add all the checkers you want to enable here -->
-              <annotationProcessors>
-                  <annotationProcessor>org.checkerframework.checker.nullness.NullnessChecker</annotationProcessor>
-              </annotationProcessors>
-              <compilerArgs>
-                  <!-- location of the annotated JDK, which comes from a Maven dependency -->
-                  <arg>-Xbootclasspath/p:${annotatedJdk}</arg>
-              </compilerArgs>
-          </configuration>
-      </plugin>
-      </plugins>
- </build>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.6.0</version>
+				<configuration>
+					<source>${jdk.level}</source>
+					<target>${jdk.level}</target>
+				</configuration>
+			</plugin>
 
-     <dependencies>
+			<!-- Below plug-in is used to execute tests -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.21.0</version>
+				<configuration>
+					<executable>C:\Program Files\Java\jdk1.8.0_251\bin\javac.exe</executable>
+					<suiteXmlFiles>
+						<!-- TestNG suite XML files -->
+						<suiteXmlFiles>src/test/resources/TestSuite/RegressionSuite.Inbound.xml</suiteXmlFiles>
+						<suiteXmlFiles>src/test/resources/TestSuite/RegressionSuite.Outbound.xml</suiteXmlFiles>
+					</suiteXmlFiles>
+				</configuration>
+			</plugin>
 
-           <!-- https://mvnrepository.com/artifact/org.testng/testng -->
-           <dependency>
-           <groupId>org.testng</groupId>
-            <artifactId>testng</artifactId>
-         <version>7.0.0</version>
-    </dependency>
+			<!-- -Unix plug-in here -->
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<version>1.2.1</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>java</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<mainClass>com.mccm.automation.App</mainClass>
+					<arguments>
+						<argument>argument1</argument>
+					</arguments>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-shade-plugin</artifactId>
+				<version>2.1</version>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>shade</goal>
+						</goals>
+						<configuration>
+							<transformers>
+								<transformer
+									implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+									<mainClass>com.mccm.automation.App</mainClass>
+								</transformer>
+							</transformers>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<!-- This plugin will set the properties values using dependency information -->
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<version>2.3</version>
 
-       <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
-       <dependency>
-           <groupId>org.seleniumhq.selenium</groupId>
-           <artifactId>selenium-java</artifactId>
-            <version>3.141.5</version>
-      </dependency>
-          
-            <!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml -->
-        <dependency>
-            <groupId>org.apache.poi</groupId>
-            <artifactId>poi-ooxml</artifactId>
-            <version>3.17</version>
-          </dependency>
-          
-          <!-- https://mvnrepository.com/artifact/com.relevantcodes/extentreports -->
-         <dependency>
-             <groupId>com.relevantcodes</groupId>
-             <artifactId>extentreports</artifactId>
-             <version>2.41.2</version>
-        </dependency>
-        
-          <!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
-            <dependency>
-               <groupId>com.aventstack</groupId>
-               <artifactId>extentreports</artifactId>
-               <version>3.0.0</version>
-          </dependency>
-          
-          <!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
-            <dependency>
-             <groupId>commons-io</groupId>
-             <artifactId>commons-io</artifactId>
-             <version>2.6</version>
-          </dependency>
-         
-     
-        
-       <!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient -->
-         <dependency>
-             <groupId>org.apache.httpcomponents</groupId>
-             <artifactId>httpclient</artifactId>
-              <version>4.5.1</version>
-         </dependency>
+			</plugin>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+					<fork>true</fork>
+					<!-- Add all the checkers you want to enable here -->
+					<annotationProcessors>
+						<annotationProcessor>org.checkerframework.checker.nullness.NullnessChecker</annotationProcessor>
+					</annotationProcessors>
+					<compilerArgs>
+						<!-- location of the annotated JDK, which comes from a Maven dependency -->
+						<arg>-Xbootclasspath/p:${annotatedJdk}</arg>
+					</compilerArgs>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 
-        <!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpcore -->
-       <dependency>
-          <groupId>org.apache.httpcomponents</groupId>
-          <artifactId>httpcore</artifactId>
-          <version>4.4.13</version>
-      </dependency>
-        
-        <!-- https://mvnrepository.com/artifact/org.json/json -->
-     <dependency>
-           <groupId>org.json</groupId>
-           <artifactId>json</artifactId>
-           <version>20200518</version>
-      </dependency>
-        
-          <dependency>
-            <groupId>commons-codec</groupId>
-            <artifactId>commons-codec</artifactId>
-            <version>1.9</version>
-        </dependency>
-        <dependency>
-            <groupId>commons-logging</groupId>
-            <artifactId>commons-logging</artifactId>
-            <version>1.2</version>
-        </dependency>
-           
-       <!-- https://mvnrepository.com/artifact/com.jcraft/jsch -->
-        <dependency>
-        <groupId>com.jcraft</groupId>
-         <artifactId>jsch</artifactId>
-          <version>0.1.55</version>
-      </dependency>
-  
-  
-          <dependency>
-        <groupId>junit</groupId>
-        <artifactId>junit</artifactId>
-         <version>4.11</version>
-         <scope></scope>
-    </dependency>
-    <dependency>
-        <groupId>org.checkerframework</groupId>
-        <artifactId>checker</artifactId>
-        <version>1.9.4</version>
-    </dependency>
-    <dependency>
-        <groupId>org.checkerframework</groupId>
-        <artifactId>checker-qual</artifactId>
-        <version>1.9.4</version>
-    </dependency>
-    <dependency>
-        <groupId>org.checkerframework</groupId>
-        <artifactId>jdk8</artifactId>
-        <version>1.9.4</version>
-    </dependency>
-    
-     <dependency>
-	 <groupId>org.seleniumhq.selenium</groupId>
-	 <artifactId>selenium-common</artifactId>
-	 <version>2.0a4</version>
-      </dependency>
-      
-       <dependency>
-	   <groupId>com.google.guava</groupId>
-    	<artifactId>guava</artifactId>
-	    <version>23.0</version>
-        </dependency>
-     <dependency>
-	    <groupId>com.google.code.gson</groupId>
-     	<artifactId>gson</artifactId>
-	    <version>2.8.2</version>
-    </dependency>
-      
-      <dependency>
-         <groupId>com.jayway.restassured</groupId>
-          <artifactId>rest-assured</artifactId>
-           <version>2.3.4</version>
-     </dependency>
- 
-    <dependency>
-        <groupId>org.codehaus.groovy</groupId>
-        <artifactId>groovy-all</artifactId>
-        <version>2.3.5</version>
-    </dependency>
-    
-    <!-- https://mvnrepository.com/artifact/com.codoid.products/fillo -->
+	<dependencies>
+
+		<!-- https://mvnrepository.com/artifact/org.testng/testng -->
+		<dependency>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
+			<version>7.0.0</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-java</artifactId>
+			<version>3.141.5</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml -->
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>3.17</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.relevantcodes/extentreports -->
+		<dependency>
+			<groupId>com.relevantcodes</groupId>
+			<artifactId>extentreports</artifactId>
+			<version>2.41.2</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
+		<dependency>
+			<groupId>com.aventstack</groupId>
+			<artifactId>extentreports</artifactId>
+			<version>3.0.0</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.6</version>
+		</dependency>
+
+
+
+		<!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient -->
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
+			<version>4.5.1</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpcore -->
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpcore</artifactId>
+			<version>4.4.13</version>
+		</dependency>
+
+
+
+		<!-- https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple -->
+		<dependency>
+			<groupId>com.googlecode.json-simple</groupId>
+			<artifactId>json-simple</artifactId>
+			<version>1.1.1</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.json/json -->
+		<dependency>
+			<groupId>org.json</groupId>
+			<artifactId>json</artifactId>
+			<version>20180813</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>commons-codec</groupId>
+			<artifactId>commons-codec</artifactId>
+			<version>1.9</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-logging</groupId>
+			<artifactId>commons-logging</artifactId>
+			<version>1.2</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.jcraft/jsch -->
+		<dependency>
+			<groupId>com.jcraft</groupId>
+			<artifactId>jsch</artifactId>
+			<version>0.1.55</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.11</version>
+			<scope></scope>
+		</dependency>
+		<dependency>
+			<groupId>org.checkerframework</groupId>
+			<artifactId>checker</artifactId>
+			<version>1.9.4</version>
+		</dependency>
+		<dependency>
+			<groupId>org.checkerframework</groupId>
+			<artifactId>checker-qual</artifactId>
+			<version>1.9.4</version>
+		</dependency>
+		<dependency>
+			<groupId>org.checkerframework</groupId>
+			<artifactId>jdk8</artifactId>
+			<version>1.9.4</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-common</artifactId>
+			<version>2.0a4</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>23.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+			<version>2.8.2</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/io.rest-assured/rest-assured -->
+		<dependency>
+			<groupId>io.rest-assured</groupId>
+			<artifactId>rest-assured</artifactId>
+			<version>4.3.1</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>org.codehaus.groovy</groupId>
+			<artifactId>groovy-all</artifactId>
+			<version>2.3.5</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.codoid.products/fillo -->
 		<dependency>
 			<groupId>com.codoid.products</groupId>
 			<artifactId>fillo</artifactId>
 			<version>1.18</version>
 		</dependency>
-     	<!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-resources-plugin -->
+		<!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-resources-plugin -->
 		<dependency>
 			<groupId>org.apache.maven.plugins</groupId>
 			<artifactId>maven-resources-plugin</artifactId>
 			<version>3.1.0</version>
-		</dependency> 
-  </dependencies>
+		</dependency>
+	</dependencies>
 </project>
