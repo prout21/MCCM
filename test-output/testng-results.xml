@@ -2,20 +2,20 @@
 <testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="6025" started-at="2020-08-11T11:12:36 IST" finished-at="2020-08-11T11:12:42 IST">
+  <suite name="Default suite" duration-ms="4706" started-at="2020-08-11T13:17:53 IST" finished-at="2020-08-11T13:17:58 IST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="6025" started-at="2020-08-11T11:12:36 IST" finished-at="2020-08-11T11:12:42 IST">
-      <class name="DemoEtEFlow.InOutbound.Raghva1">
-        <test-method status="PASS" signature="VerifyHitRESTfulGETRequestResponseSuccessfully()[pri:0, instance:DemoEtEFlow.InOutbound.Raghva1@42f93a98]" name="VerifyHitRESTfulGETRequestResponseSuccessfully" duration-ms="2687" started-at="2020-08-11T11:12:36 IST" finished-at="2020-08-11T11:12:38 IST">
+    <test name="Default test" duration-ms="4706" started-at="2020-08-11T13:17:53 IST" finished-at="2020-08-11T13:17:58 IST">
+      <class name="DemoEtEFlow.InOutbound.RestAPIGetCall">
+        <test-method status="PASS" signature="VerifyRESTAPIGETRequestResponseStatusCodeChkSuccessfully()[pri:1, instance:DemoEtEFlow.InOutbound.RestAPIGetCall@42f93a98]" name="VerifyRESTAPIGETRequestResponseStatusCodeChkSuccessfully" duration-ms="3220" started-at="2020-08-11T13:17:53 IST" finished-at="2020-08-11T13:17:57 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- VerifyHitRESTfulGETRequestResponseSuccessfully -->
-        <test-method status="PASS" signature="test3()[pri:0, instance:DemoEtEFlow.InOutbound.Raghva1@42f93a98]" name="test3" duration-ms="3258" started-at="2020-08-11T11:12:38 IST" finished-at="2020-08-11T11:12:42 IST">
+        </test-method> <!-- VerifyRESTAPIGETRequestResponseStatusCodeChkSuccessfully -->
+        <test-method status="PASS" signature="VerifyRESTAPIGETRequestResponseMessageSuccessfully()[pri:2, instance:DemoEtEFlow.InOutbound.RestAPIGetCall@42f93a98]" name="VerifyRESTAPIGETRequestResponseMessageSuccessfully" duration-ms="1408" started-at="2020-08-11T13:17:57 IST" finished-at="2020-08-11T13:17:58 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test3 -->
-      </class> <!-- DemoEtEFlow.InOutbound.Raghva1 -->
+        </test-method> <!-- VerifyRESTAPIGETRequestResponseMessageSuccessfully -->
+      </class> <!-- DemoEtEFlow.InOutbound.RestAPIGetCall -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

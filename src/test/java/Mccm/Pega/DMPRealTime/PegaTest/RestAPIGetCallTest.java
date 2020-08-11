@@ -1,7 +1,7 @@
 /**
  * 
  */
-package DemoEtEFlow.InOutbound;
+package Mccm.Pega.DMPRealTime.PegaTest;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -41,15 +41,15 @@ import static org.hamcrest.Matchers.*;
  * @author p.rout 
  *
  */
-public class RestAPIGetCall {
+public class RestAPIGetCallTest {
 	
   	@Test(priority=1)
 	
 	public void VerifyRESTAPIGETRequestResponseStatusCodeChkSuccessfully() {
 		
-	//  Response response =  get("http://mccm-191102761.eu-central-1.elb.amazonaws.com:8171/prweb/PRRestService/CSM/customerMarketingProductAPI/processNextBestAction");
+	  Response response =  get("http://mccm-191102761.eu-central-1.elb.amazonaws.com:8171/prweb/PRRestService/CSM/customerMarketingProductAPI/processNextBestAction");
 	 
- 	  Response response   = get("https://reqres.in/api/users?page=2\"");
+ 	// Response response   = get("https://reqres.in/api/users?page=2\"");
 	
 //	System.out.println(response.asString());
 	System.out.println(response.getBody().asString());
@@ -80,10 +80,10 @@ public class RestAPIGetCall {
 	System.out.println(request);
  
 
-  Response response   = get("https://reqres.in/api/users?page=2\"");
+	// Response response   = get("https://reqres.in/api/users?page=2\"");
 	 
  	
-       //  Response response =  get("http://mccm-191102761.eu-central-1.elb.amazonaws.com:8171/prweb/PRRestService/CSM/customerMarketingProductAPI/processNextBestAction");
+         Response response =  get("http://mccm-191102761.eu-central-1.elb.amazonaws.com:8171/prweb/PRRestService/CSM/customerMarketingProductAPI/processNextBestAction");
  	
 // 	    Headers  headersArray = response.getHeaders();
 // 	   
@@ -102,8 +102,8 @@ public class RestAPIGetCall {
 	      accept(ContentType.JSON).
 	      body(request).
 	     when().
-	    get("https://reqres.in/api/users?page=2\"").
-	 //    get("http://mccm-191102761.eu-central-1.elb.amazonaws.com:8171/prweb/PRRestService/CSM/customerMarketingProductAPI/processNextBestAction").
+	  //  get("https://reqres.in/api/users?page=2\"").
+	     get("http://mccm-191102761.eu-central-1.elb.amazonaws.com:8171/prweb/PRRestService/CSM/customerMarketingProductAPI/processNextBestAction").
 	      then().statusCode(200).
 	      log().all();
 	   }
