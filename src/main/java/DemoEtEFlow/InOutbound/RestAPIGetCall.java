@@ -41,18 +41,20 @@ import static org.hamcrest.Matchers.*;
  * @author p.rout 
  *
  */
-public class Raghva1 {
+public class RestAPIGetCall {
 	
   
-	private static final String jsonPointer = null;
+	 
 
 	@Test
 	
 	public void VerifyHitRESTfulGETRequestResponseSuccessfully()  {
 		
-	Response response =  get("http://mccm-191102761.eu-central-1.elb.amazonaws.com:8171/prweb/PRRestService/CSM/customerMarketingProductAPI/processNextBestAction");
+	 Response response =  get("http://mccm-191102761.eu-central-1.elb.amazonaws.com:8171/prweb/PRRestService/CSM/customerMarketingProductAPI/processNextBestAction");
 	 
-	System.out.println(response.asString());
+//	Response response   = get("https://reqres.in/api/users?page=2\"");
+	
+//	System.out.println(response.asString());
 	System.out.println(response.getBody().asString());
 	System.out.println(response.getStatusCode());
 	System.out.println(response.getStatusLine());
@@ -96,25 +98,25 @@ public class Raghva1 {
 	
 //	JSONObject  request = new JSONObject(map);
 	JSONObject  request = new JSONObject();
-	request.put("name" ,"MCC_3102;4G_SWAP");
+//	request.put("name" ,"MCC_3102;4G_SWAP");
 	System.out.println(request);
  
 
-	
+	//Response response   = get("https://reqres.in/api/users?page=2\"");
 	 
-	
-	Response response =  get("http://mccm-191102761.eu-central-1.elb.amazonaws.com:8171/prweb/PRRestService/CSM/customerMarketingProductAPI/processNextBestAction");
-	
-	 Headers  headersArray = response.getHeaders();
-	   
-	   HashMap<String,String> allHeaders = new  HashMap<String,String>();
-	   
-	   for(io.restassured.http.Header header : headersArray ) {
-	   
-	   allHeaders.put(header.getName(), header.getValue());
-	    
-	 
-  	System.out.println("Headers Arry----> +allHeaders");
+ 	
+      Response response =  get("http://mccm-191102761.eu-central-1.elb.amazonaws.com:8171/prweb/PRRestService/CSM/customerMarketingProductAPI/processNextBestAction");
+ 	
+ 	 Headers  headersArray = response.getHeaders();
+ 	   
+ 	   HashMap<String,String> allHeaders = new  HashMap<String,String>();
+ 	   
+ 	   for(io.restassured.http.Header header : headersArray ) {
+    
+ 	   allHeaders.put(header.getName(), header.getValue());
+ 	    
+ 	 
+   	System.out.println("Headers Arry----> +allHeaders");
 	
 
   	 given().header("Content-Type", "application/json").
@@ -122,6 +124,7 @@ public class Raghva1 {
 	      accept(ContentType.JSON).
 	      body(request).
 	     when().
+	  //   get("https://reqres.in/api/users?page=2\"").
 	      get("http://mccm-191102761.eu-central-1.elb.amazonaws.com:8171/prweb/PRRestService/CSM/customerMarketingProductAPI/processNextBestAction").
 	      then().statusCode(200).
 	      log().all();
@@ -129,7 +132,8 @@ public class Raghva1 {
     
 	
 	}
-
-
 }
+
+
+ 
  
