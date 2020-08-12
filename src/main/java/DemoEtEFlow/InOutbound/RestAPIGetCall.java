@@ -11,6 +11,8 @@ import java.net.CookiePolicy;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.xml.crypto.dsig.XMLObject;
+
 import org.apache.http.Header;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.ClientProtocolException;
@@ -19,8 +21,10 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.util.EntityUtils;
+import org.apache.xmlbeans.impl.values.XmlObjectBase;
 import org.json.JSONArray;
 import org.json.JSONObject;
+import org.json.XML;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -28,12 +32,13 @@ import com.mongodb.util.JSON;
 
 import static io.restassured.RestAssured.*;
 
+import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.http.Headers;
 import io.restassured.response.Response;
 import static io.restassured.matcher.RestAssuredMatchers.*;
 import static org.hamcrest.Matchers.*;
-
+import static org.hamcrest.core.IsEqual.equalTo;
 
 
 
@@ -47,9 +52,9 @@ public class RestAPIGetCall {
 	
 	public void VerifyRESTAPIGETRequestResponseStatusCodeChkSuccessfully() {
 		
-	//  Response response =  get("http://mccm-191102761.eu-central-1.elb.amazonaws.com:8171/prweb/PRRestService/CSM/customerMarketingProductAPI/processNextBestAction");
+	    Response response =  get("http://mccm-191102761.eu-central-1.elb.amazonaws.com:8171/prweb/PRRestService/CSM/customerMarketingProductAPI/processNextBestAction");
 	 
- 	  Response response   = get("https://reqres.in/api/users?page=2\"");
+ //	   Response response   = get("https://reqres.in/api/users?page=2\"");
 	
 //	System.out.println(response.asString());
 	System.out.println(response.getBody().asString());
@@ -57,6 +62,16 @@ public class RestAPIGetCall {
 	System.out.println(response.getStatusLine());
 	System.out.println(response.getHeader("content-type"));
 	System.out.println(response.getTime());
+	System.out.println(response.contentType());
+	System.out.println(response.getContentType());
+	System.out.println(response.xmlPath());
+	System.out.println(response.andReturn());
+	System.out.println(response.toString());
+	System.out.println(response.header(DEFAULT_BODY_ROOT_PATH));
+	System.out.println(response.asInputStream());
+	
+	System.out.println(response.getBody().print());
+
 	
   	int StatusCode = (response. getStatusCode());
  	 	 	
@@ -74,13 +89,15 @@ public class RestAPIGetCall {
 //	System.out.println(map);
 	
 //	JSONObject  request = new JSONObject(map);
-	JSONObject  request = new JSONObject();
- //	request.put("name" ,"MCC_3102;4G_SWAP");
+		
+	  JSONObject  request = new JSONObject();
+	   
+  // request.put("name" ,"MCC_3102;4G_SWAP");
  //	request.put("first_name","Michael");
-	System.out.println(request);
+	 System.out.println(request.toString());
  
 
-  Response response   = get("https://reqres.in/api/users?page=2\"");
+         // Response response   = get("https://reqres.in/api/users?page=2\"");
 	 
  	
        //  Response response =  get("http://mccm-191102761.eu-central-1.elb.amazonaws.com:8171/prweb/PRRestService/CSM/customerMarketingProductAPI/processNextBestAction");
@@ -97,17 +114,25 @@ public class RestAPIGetCall {
 //   	System.out.println("Headers Arry----> +allHeaders");
 	
 
-  	 given().header("Content-Type", "application/json").
-	    contentType(ContentType.JSON).
-	      accept(ContentType.JSON).
+  //  given().header("Content-Type", "application/json").
+       given().header("Content-Type", "application/xml").
+	    contentType(ContentType.XML).
+	      accept(ContentType.XML).
 	      body(request).
 	     when().
-	    get("https://reqres.in/api/users?page=2\"").
-	 //    get("http://mccm-191102761.eu-central-1.elb.amazonaws.com:8171/prweb/PRRestService/CSM/customerMarketingProductAPI/processNextBestAction").
+  //  get("https://reqres.in/api/users?page=2\"").
+        
+      get("http://mccm-191102761.eu-central-1.elb.amazonaws.com:8171/prweb/PRRestService/CSM/customerMarketingProductAPI/processNextBestAction").
+	     
+	     
 	      then().statusCode(200).
 	      log().all();
 	   }
-    
+	
+	
+
+
+ 
 	
 	}
  

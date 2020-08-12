@@ -1,17 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+<testng-results skipped="0" failed="1" ignored="0" total="2" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="4706" started-at="2020-08-11T13:17:53 IST" finished-at="2020-08-11T13:17:58 IST">
+  <suite name="Default suite" duration-ms="3348" started-at="2020-08-12T15:29:56 IST" finished-at="2020-08-12T15:30:00 IST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="4706" started-at="2020-08-11T13:17:53 IST" finished-at="2020-08-11T13:17:58 IST">
+    <test name="Default test" duration-ms="3348" started-at="2020-08-12T15:29:56 IST" finished-at="2020-08-12T15:30:00 IST">
       <class name="DemoEtEFlow.InOutbound.RestAPIGetCall">
-        <test-method status="PASS" signature="VerifyRESTAPIGETRequestResponseStatusCodeChkSuccessfully()[pri:1, instance:DemoEtEFlow.InOutbound.RestAPIGetCall@42f93a98]" name="VerifyRESTAPIGETRequestResponseStatusCodeChkSuccessfully" duration-ms="3220" started-at="2020-08-11T13:17:53 IST" finished-at="2020-08-11T13:17:57 IST">
+        <test-method status="PASS" signature="VerifyRESTAPIGETRequestResponseStatusCodeChkSuccessfully()[pri:1, instance:DemoEtEFlow.InOutbound.RestAPIGetCall@e874448]" name="VerifyRESTAPIGETRequestResponseStatusCodeChkSuccessfully" duration-ms="2810" started-at="2020-08-12T15:29:56 IST" finished-at="2020-08-12T15:29:59 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- VerifyRESTAPIGETRequestResponseStatusCodeChkSuccessfully -->
-        <test-method status="PASS" signature="VerifyRESTAPIGETRequestResponseMessageSuccessfully()[pri:2, instance:DemoEtEFlow.InOutbound.RestAPIGetCall@42f93a98]" name="VerifyRESTAPIGETRequestResponseMessageSuccessfully" duration-ms="1408" started-at="2020-08-11T13:17:57 IST" finished-at="2020-08-11T13:17:58 IST">
+        <test-method status="FAIL" signature="VerifyRESTAPIGETRequestResponseMessageSuccessfully()[pri:2, instance:DemoEtEFlow.InOutbound.RestAPIGetCall@e874448]" name="VerifyRESTAPIGETRequestResponseMessageSuccessfully" duration-ms="456" started-at="2020-08-12T15:29:59 IST" finished-at="2020-08-12T15:30:00 IST">
+          <exception class="javax.xml.bind.MarshalException">
+            <full-stacktrace>
+              <![CDATA[javax.xml.bind.MarshalException
+ - with linked exception:
+[com.sun.istack.SAXException2: unable to marshal type "org.json.JSONObject" as an element because it is missing an @XmlRootElement annotation]
+at com.sun.xml.bind.v2.runtime.MarshallerImpl.write(MarshallerImpl.java:323)
+at com.sun.xml.bind.v2.runtime.MarshallerImpl.marshal(MarshallerImpl.java:249)
+at javax.xml.bind.helpers.AbstractMarshallerImpl.marshal(AbstractMarshallerImpl.java:116)
+at javax.xml.bind.Marshaller$marshal$0.call(Unknown Source)
+at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:47)
+at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)
+at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:148)
+at io.restassured.internal.mapping.JaxbMapper.serialize(JaxbMapper.groovy:52)
+at io.restassured.mapper.ObjectMapper$serialize.call(Unknown Source)
+at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:47)
+at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)
+at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:139)
+at io.restassured.internal.mapping.ObjectMapping.serializeWithJaxb(ObjectMapping.groovy:214)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.lang.reflect.Method.invoke(Method.java:498)
+at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:107)
+at org.codehaus.groovy.runtime.callsite.StaticMetaMethodSite$StaticMetaMethodSiteNoUnwrapNoCoerce.invoke(StaticMetaMethodSite.java:149)
+at org.codehaus.groovy.runtime.callsite.StaticMetaMethodSite.callStatic(StaticMetaMethodSite.java:100)
+at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallStatic(CallSiteArray.java:55)
+at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callStatic(AbstractCallSite.java:217)
+at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callStatic(AbstractCallSite.java:240)
+at io.restassured.internal.mapping.ObjectMapping.serialize(ObjectMapping.groovy:163)
+at io.restassured.internal.mapping.ObjectMapping$serialize.call(Unknown Source)
+at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:47)
+at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)
+at io.restassured.internal.RequestSpecificationImpl.body(RequestSpecificationImpl.groovy:751)
+at DemoEtEFlow.InOutbound.RestAPIGetCall.VerifyRESTAPIGETRequestResponseMessageSuccessfully(RestAPIGetCall.java:121)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.lang.reflect.Method.invoke(Method.java:498)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:135)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:821)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.util.ArrayList.forEach(ArrayList.java:1257)
+at org.testng.TestRunner.privateRun(TestRunner.java:767)
+at org.testng.TestRunner.run(TestRunner.java:588)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1214)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1136)
+at org.testng.TestNG.runSuites(TestNG.java:1066)
+at org.testng.TestNG.run(TestNG.java:1034)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: com.sun.istack.SAXException2: unable to marshal type "org.json.JSONObject" as an element because it is missing an @XmlRootElement annotation
+at com.sun.xml.bind.v2.runtime.XMLSerializer.reportError(XMLSerializer.java:252)
+at com.sun.xml.bind.v2.runtime.ClassBeanInfoImpl.serializeRoot(ClassBeanInfoImpl.java:324)
+at com.sun.xml.bind.v2.runtime.XMLSerializer.childAsRoot(XMLSerializer.java:498)
+at com.sun.xml.bind.v2.runtime.MarshallerImpl.write(MarshallerImpl.java:320)
+... 56 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- javax.xml.bind.MarshalException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- VerifyRESTAPIGETRequestResponseMessageSuccessfully -->
