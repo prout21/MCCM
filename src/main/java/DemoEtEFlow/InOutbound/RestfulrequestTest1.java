@@ -37,8 +37,11 @@ public class RestfulrequestTest1 {
 	
 
            
-      String endpoint = "http://mccm-191102761.eu-central-1.elb.amazonaws.com:8171/prweb/PRRestService/CSM/customerMarketingProductAPI/processNextBestAction";
+     String endpoint = "http://mccm-191102761.eu-central-1.elb.amazonaws.com:8171/prweb/PRRestService/CSM/customerMarketingProductAPI/processNextBestAction";
 	  
+    //  String endpoint = "http://mccm-191102761.eu-central-1.elb.amazonaws.com:8171/prweb/PRRestService/CSM/customerMarketingProductAPI/processOffersResult";
+	  
+      
   //    String endpoint = "https://reqres.in/api/users?page=2\"";
       
 	@Test
@@ -50,17 +53,24 @@ public class RestfulrequestTest1 {
 		HttpGet request = new HttpGet(endpoint);
 		HttpResponse response = client.execute(request);
 		
- 		BufferedReader br = new BufferedReader(new InputStreamReader((response.getEntity().getContent()))); 
- 		String response1 = br.readLine(); 
- 		System.out.println("response" + response); 
-		
+// 		BufferedReader br = new BufferedReader(new InputStreamReader((response.getEntity().getContent()))); 
+// 		String response1 = br.readLine(); 
+// 		
+  		System.out.println("response details "  +  response); 
+ 	// 	System.out.println(response.toString());
+ 	
+ 	 
 		
 	//     	String responseString = EntityUtils.toString(response.getEntity(), "UTF-8");
 	 	
 	  //  	String response1 = responseString.readLine(); 
  	    //	System.out.println("response" + response); 
+ 		
+
+
+ 		    
 		   
-	      JSONObject responseJson = new JSONObject(br);
+	 //     JSONObject responseJson = new JSONObject(br);
           
 	   //    JSONArray jsonArray = new JSONArray(br);
 	     
@@ -90,7 +100,7 @@ public class RestfulrequestTest1 {
 //		}
 //    	System.out.println(response.getStatusLine());
 //		
-//	 	int StatusCode = (response.getStatusLine().getStatusCode());
+ 	 	int StatusCode = (response.getStatusLine().getStatusCode());
 		
 	
 		
@@ -98,7 +108,7 @@ public class RestfulrequestTest1 {
     	
 //		  System.out.println(sb);
 //    	
-//      	Assert.assertEquals(StatusCode, 200, "Status code is not 200");
+      	Assert.assertEquals(StatusCode, 200, "Status code is not 200");
       	
 //      	PrintWriter pw = new PrintWriter(System.getProperty("user.dir")+"//Response//DML.json");
 //      	//		pw.write(sb.toString());
@@ -107,10 +117,12 @@ public class RestfulrequestTest1 {
 //      			pw.flush();
   
   	   
+		   }
+ 		}
 	}
-	}
-}
-      	
+ 
+
+
     	
  
 	 

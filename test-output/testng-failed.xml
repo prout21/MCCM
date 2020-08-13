@@ -6,6 +6,7 @@
       <class name="DemoEtEFlow.InOutbound.RestAPIGetCall">
         <methods>
           <include name="VerifyRESTAPIGETRequestResponseMessageSuccessfully"/>
+          <include name="VerifyRESTAPIGETRequestResponseStatusCodeChkSuccessfully"/>
         </methods>
       </class> <!-- DemoEtEFlow.InOutbound.RestAPIGetCall -->
     </classes>

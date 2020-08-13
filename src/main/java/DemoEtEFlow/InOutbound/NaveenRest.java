@@ -67,13 +67,14 @@ public class NaveenRest {
 	   
 	    String response1 = responseString.toString(); 
 	    
-	//	System.out.println("response" + response); 
-	    
+	 	System.out.println("response" + response1); 
+	 
 	    
   
-       JSONObject responseJson = new JSONObject(responseString);
-       
-      JSONArray jsonArray = new JSONArray(responseString);
+     JSONObject responseJson = new JSONObject(responseString);
+   
+//       
+//      JSONArray jsonArray = new JSONArray(responseString);
 	    
 	   
 	   System.out.println("Response Json from API-->+ responseJson");

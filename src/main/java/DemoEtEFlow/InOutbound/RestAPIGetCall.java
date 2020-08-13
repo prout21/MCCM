@@ -33,12 +33,17 @@ import com.mongodb.util.JSON;
 import static io.restassured.RestAssured.*;
 
 import io.restassured.RestAssured;
+import io.restassured.authentication.PreemptiveBasicAuthScheme;
 import io.restassured.http.ContentType;
 import io.restassured.http.Headers;
+import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
+import io.restassured.specification.RequestSpecification;
+
 import static io.restassured.matcher.RestAssuredMatchers.*;
 import static org.hamcrest.Matchers.*;
 import static org.hamcrest.core.IsEqual.equalTo;
+import static org.testng.Assert.assertTrue;
 
 
 
@@ -48,13 +53,18 @@ import static org.hamcrest.core.IsEqual.equalTo;
  */
 public class RestAPIGetCall {
 	
-  	@Test(priority=1)
+  
+
+	@Test(priority=1)
 	
 	public void VerifyRESTAPIGETRequestResponseStatusCodeChkSuccessfully() {
 		
-	    Response response =  get("http://mccm-191102761.eu-central-1.elb.amazonaws.com:8171/prweb/PRRestService/CSM/customerMarketingProductAPI/processNextBestAction");
+       Response response =  get("http://mccm-191102761.eu-central-1.elb.amazonaws.com:8171/prweb/PRRestService/CSM/customerMarketingProductAPI/processNextBestAction");
 	 
- //	   Response response   = get("https://reqres.in/api/users?page=2\"");
+       // Response response   = get("https://reqres.in/api/users?page=2\"");
+  	   
+	//	 Response response   = post("https://ukwtsvulx386.elabs.svcs.entsvcs.net:18576"); 
+      //  Response response   = get("http://mccm-191102761.eu-central-1.elb.amazonaws.com:8171/prweb/PRRestService/CSM/customerMarketingProductAPI/processOffersResult");
 	
 //	System.out.println(response.asString());
 	System.out.println(response.getBody().asString());
@@ -62,13 +72,13 @@ public class RestAPIGetCall {
 	System.out.println(response.getStatusLine());
 	System.out.println(response.getHeader("content-type"));
 	System.out.println(response.getTime());
-	System.out.println(response.contentType());
-	System.out.println(response.getContentType());
-	System.out.println(response.xmlPath());
-	System.out.println(response.andReturn());
-	System.out.println(response.toString());
-	System.out.println(response.header(DEFAULT_BODY_ROOT_PATH));
-	System.out.println(response.asInputStream());
+//	System.out.println(response.contentType());
+//	System.out.println(response.getContentType());
+//	System.out.println(response.xmlPath());
+//	System.out.println(response.andReturn());
+//	System.out.println(response.toString());
+//	System.out.println(response.header(DEFAULT_BODY_ROOT_PATH));
+//	System.out.println(response.asInputStream());
 	
 	System.out.println(response.getBody().print());
 
@@ -114,27 +124,50 @@ public class RestAPIGetCall {
 //   	System.out.println("Headers Arry----> +allHeaders");
 	
 
-  //  given().header("Content-Type", "application/json").
-       given().header("Content-Type", "application/xml").
-	    contentType(ContentType.XML).
-	      accept(ContentType.XML).
+   //given().header("Content-Type", "application/json").
+      given().header("Content-Type", "application/xml").
+	    contentType(ContentType.JSON).
+	      accept(ContentType.JSON).
 	      body(request).
 	     when().
-  //  get("https://reqres.in/api/users?page=2\"").
+ //   get("https://reqres.in/api/users?page=2\"").
+    
+  //  get("http://mccm-191102761.eu-central-1.elb.amazonaws.com:8171/prweb/PRRestService/CSM/customerMarketingProductAPI/processOffersResult").
         
-      get("http://mccm-191102761.eu-central-1.elb.amazonaws.com:8171/prweb/PRRestService/CSM/customerMarketingProductAPI/processNextBestAction").
-	     
-	     
+    post("http://mccm-191102761.eu-central-1.elb.amazonaws.com:8171/prweb/PRRestService/CSM/customerMarketingProductAPI/processNextBestAction").
+	         
 	      then().statusCode(200).
 	      log().all();
 	   }
 	
-	
-
-
+	 
+		
+		
  
-	
-	}
+ 
+//		
+//		private String token_resource = "C:\\Users\\prout21\\git\\Automation_Framework\\MCCM\\MCCM\\Response\\css1identity.jks";
+//	    private String endpoint_rest="http://mccm-191102761.eu-central-1.elb.amazonaws.com:8171/prweb/PRRestService/CSM/customerMarketingProductAPI/processNextBestAction";
+//	    private String acessToken;
+//
+//	   // @When("^user gets access token using userId \"(.+)\" and password \"(.+)\"$")
+//	public void getAccessToken(String userName, String password){
+//	    RequestSpecification requestSpec = RestAssured.with();
+//	    requestSpec.given().contentType("application/json");
+//	    requestSpec.headers("Authorization", "Basic  your-string-here");
+//	    Response response = requestSpec.post(endpoint_rest + token_resource + password + "&password=" + password + "&client_id=yourApp&grant_type=password");
+//	    String responseMsg = response.asString();
+//	    System.out.println(">> responseMsg=" + responseMsg);
+//	 //   assertTrue("Missing access token",responseMsg.contains("access_token"));
+//	    System.out.println(">> Get Access token RESPONSE: " + responseMsg);
+//
+////	    DocumentContext doc = JsonPath.parse(responseMsg);
+//	 //   acessToken= doc.read("access_token");
+//
+//	    System.out.println(" >> doc.read access_token= " + acessToken);  
+	 
+	} 
+ 
  
 
 
