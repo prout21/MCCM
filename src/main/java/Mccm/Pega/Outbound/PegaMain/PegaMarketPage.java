@@ -427,9 +427,9 @@ public class PegaMarketPage extends TestBase  {
 	 
 	Assert.assertEquals(getTextOnPage, "COMPLETED"); 
 	 
-	//driver.quit();
+    // driver.quit();
 	
-	System. exit(1);
+	 System. exit(1);
 	
 	   return null;
 	 	 

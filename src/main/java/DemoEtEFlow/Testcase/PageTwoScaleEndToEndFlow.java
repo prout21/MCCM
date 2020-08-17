@@ -52,9 +52,10 @@ public class PageTwoScaleEndToEndFlow {
 	   int size = driver.findElements(By.tagName("iframe")).size();
 	   System.out.println(size);
 	   Thread.sleep(6000);
+	   
 	   driver.findElement(By.xpath("(/html[1]/body[1]/div[2]/form[1]/div[3]/div[1]/table[1]/tbody[1]/tr[1]/td[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/table[1]/tbody[1]/tr[1]/td[2]/div[1]/table[1]/tbody[1]/tr[1]/th[2]/div[1]/span[1]/a[1])")).click( );
 	   Thread.sleep(6000);
-	   driver.findElement(By.xpath("//input[@type='text'][@name='$PpyFilterCriteria_pgRepPgSubSectionpzViewInstancesB_pxResults_pzViewInstances_1$ppyColumnFilterCriteria$gpyPurpose2$ppySearchText']")).sendKeys("NBACampaignName");  
+	   driver.findElement(By.xpath("//input[@type='text'][@name='$PpyFilterCriteria_pgRepPgSubSectionpzViewInstancesB_pxResults_pzViewInstances_1$ppyColumnFilterCriteria$gpyPurpose2$ppySearchText']")).sendKeys("2scale_Batchsize");  
 	   Thread.sleep(6000);
 	   driver.findElement(By.xpath("//text()[.='Apply']/ancestor::button[1]")).click( );
 	   Thread.sleep(6000);
@@ -66,12 +67,14 @@ public class PageTwoScaleEndToEndFlow {
 	   WebElement element10 = driver.findElement(By.xpath("//input[@type='text'][@name='$PRH_1$ppySetting']"));
 	   Thread.sleep(6000); 
 	   element10.clear();
-	   element10.sendKeys("NBABatchCampai25");  	 
+	   element10.sendKeys("500");  	 
 	   Thread.sleep(6000);
 	   driver.findElement(By.xpath("//button[text()='Save']")).click( );
 	   Thread.sleep(6000);
 	   driver.findElement(By.xpath("//*[@class='pi pi-close-circle']")).click( );
 	   Thread.sleep(6000);
+	   
+	   
 	   driver.switchTo().defaultContent();
 	   Thread.sleep(8000);
 	   driver.switchTo().frame("PegaGadget0Ifr");
@@ -81,7 +84,7 @@ public class PageTwoScaleEndToEndFlow {
 	   WebElement element12 = driver.findElement(By.xpath("//input[@type='text'][@name='$PpyFilterCriteria_pgRepPgSubSectionpzViewInstancesB_pxResults_pzViewInstances_1$ppyColumnFilterCriteria$gpyPurpose2$ppySearchText']"));
 	   Thread.sleep(6000); 
 	   element12.clear();
-	   element12.sendKeys("NotifyNonErrorList");  
+	   element12.sendKeys("2scale_Timeslot_start");  
 	   Thread.sleep(6000);
 	   driver.findElement(By.xpath("//text()[.='Apply']/ancestor::button[1]")).click( );
 	   Thread.sleep(6000);
@@ -93,12 +96,104 @@ public class PageTwoScaleEndToEndFlow {
 	   WebElement element11 = driver.findElement(By.xpath("//input[@type='text'][@name='$PRH_1$ppySetting']"));
 	   Thread.sleep(6000); 
 	   element11.clear();
-	   element11.sendKeys("prafulla.rout@dxc.com");  	
+	   element11.sendKeys("09:00");  	
 	   Thread.sleep(6000);
 	   driver.findElement(By.xpath("//button[text()='Save']")).click( );
 	   Thread.sleep(6000);
 	   driver.findElement(By.xpath("//*[@class='pi pi-close-circle']")).click( );
 	   Thread.sleep(6000);
+	   
+	   
+	   driver.switchTo().defaultContent();
+	   Thread.sleep(8000);
+	   driver.switchTo().frame("PegaGadget0Ifr");
+	   Thread.sleep(6000);
+	   driver.findElement(By.xpath("/html[1]/body[1]/div[3]/form[1]/div[3]/div[1]/table[1]/tbody[1]/tr[1]/td[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/table[1]/tbody[1]/tr[1]/td[2]/div[1]/table[1]/tbody[1]/tr[1]/th[2]/div[1]/span[1]/a[1]")).click( );
+	   Thread.sleep(6000);
+	   WebElement element13= driver.findElement(By.xpath("//input[@type='text'][@name='$PpyFilterCriteria_pgRepPgSubSectionpzViewInstancesB_pxResults_pzViewInstances_1$ppyColumnFilterCriteria$gpyPurpose2$ppySearchText']"));
+	   Thread.sleep(6000); 
+	   element13.clear();
+	   element13.sendKeys("2scale_Timeslot_end");  
+	   Thread.sleep(6000);
+	   driver.findElement(By.xpath("//text()[.='Apply']/ancestor::button[1]")).click( );
+	   Thread.sleep(6000);
+	   driver.findElement(By.xpath("//div[contains(text(),'MCCM')]")).click( );
+	   driver.switchTo().defaultContent();
+	   Thread.sleep(8000);
+	   driver.switchTo().frame("PegaGadget1Ifr");	 
+	   Thread.sleep(6000); 
+	   WebElement element14 = driver.findElement(By.xpath("//input[@type='text'][@name='$PRH_1$ppySetting']"));
+	   Thread.sleep(6000); 
+	   element14.clear();
+	   element14.sendKeys("18:00");  	
+	   Thread.sleep(6000);
+	   driver.findElement(By.xpath("//button[text()='Save']")).click( );
+	   Thread.sleep(6000);
+	   driver.findElement(By.xpath("//*[@class='pi pi-close-circle']")).click( );
+	   Thread.sleep(6000);
+	   
+	   
+	   driver.switchTo().defaultContent();
+	   Thread.sleep(8000);
+	   driver.switchTo().frame("PegaGadget0Ifr");
+	   Thread.sleep(6000);
+	   driver.findElement(By.xpath("/html[1]/body[1]/div[3]/form[1]/div[3]/div[1]/table[1]/tbody[1]/tr[1]/td[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/table[1]/tbody[1]/tr[1]/td[2]/div[1]/table[1]/tbody[1]/tr[1]/th[2]/div[1]/span[1]/a[1]")).click( );
+	   Thread.sleep(6000);
+	   WebElement element15= driver.findElement(By.xpath("//input[@type='text'][@name='$PpyFilterCriteria_pgRepPgSubSectionpzViewInstancesB_pxResults_pzViewInstances_1$ppyColumnFilterCriteria$gpyPurpose2$ppySearchText']"));
+	   Thread.sleep(6000); 
+	   element15.clear();
+	   element15.sendKeys("2scale_PushType");  
+	   Thread.sleep(6000);
+	   driver.findElement(By.xpath("//text()[.='Apply']/ancestor::button[1]")).click( );
+	   Thread.sleep(6000);
+	   driver.findElement(By.xpath("//div[contains(text(),'MCCM')]")).click( );
+	   driver.switchTo().defaultContent();
+	   Thread.sleep(8000);
+	   driver.switchTo().frame("PegaGadget1Ifr");	 
+	   Thread.sleep(6000); 
+	   WebElement element19 = driver.findElement(By.xpath("//input[@type='text'][@name='$PRH_1$ppySetting']"));
+	   Thread.sleep(6000); 
+	   element19.clear();
+	   element19.sendKeys("MCCM");  	
+	   Thread.sleep(6000);
+	   driver.findElement(By.xpath("//button[text()='Save']")).click( );
+	   Thread.sleep(6000);
+	   driver.findElement(By.xpath("//*[@class='pi pi-close-circle']")).click( );
+	   Thread.sleep(6000);
+	   
+	   
+	   driver.switchTo().defaultContent();
+	   Thread.sleep(8000);
+	   driver.switchTo().frame("PegaGadget0Ifr");
+	   Thread.sleep(6000);
+	   driver.findElement(By.xpath("/html[1]/body[1]/div[3]/form[1]/div[3]/div[1]/table[1]/tbody[1]/tr[1]/td[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/table[1]/tbody[1]/tr[1]/td[2]/div[1]/table[1]/tbody[1]/tr[1]/th[2]/div[1]/span[1]/a[1]")).click( );
+	   Thread.sleep(6000);
+	   WebElement element17= driver.findElement(By.xpath("//input[@type='text'][@name='$PpyFilterCriteria_pgRepPgSubSectionpzViewInstancesB_pxResults_pzViewInstances_1$ppyColumnFilterCriteria$gpyPurpose2$ppySearchText']"));
+	   Thread.sleep(6000); 
+	   element17.clear();
+	   element17.sendKeys("2scale_ExpiryInDays");  
+	   Thread.sleep(6000);
+	   driver.findElement(By.xpath("//text()[.='Apply']/ancestor::button[1]")).click( );
+	   Thread.sleep(6000);
+	   driver.findElement(By.xpath("//div[contains(text(),'MCCM')]")).click( );
+	   driver.switchTo().defaultContent();
+	   Thread.sleep(8000);
+	   driver.switchTo().frame("PegaGadget1Ifr");	 
+	   Thread.sleep(6000); 
+	   WebElement element18 = driver.findElement(By.xpath("//input[@type='text'][@name='$PRH_1$ppySetting']"));
+	   Thread.sleep(6000); 
+	   element18.clear();
+	   element18.sendKeys("5");  	
+	   Thread.sleep(6000);
+	   driver.findElement(By.xpath("//button[text()='Save']")).click( );
+	   Thread.sleep(6000);
+	   driver.findElement(By.xpath("//*[@class='pi pi-close-circle']")).click( );
+	   Thread.sleep(6000);
+	   
+	   
+	   
+	   
+	   
 	   driver.findElement(By.xpath("//input[@type='text'][@name='$PpyDisplayHarness$ppySearchText']")).sendKeys("d_mccmsettings");  
 	   Thread.sleep(6000); 
 	   driver.findElement(By.xpath("//*[@class='pi pi-search-2']")).click( );
@@ -437,7 +532,7 @@ public class PageTwoScaleEndToEndFlow {
 						   Assert.assertEquals(getTextOnPage, "COMPLETED"); 
 
 
-						   System. exit(1);
+						//   System. exit(1);
 
 						   return null;
 
@@ -481,6 +576,8 @@ public class PageTwoScaleEndToEndFlow {
 		   }
 	   }
    }
+
+
 
 }
 

@@ -51,7 +51,7 @@ import static org.testng.Assert.assertTrue;
  * @author p.rout 
  *
  */
-public class RestAPIGetCall {
+public class RestAPIGetCallPost {
 	
   
 
@@ -87,16 +87,25 @@ public class RestAPIGetCall {
 
 	public void VerifyRESTAPIGETRequestResponseMessageSuccessfully() {
 
- 	Map<String, Object> map = new HashMap<String, Object>();
-//	
-//	map.put("name" ,"MCC_3102;4G_SWAP");
+ 	Map<String, String> postContent = new HashMap<>();
+ 
+ 	
+	postContent.put("name","Online");
+	postContent.put("type", "Inbound");
+	postContent.put("container", "CustomerOfferOnline");
+	postContent.put("schemeID", "MobileHashed");
+	postContent.put("characteristicName","Transaction");
+	postContent.put( "value","Prolongation");
+	postContent.put( "type","Intent");
+	
+ 	
 //	System.out.println(map);
 	
 //	JSONObject  request = new JSONObject(map);
 		
 	  JSONObject  request = new JSONObject();
 	   
-  // request.put("name" ,"MCC_3102;4G_SWAP");
+    // request.put("name" ,"MCC_3102;4G_SWAP");
  //	request.put("first_name","Michael");
     // map.put("container", "CustomerOfferOnline");
 	  
@@ -121,12 +130,15 @@ public class RestAPIGetCall {
 	
 	// String container = "container";
 
-   given().header("Content-Type", "application/json").
+   given().
+   header("Content-Type", "application/json").
     //  given().header("Content-Type", "application/xml").
 	       contentType(ContentType.JSON).
-	       accept(ContentType.JSON).
+	       with()
+	       .body(postContent).
+	  //     accept(ContentType.JSON).
 	  //   body("CustomerOfferOnline").
-	     body(map).
+	    
 	     when().
   // get("https://reqres.in/api/users?page=2\"").
     
