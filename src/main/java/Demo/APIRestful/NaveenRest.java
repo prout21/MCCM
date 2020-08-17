@@ -1,7 +1,7 @@
 /**
  * 
  */
-package DemoEtEFlow.InOutbound;
+package Demo.APIRestful;
 
 import static io.restassured.RestAssured.get;
 

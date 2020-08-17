@@ -3,12 +3,11 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="DemoEtEFlow.InOutbound.RestAPIGetCall">
+      <class name="Demo.APIRestful.RestAPIGetCall">
         <methods>
           <include name="VerifyRESTAPIGETRequestResponseMessageSuccessfully"/>
-          <include name="VerifyRESTAPIGETRequestResponseStatusCodeChkSuccessfully"/>
         </methods>
-      </class> <!-- DemoEtEFlow.InOutbound.RestAPIGetCall -->
+      </class> <!-- Demo.APIRestful.RestAPIGetCall -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

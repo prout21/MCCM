@@ -1,4 +1,4 @@
-package DemoEtEFlow.InOutbound;
+package DemoEtEFlow.Testcase;
 
 import static org.testng.Assert.assertEquals;
 
