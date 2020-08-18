@@ -3,11 +3,11 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="DemoEtEFlow.Testcase.PageTwoScaleEndToEndFlow">
+      <class name="DemoEtEFlow.Testcase.Page2ScaleDssStudio">
         <methods>
-          <include name="RunNBACampaignEndToEndFlow"/>
+          <include name="NBABatchCampaignInboundSuccessfull"/>
         </methods>
-      </class> <!-- DemoEtEFlow.Testcase.PageTwoScaleEndToEndFlow -->
+      </class> <!-- DemoEtEFlow.Testcase.Page2ScaleDssStudio -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
