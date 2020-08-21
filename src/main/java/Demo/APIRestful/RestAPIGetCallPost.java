@@ -59,11 +59,11 @@ public class RestAPIGetCallPost {
 	
 	public void VerifyRESTAPIGETRequestResponseStatusCodeChkSuccessfully() {
 		
-    Response response =  get("http://mccm-191102761.eu-central-1.elb.amazonaws.com:8171/prweb/PRRestService/CSM/customerMarketingProductAPI/processNextBestAction");
+     Response response =  post("http://mccm-191102761.eu-central-1.elb.amazonaws.com:8171/prweb/PRRestService/CSM/customerMarketingProductAPI/processNextBestAction");
 	 
    //   Response response   = get("https://reqres.in/api/users?page=2\"");
   	   
-     //	 Response response   = post("https://ukwtsvulx386.elabs.svcs.entsvcs.net:18576"); 
+    // Response response   = post("https://ukwtsvulx386.elabs.svcs.entsvcs.net:18576"); 
       //  Response response   = get("http://mccm-191102761.eu-central-1.elb.amazonaws.com:8171/prweb/PRRestService/CSM/customerMarketingProductAPI/processOffersResult");
 	
 //	System.out.println(response.asString());
@@ -117,17 +117,22 @@ public class RestAPIGetCallPost {
  	
        //  Response response =  get("http://mccm-191102761.eu-central-1.elb.amazonaws.com:8171/prweb/PRRestService/CSM/customerMarketingProductAPI/processNextBestAction");
  	
-// 	    Headers  headersArray = response.getHeaders();
-// 	   
-// 	   HashMap<String,String> allHeaders = new  HashMap<String,String>();
-// 	   
-// 	   for(io.restassured.http.Header header : headersArray ) {
-//    
-// 	   allHeaders.put(header.getName(), header.getValue());
-// 	    
-// 	 
-//   	System.out.println("Headers Arry----> +allHeaders");
-	
+	    
+	    Response response =  post("http://mccm-191102761.eu-central-1.elb.amazonaws.com:8171/prweb/PRRestService/CSM/customerMarketingProductAPI/processNextBestAction");
+	    
+
+		
+ 	    Headers  headersArray = response.getHeaders();
+ 	   
+  	   HashMap<String,String> allHeaders = new  HashMap<String,String>();
+  	   
+ 	   for(io.restassured.http.Header header : headersArray ) {
+     
+  	   allHeaders.put(header.getName(), header.getValue());
+ 	    
+  	 
+    	System.out.println("Headers Arry----> +allHeaders");
+//	
 	// String container = "container";
 
    given().
@@ -150,17 +155,49 @@ public class RestAPIGetCallPost {
 	      //statusCode(200).
 	      log().all();
 	   }
-	
+ 	 	System.out.println(response.getStatusCode());
+ 	 	int StatusCode = (response. getStatusCode());
+ 	  	 	
+ 	  	Assert.assertEquals(StatusCode, 200, "Status code is not 200");
 	 
-		
-	 
+	}	
+
 		
 		
 		}
  
- 
- 
+  <-  body part input ---->
+{
+	  "parts": {
+	    "channel": [
+	      {
+	        "name": "Online",
+	        "type": "Inbound"
+	      }
+	    ],
+	    "subscription": {
+	      "id": [
+	        {
+	          "value": " ",
+	          "schemeID": "MobileHashed"
+	        }
+	      ]
+	    },
+	    "campaign": {
+	      "container": "CSM"
+	    },
+	    "specification": {
+	      "characteristicsValue": [
+	        {
+	          "characteristicName": "Transaction",
+	          "value": "Prolongation",
+	          "type": "Intent"
+	        }
+	      ]
+	    }
+	  }
+	} 
 
-
+---------------------------------------------------
  
  

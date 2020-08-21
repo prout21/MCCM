@@ -24,7 +24,8 @@ public class testpost {
 				
 				.header("Content-Type", "application/json").
 			    header(" ", " ").
-			     header(" ", " ").body(map).
+			     header(" ", " ").
+			     //body(map).
 			
 			     when().
 	 	        
