@@ -4,25 +4,14 @@
   <listeners>
     <listener class-name="Mccm.Pega.ExtentReportListner.TestListener"/>
   </listeners>
-  <test thread-count="5" name="Pega completed Test(failed)">
+  <test thread-count="5" name="Pega DMP Real Time Regression Test(failed)">
     <classes>
-      <class name="Mccm.Pega.Outbound.PegaTest.PegamarktingTest">
+      <class name="Mccm.Pega.DMPRealTime.PegaTest.PegamarktDMPrealtimeTest">
         <methods>
-          <include name="VerifyNBACampaignRunSuccessfully"/>
           <include name="setup"/>
+          <include name="VerifyDMPrealtimeRunSuccessfully"/>
         </methods>
-      </class> <!-- Mccm.Pega.Outbound.PegaTest.PegamarktingTest -->
+      </class> <!-- Mccm.Pega.DMPRealTime.PegaTest.PegamarktDMPrealtimeTest -->
     </classes>
-  </test> <!-- Pega completed Test(failed) -->
-  <test thread-count="5" name="Pega  Test(failed)">
-    <classes>
-      <class name="Mccm.Pega.Outbound.PegaTest.LoginPageTest">
-        <methods>
-          <include name="teardown"/>
-          <include name="setup"/>
-          <include name="VerifyLoginSuccessfulTest"/>
-        </methods>
-      </class> <!-- Mccm.Pega.Outbound.PegaTest.LoginPageTest -->
-    </classes>
-  </test> <!-- Pega  Test(failed) -->
+  </test> <!-- Pega DMP Real Time Regression Test(failed) -->
 </suite> <!-- Failed suite [Mccm Automation Regression Suite] -->

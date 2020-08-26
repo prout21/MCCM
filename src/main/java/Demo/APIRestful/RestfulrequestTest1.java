@@ -53,11 +53,11 @@ public class RestfulrequestTest1 {
 		HttpGet request = new HttpGet(endpoint);
 		HttpResponse response = client.execute(request);
 		
-// 		BufferedReader br = new BufferedReader(new InputStreamReader((response.getEntity().getContent()))); 
-// 		String response1 = br.readLine(); 
-// 		
+  		BufferedReader br = new BufferedReader(new InputStreamReader((response.getEntity().getContent()))); 
+  		String response1 = br.readLine(); 
+ 		
   		System.out.println("response details "  +  response); 
- 	// 	System.out.println(response.toString());
+ 	 	System.out.println(response.toString());
  	
  	 
 		

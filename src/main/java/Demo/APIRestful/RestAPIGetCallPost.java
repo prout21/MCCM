@@ -90,13 +90,14 @@ public class RestAPIGetCallPost {
  	Map<String, String> postContent = new HashMap<>();
  
  	
-	postContent.put("name","Online");
-	postContent.put("type", "Inbound");
-	postContent.put("container", "CustomerOfferOnline");
-	postContent.put("schemeID", "MobileHashed");
-	postContent.put("characteristicName","Transaction");
-	postContent.put( "value","Prolongation");
-	postContent.put( "type","Intent");
+ 	postContent.put("name","Online");
+ 	postContent.put("type", "Inbound");
+ 	postContent.put("container", "CustomerOfferOnline");
+ 	postContent.put("schemeID", "MobileHashed");
+ 	postContent.put("characteristicName","Transaction");
+ 	postContent.put( "value","Prolongation");
+ 	postContent.put( "type","Intent");
+ 	postContent.put( "type","Intent");
 	
  	
 //	System.out.println(map);
@@ -112,13 +113,13 @@ public class RestAPIGetCallPost {
 	 System.out.println(request.toString());
  
 
-         // Response response   = get("https://reqres.in/api/users?page=2\"");
+      Response response   = get("https://reqres.in/api/users?page=2\"");
 	 
  	
        //  Response response =  get("http://mccm-191102761.eu-central-1.elb.amazonaws.com:8171/prweb/PRRestService/CSM/customerMarketingProductAPI/processNextBestAction");
  	
 	    
-	    Response response =  post("http://mccm-191102761.eu-central-1.elb.amazonaws.com:8171/prweb/PRRestService/CSM/customerMarketingProductAPI/processNextBestAction");
+	//    Response response =  post("http://mccm-191102761.eu-central-1.elb.amazonaws.com:8171/prweb/PRRestService/CSM/customerMarketingProductAPI/processNextBestAction");
 	    
 
 		
@@ -145,11 +146,11 @@ public class RestAPIGetCallPost {
 	  //   body("CustomerOfferOnline").
 	    
 	     when().
-  // get("https://reqres.in/api/users?page=2\"").
+   //   post("https://reqres.in/api/users?page=2\"").
     
   //  post("http://mccm-191102761.eu-central-1.elb.amazonaws.com:8171/prweb/PRRestService/CSM/customerMarketingProductAPI/processOffersResult").
         
- post("http://mccm-191102761.eu-central-1.elb.amazonaws.com:8171/prweb/PRRestService/CSM/customerMarketingProductAPI/processNextBestAction").
+  post("http://mccm-191102761.eu-central-1.elb.amazonaws.com:8171/prweb/PRRestService/CSM/customerMarketingProductAPI/processNextBestAction").
 	         
 	      then().
 	      //statusCode(200).
@@ -160,45 +161,12 @@ public class RestAPIGetCallPost {
  	  	 	
  	  	Assert.assertEquals(StatusCode, 200, "Status code is not 200");
 	 
-	}	
+	}
+}
 
 		
 		
-		}
- 
-  <-  body part input ---->
-{
-	  "parts": {
-	    "channel": [
-	      {
-	        "name": "Online",
-	        "type": "Inbound"
-	      }
-	    ],
-	    "subscription": {
-	      "id": [
-	        {
-	          "value": " ",
-	          "schemeID": "MobileHashed"
-	        }
-	      ]
-	    },
-	    "campaign": {
-	      "container": "CSM"
-	    },
-	    "specification": {
-	      "characteristicsValue": [
-	        {
-	          "characteristicName": "Transaction",
-	          "value": "Prolongation",
-	          "type": "Intent"
-	        }
-	      ]
-	    }
-	  }
-	} 
 
----------------------------------------------------
 
 
  

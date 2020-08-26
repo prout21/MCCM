@@ -22,21 +22,23 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
 import Mccm.Pega.Outbound.PegaMain.HomePage;
 import Mccm.Pega.Outbound.PegaTestBase.TestBase;
 
-public class PageMrktEtoEFlowTest2aaaaa extends TestBase  {
+public class PageMrktEtoEFlowTest2 extends TestBase  {
  
 
 
+
+//private static final WebElement element10 = null;
 
 @Test  
      public void NBABatchCampaignSuccessfull() throws InterruptedException, AWTException {
@@ -105,7 +107,7 @@ public class PageMrktEtoEFlowTest2aaaaa extends TestBase  {
 	  System.out.println("i am ineer frame no ");
 	  Thread.sleep(8000);
 	  
-	  driver.findElement(By.xpath("//input[@type='text'][@name='$PpyWorkPage$ppyLabel']")).sendKeys("NBABatchCamp9");
+	  driver.findElement(By.xpath("//input[@type='text'][@name='$PpyWorkPage$ppyLabel']")).sendKeys("NBABatchCamp1");
 	  Thread.sleep(8000);
       driver.findElement(By.xpath("//span[text()='Build']")).click( );
       Thread.sleep(8000);
@@ -270,58 +272,42 @@ public class PageMrktEtoEFlowTest2aaaaa extends TestBase  {
 	 
 	
 	///--------------------------------------------------------------------------------------------------------------//	 
-		 
-	     FluentWait<WebDriver> wait = new FluentWait<WebDriver>(driver);
-			wait.pollingEvery(600, TimeUnit.MILLISECONDS);
-			wait.withTimeout(2, TimeUnit.SECONDS);
-			
-			{
-			 try
-			 {
-			 Thread.sleep(6000);
-			 driver.findElement(By.xpath("//*[@class='pi pi-refresh']")).click( );
-			 Thread.sleep(6000);
-			 JavascriptExecutor js6 = (JavascriptExecutor) driver;
-			 WebElement element7 = driver.findElement(By.xpath("//h2[text()='Run schedule']"));
-		     js6.executeScript("arguments[0].scrollIntoView();", element7);	
-			 }catch(Exception e){
-				 
-			 }
-			 try
-			 {
-			Function<WebDriver, Boolean> function = new Function<WebDriver, Boolean>() {
-				public Boolean apply(WebDriver driver) {
-					WebElement element = driver.findElement(By.xpath("//span[text()='Completed']"));
-					String color = element.getText();
-					System.out.println("The button text has color :" + color);
-					if (color.equals("COMPLETED")) {
-						return true;
-						 
-					}
-					return false;
-				}
-			};
-
-			wait.until(function);
-           }catch(Exception e1){
-				 
-			 }
 	
-			}
-	 // main code bracket below
+	     WebDriverWait wait = new WebDriverWait(driver, 600);
+	     wait.withTimeout(60, TimeUnit.SECONDS);
+	     wait.pollingEvery(5, TimeUnit.SECONDS);
+	     wait.ignoring(NoSuchElementException.class);
+	     wait.until(new ExpectedCondition<Boolean>(){
+	         @Override
+	         public Boolean apply(WebDriver driver) {
+	        	 try
+	    		 {
+	    		 Thread.sleep(6000);
+	    		 driver.findElement(By.xpath("//*[@class='pi pi-refresh']")).click( );
+	    		 Thread.sleep(6000);
+	    		 JavascriptExecutor js6 = (JavascriptExecutor) driver;
+	    		 WebElement element7 = driver.findElement(By.xpath("//h2[text()='Run schedule']"));
+	    	     js6.executeScript("arguments[0].scrollIntoView();", element7);	
+	    		 }catch(Exception e){
+	    			 
+	    		 }
+	             WebElement ele=driver.findElement(By.xpath("//span[text()='Completed']"));
+	             if(ele==null)
+	                 return false;
+	             
+	             else
+	             {
+	                 System.out.println("found");
+	                 return true;
+	                               	             }  
+	             
+	         }
+	     });
+	     
+	     
       }
       }
-      }
-  
-
-
- 
-//}
-
 }
-
-
-    	
-   
-    
-   
+}
+	     
+	 

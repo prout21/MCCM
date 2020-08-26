@@ -347,14 +347,14 @@ public class Page2ScaleEndToEndFlow {
 			   System.out.println("i am ineer frame no ");
 			   Thread.sleep(8000);
 
-			   driver.findElement(By.xpath("//input[@type='text'][@name='$PpyWorkPage$ppyLabel']")).sendKeys("NBABatchCampai25");
+			   driver.findElement(By.xpath("//input[@type='text'][@name='$PpyWorkPage$ppyLabel']")).sendKeys("twoscalepushN1");
 			   Thread.sleep(8000);
 			   driver.findElement(By.xpath("//span[text()='Build']")).click( );
 			   Thread.sleep(8000);
 
 			   driver.findElement(By.cssSelector("button[name='ContainerWithHeader_pyWorkPage.ProgramConfiguration.StrategyContainer_7']")).click( );
 			   Thread.sleep(6000);
-			   driver.findElement(By.xpath("//input[contains(@name,'pFilterCriteriaDisplay$ppyValue')]")).sendKeys("Test Channel");  
+			   driver.findElement(By.xpath("//input[contains(@name,'pFilterCriteriaDisplay$ppyValue')]")).sendKeys("2scale Strategy");  
 			   Thread.sleep(6000);       
 			   driver.findElement(By.xpath("//*[contains(@class,'pi-search')]")).click( );
 			   Thread.sleep(6000);
@@ -366,7 +366,7 @@ public class Page2ScaleEndToEndFlow {
 			   Thread.sleep(6000);
 
 			   Thread.sleep(6000);
-			   driver.findElement(By.xpath("//input[contains(@name,'pFilterCriteriaDisplay$ppyValue')]")).sendKeys("OMBTA");  
+			   driver.findElement(By.xpath("//input[contains(@name,'pFilterCriteriaDisplay$ppyValue')]")).sendKeys("MD1509");  
 			   Thread.sleep(6000);       
 			   driver.findElement(By.xpath("//*[contains(@class,'pi-search')]")).click( );
 
@@ -402,7 +402,7 @@ public class Page2ScaleEndToEndFlow {
 			   Thread.sleep(6000);
 			   driver.findElement(By.xpath("//text()[.='Configure template']/ancestor::button[1]")).click( );
 			   Thread.sleep(6000);
-			   driver.findElement(By.xpath("//input[@type='text'][@name='$PDBTemplateMultiPg$pFilterCriteriaDisplay$ppyValue']")).sendKeys("MCCM LC Outbound");  
+			   driver.findElement(By.xpath("//input[@type='text'][@name='$PDBTemplateMultiPg$pFilterCriteriaDisplay$ppyValue']")).sendKeys("Two Scale Push Notification");  
 			   Thread.sleep(6000); 
 			   driver.findElement(By.xpath("//*[@name='WideDetailsSelectorPanel_DBTemplateMultiPg_53']")).click( );
 			   Thread.sleep(6000);
@@ -531,8 +531,7 @@ public class Page2ScaleEndToEndFlow {
 
 						   Assert.assertEquals(getTextOnPage, "COMPLETED"); 
 
-
-						//   System. exit(1);
+                           System. exit(1);
 
 						   return null;
 

@@ -103,7 +103,7 @@ public class RestAPIGetCallTest {
 	      body(request).
 	     when().
 	  //  get("https://reqres.in/api/users?page=2\"").
-	     get("http://mccm-191102761.eu-central-1.elb.amazonaws.com:8171/prweb/PRRestService/CSM/customerMarketingProductAPI/processNextBestAction").
+	     post("http://mccm-191102761.eu-central-1.elb.amazonaws.com:8171/prweb/PRRestService/CSM/customerMarketingProductAPI/processNextBestAction").
 	      then().statusCode(200).
 	      log().all();
 	   }

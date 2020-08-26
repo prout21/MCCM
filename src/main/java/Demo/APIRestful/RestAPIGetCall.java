@@ -4,10 +4,18 @@
 package Demo.APIRestful;
 
 import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.CookiePolicy;
+import java.security.KeyStore;
+import java.security.KeyStoreException;
+import java.security.NoSuchAlgorithmException;
+import java.security.UnrecoverableEntryException;
+import java.security.cert.CertificateException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -53,7 +61,35 @@ import static org.testng.Assert.assertTrue;
  */
 public class RestAPIGetCall {
 	
-  
+public static void main(String[] args) throws KeyStoreException, NoSuchAlgorithmException, CertificateException, IOException, UnrecoverableEntryException {
+		
+		//Connect to server use Keystore Certificate
+	
+	KeyStore keystore = KeyStore.getInstance(KeyStore.getDefaultType());
+		System.out.println("hi");
+		char[] keyStorePassword = "password".toCharArray();  
+		try(InputStream keyStoreData = new FileInputStream("C:\\Users\\prout21\\css1identity.jks"))
+		{  //keystore.ks       //is the file from where we want to load the file  
+			keystore.load(keyStoreData, keyStorePassword); 
+			System.out.println(keyStoreData);
+			System.out.println(keyStorePassword);
+		}
+	
+	char[] keyPassword = "password".toCharArray();  
+	KeyStore.ProtectionParameter entryPassword =  
+	        new KeyStore.PasswordProtection(keyPassword);  
+	System.out.println("hi1");
+	KeyStore.Entry keyEntry = keystore.getEntry("keyAlias", entryPassword);  
+	System.out.println("hi2");
+
+	 
+	
+	char[] keyStorePassword1 = "password".toCharArray();  
+	try (FileOutputStream keyStoreOutputStream = new FileOutputStream("C:\\Users\\prout21\\jks\\css1identity.jks")) {  
+	    keystore.store(keyStoreOutputStream, keyStorePassword1);
+	    }  
+	}  
+	
 
 	@Test(priority=1)
 	
@@ -140,9 +176,6 @@ public class RestAPIGetCall {
 	   }
 	
 	 
-		
-	 
-		
 		
 		}
  
