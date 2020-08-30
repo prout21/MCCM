@@ -215,13 +215,13 @@ public  void VerifyKeyStoreCerificateSuccessfully() throws KeyStoreException, No
 
 		//	JSONObject  request = new JSONObject(map);
 
-		JSONObject  request = new JSONObject();
-
-		// request.put("name" ,"MCC_3102;4G_SWAP");
-		//	request.put("first_name","Michael");
-		// map.put("container", "CustomerOfferOnline");
-
-		System.out.println(request.toString());
+//		JSONObject  request = new JSONObject();
+//
+//		// request.put("name" ,"MCC_3102;4G_SWAP");
+//		//	request.put("first_name","Michael");
+//		// map.put("container", "CustomerOfferOnline");
+//
+//		System.out.println(request.toString());
 
 
 		//  Response response1   = get("https://reqres.in/api/users?page=2\"");
@@ -232,7 +232,7 @@ public  void VerifyKeyStoreCerificateSuccessfully() throws KeyStoreException, No
 
 		//    Response response1 =  post("http://mccm-191102761.eu-central-1.elb.amazonaws.com:8171/prweb/PRRestService/CSM/customerMarketingProductAPI/processNextBestAction");
 
-	  	      Response response1   = post("http://mccm-191102761.eu-central-1.elb.amazonaws.com:8171/prweb/PRRestService/CSM/customerMarketingProductAPI/processOffersResult");
+	  //	      Response response1   = post("http://mccm-191102761.eu-central-1.elb.amazonaws.com:8171/prweb/PRRestService/CSM/customerMarketingProductAPI/processOffersResult");
 
 		// 	    Headers  headersArray = response.getHeaders();
 		// 	   
@@ -253,17 +253,17 @@ public  void VerifyKeyStoreCerificateSuccessfully() throws KeyStoreException, No
 		when().
 		 
 	
-    	post("http://mccm-191102761.eu-central-1.elb.amazonaws.com:8576/prweb/PRRestService/CSM/customerMarketingProductAPI/processOffersResult").
+    	get("http://mccm-191102761.eu-central-1.elb.amazonaws.com:8576/prweb/PRRestService/CSM/customerMarketingProductAPI/processOffersResult").
 		
 		then().
 	 
 		log().all();
 	
-  	 	System.out.println(response1.getStatusCode());
-  	 	
- 	 	int StatusCode = (response1.getStatusCode());
-	  	  	 	
-	  	  	Assert.assertEquals(StatusCode, 200, "Status code is not 200");
+//  	 	System.out.println(response1.getStatusCode());
+//  	 	
+// 	 	int StatusCode = (response1.getStatusCode());
+//	  	  	 	
+//	  	  	Assert.assertEquals(StatusCode, 200, "Status code is not 200");
 	}
 		}
  

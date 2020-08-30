@@ -35,7 +35,7 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.testng.TESTNG_CONTAINER"/>
-	<classpathentry kind="lib" path="C:/Users/prout21/Downloads/org.jbundle.util.osgi.wrapped.org.apache.http.client-4.1.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/prout21/Downloads/org.jbundle.util.osgi.wrapped.org.apache.http.client-4.1.2.jar" sourcepath="XMLFiles"/>
 	<classpathentry kind="lib" path="C:/Users/prout21/Downloads/jar_files/ojdbc8-19.3.0.0.jar"/>
 	<classpathentry kind="lib" path="C:/Users/prout21/Downloads/jar_files/ons-19.3.0.0.jar"/>
 	<classpathentry kind="lib" path="C:/Users/prout21/Downloads/jar_files/oraclepki-19.3.0.0.jar"/>
