@@ -1,5 +1,6 @@
 package Mccm.Pega.Outbound.PegaTestBase;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -16,6 +17,7 @@ import Mccm.Pega.Outbound.PegaMain.PegaMarketPage;
 import Mccm.Pega.Outbound.PegaMain.HomePageDetails;
 //import Mccm.Pega.Outbound.PegaSubClass.HomePageDetails;
 import Mccm.Pega.QAUtil.TestUtil;
+import Mccm.RESTful.APICall.DMPRTPNBAMobHash;
 
 public class TestBase {
 	public static WebDriver driver;
@@ -26,6 +28,7 @@ public class TestBase {
 	{
 		try {
 			prop=new Properties();
+			
 			String projectPath = System.getProperty("user.dir");
 			
 							
@@ -37,7 +40,8 @@ public class TestBase {
 	   HomePageDetails.ExcelFilePath = System.getProperty("user.dir");
 	   
 	   PegaMarktDMPRealTime.ExcelFilePath = System.getProperty("user.dir");
-	    	      
+	   
+  	      
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
@@ -63,5 +67,35 @@ public class TestBase {
      
     }
     
-   
+  //*******************************************************************************************
+  	//*Function:	general_ReadProperty														*
+  	//*Arguments:	Property Key as String													 	*
+  	//*Return 		Poverty Value as String														*
+  	//*Descriptions: 																			*
+  	//*	This function will read the Properties file and return property value to based on key.	*
+  	//*Author: 														*
+  	//*******************************************************************************************
+  	public static String general_ReadProperty(String propertyKey)
+  	{
+  		String propertyValue="";
+  		File cfgfile = new File("configurationFile.properties");
+  		
+  		if(cfgfile.exists())
+  		{
+  			  Properties propties = new Properties();
+  			  FileInputStream propFile;
+
+  			  try {
+  				  propFile = new FileInputStream(cfgfile);
+  				  propties.load(propFile);
+  				  propertyValue=propties.getProperty(propertyKey);
+  				  } catch (Exception e1) {
+  					  
+  					  e1.printStackTrace();
+  				  } 
+  		 }
+  		return propertyValue;
+  		
+  	    
+  }
  }
