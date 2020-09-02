@@ -12,20 +12,18 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import Mccm.Pega.Outbound.PegaTestBase.TestBase;
+import Mccm.Pega.excel.utility.Excel_Reader;
 
-public class DMPRTPNBAMobHash extends TestBase {
+
+public class DMPRTPNBAMobHash extends TestBase  {
 
 	public static String KeystorePath;
 	public static String hostName;
 	public static String port;
 	public static String Keystorepassword;
+	public static String json;
+ 
 	
-	public static String SubValue;
-	
-	
-
-
-
 	@Test
 
 	public void VerifyDMPRTPNBAMobHashedAPIcallSuccessfully() {
@@ -43,26 +41,21 @@ public class DMPRTPNBAMobHash extends TestBase {
 			KeystorePath=general_ReadProperty("KeystorePath");
 			Keystorepassword=general_ReadProperty("Keystorepassword");
 			
-			SubValue=general_ReadProperty(SubValue);
-			
-			
-
-			URL urlForGetRequest = new URL("https://" + hostName + ":" + port
+		 	URL urlForGetRequest = new URL("https://" + hostName + ":" + port
 					+ "/prweb/PRRestService/CSM/customerMarketingProductAPI/processNextBestAction");
 			String readLine = null;
 			System.setProperty("javax.net.ssl.keyStore",(KeystorePath+"/css1identity.jks"));   
-
-
-
 			System.setProperty("javax.net.ssl.keyStorePassword", Keystorepassword);
 			System.setProperty("javax.net.ssl.keyStoreType", "JKS");
 			System.setProperty("javax.net.ssl.trustStore",(KeystorePath+"/mccminternaltrust.jks"));
 			System.setProperty("javax.net.ssl.trustStorePassword", Keystorepassword);
 			System.setProperty("javax.net.ssl.trustStoreType", "JKS");
 
-		//	String json = "{ \"parts\" : {\"campaign\":{\"container\":\"CSM\"},\"subscription\":{\"id\":[{\"value\":\"7cd536xz3000\",\"schemeID\":\"MobileHashed\"}]}}}";
-
-			String json = "{ \"parts\" : {\"campaign\":{\"container\":\"CSM\"},\"subscription\":{\"id\":[{\"value\":\"SubValue\",\"schemeID\":\"MobileHashed\"}]}}}";
+	      //  String json = "{ \"parts\" : {\"campaign\":{\"container\":\"CSM\"},\"subscription\":{\"id\":[{\"value\":\"7cd536xz3000\",\"schemeID\":\"MobileHashed\"}]}}}";
+            
+			 json = general_ReadProperty("NBA_json");
+	
+		 
 			
 			// Create all-trusting host name verifier
 			HostnameVerifier allHostsValid = new HostnameVerifier() {
@@ -96,8 +89,6 @@ public class DMPRTPNBAMobHash extends TestBase {
 			in.close();
 			System.out.println("response: " + response.toString());
 			
-
-
 			Assert.assertEquals(responseCode, 200, "Status code is not 200");
 
 		} catch (Exception e) {
