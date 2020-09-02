@@ -11,5 +11,11 @@
       <class name="Mccm.Pega.DMPRealTime.PegaTest.PegamarktDMPrealtimeTest"/>  
     </classes>
   </test> <!-- Test -->
+  
+    <test name="RestAPI POST Call NBA Regression Test">
+    <classes>
+      <class name="Mccm.Pega.DMPRealTime.PegaTest.DMPRTPNBAMobHash"/>  
+    </classes>
+  </test> <!-- Test -->
    
 </suite> <!-- Suite -->
