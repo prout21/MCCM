@@ -3,11 +3,11 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Mccm.Pega.DMPRealTime.PegaTest.DMPRTPNBAMobHash">
+      <class name="Mccm.Unix.Outbound.App_Unix_Outbound_Extract_Test">
         <methods>
-          <include name="VerifyDMPRTPNBAMobHashedAPIcallSuccessfully"/>
+          <include name="VerifyExtracDataLoadSuccessfully"/>
         </methods>
-      </class> <!-- Mccm.Pega.DMPRealTime.PegaTest.DMPRTPNBAMobHash -->
+      </class> <!-- Mccm.Unix.Outbound.App_Unix_Outbound_Extract_Test -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
