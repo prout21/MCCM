@@ -1,11 +1,18 @@
-NBA BATCH OUTBOUND : documentation 
+NBA Batch Outbound E2E flow :
 ----------------------------
-Step-1:dataload -oracle and Casandra load
+Step-1:dataload -oracle and cansndra load
 step-2:dev studio setup
-step-3:pega marketing part configuration 
-step-4:capagin run and validation on successfully
-step-5:Validation of configured DB table(MCCMLCOutbound) 
-step6:putty login run the wrapper script for 3 diff channels as mention below:
+step-3:dev studio ->serch the value -LegacyChannelSnapshot ->select dataset->action->run->drop down 
+       ->select truncate->click on run->close the window
+step-4:pega mrkting part configuration
+step-5:capagin run and validation on completed successfully
+step-6:dev studio ->serch the value -LegacyChannelSnapshot ->select dataset->action->run->drop down 
+       ->select brwose->click run->validation of the casandra data ->wait for 2 min->close the window
+step-7:Validation of configured DB table(MCCMLCOutbound) 
+step-8:dev studio ->serch the value -MasterLegacyChannelSnapshot  ->select dataset->action->run->drop down 
+        ->select truncate->click on run->close the window
+
+step-9:putty login run the wrapper script for 3 diff chanels as mention below:
 sub steps:
 1. login into Putty as dxc_dev
 2. Run the Command ssh mccm02@10.0.4.99, Password: unix11
@@ -13,10 +20,14 @@ sub steps:
 4. Run the extract wrapper to generate each NBA Channel file using the Shell command with parameter passing as shown below:
 -> ksh Data_Extract_wrapper.ksh NBA_ONB
 -> ksh Data_Extract_wrapper.ksh NBA_KIASEPOS
--> ksh Data_Extract_wrapper.ksh NBA_DMP 
-step7: Go to PEGA and select * from MCCM_EXTRACT_HISTORY; 
+-> ksh Data_Extract_wrapper.ksh NBA_DMP
+ 
+step-10:dev studio ->serch the value -MasterLegacyChannelSnapshot ->select dataset->action->run->drop down 
+       ->select brwose->click run->validation of the casandra data ->wait for 2 min->close the window
+
+step-11: Go to PEGA and select * from MCCM_EXTRACT_HISTORY; 
       DPF_MMC_NBA_DMP_20191211055800.csv.gz 
       DPF_MMC_NBA_KIASEPOS_20191211055800.csv.gz 
       DPF_MMC_NBA_ONB_20191211055800.csv.gz 
-step8:Go to PEGA and select * from MCCM_NBACAMPAIGN_FLAGS; 
+step-12:Go to PEGA and select * from MCCM_NBACAMPAIGN_FLAGS; 
       Result :YY

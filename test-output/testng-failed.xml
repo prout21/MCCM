@@ -3,11 +3,11 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Mccm.Unix.Outbound.App_Unix_Outbound_Extract_Test">
+      <class name="DemoEtEFlow.Testcase.PageDssEtoEtest">
         <methods>
-          <include name="VerifyExtracDataLoadSuccessfully"/>
+          <include name="lunchChromBrowser"/>
         </methods>
-      </class> <!-- Mccm.Unix.Outbound.App_Unix_Outbound_Extract_Test -->
+      </class> <!-- DemoEtEFlow.Testcase.PageDssEtoEtest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
