@@ -1,5 +1,13 @@
 package Mccm.Unix.Outbound;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.util.Properties;
+
+import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class MyAutomationConstants {
 
@@ -30,4 +38,7 @@ public class MyAutomationConstants {
 	public static String port;
 	public static String SID;
 	public static String schema;
+	public static XSSFWorkbook wb;
+
+
 }
