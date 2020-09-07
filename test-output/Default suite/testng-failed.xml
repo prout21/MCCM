@@ -3,11 +3,11 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="DemoEtEFlow.Testcase.PageDssEtoEtest">
+      <class name="Demo.DBquery.DBValidationOutbound">
         <methods>
-          <include name="lunchChromBrowser"/>
+          <include name="VerifyDBValidationOutboundSuccessfull"/>
         </methods>
-      </class> <!-- DemoEtEFlow.Testcase.PageDssEtoEtest -->
+      </class> <!-- Demo.DBquery.DBValidationOutbound -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

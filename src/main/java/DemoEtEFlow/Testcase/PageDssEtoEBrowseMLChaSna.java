@@ -21,7 +21,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
-public class PageDssEtoEtest {
+public class PageDssEtoEBrowseMLChaSna {
    
    @Test  
     public void lunchChromBrowser() throws InterruptedException, AWTException {
@@ -47,16 +47,16 @@ public class PageDssEtoEtest {
 	 js.executeScript("arguments[0].scrollIntoView();", element);
 	 driver.findElement(By.xpath("//a[text()='Dynamic System Settings']")).click( );
 	 Thread.sleep(6000);
-	 driver.switchTo().frame(0);
-	 int size = driver.findElements(By.tagName("iframe")).size();
-	 System.out.println(size);
-	 Thread.sleep(6000);
+//	 driver.switchTo().frame(0);
+//	 int size = driver.findElements(By.tagName("iframe")).size();
+//	 System.out.println(size);
+//	 Thread.sleep(6000);
 	
 	    
 		     
 			 Thread.sleep(6000);
 			 
-			 driver.findElement(By.xpath("//input[@type='text'][@name='$PpyDisplayHarness$ppySearchText']")).sendKeys("LegacyChannelSnapshot");  
+			 driver.findElement(By.xpath("//input[@type='text'][@name='$PpyDisplayHarness$ppySearchText']")).sendKeys("MasterLegacyChannelSnapshot");  
 			 Thread.sleep(6000); 
 			 
 			 driver.findElement(By.xpath("//*[@class='pi pi-search-2']")).click( );
@@ -65,7 +65,7 @@ public class PageDssEtoEtest {
 			 driver.findElement(By.xpath("//a[text()='Data Set']")).click( );
 			 Thread.sleep(6000);
 			 
-			 driver.findElement(By.xpath("//a[text()='LegacyChannelSnapshot']")).click( );
+			 driver.findElement(By.xpath("//a[text()='MasterLegacyChannelSnapshot']")).click( );
 			 Thread.sleep(6000);
 			 
 			 driver.switchTo().defaultContent();
@@ -105,31 +105,28 @@ public class PageDssEtoEtest {
 			  
 		     Thread.sleep(6000);
 			 
-			 driver.findElement(By.xpath("//select[@name='$PD_pzRunRecord$ppxRunWindow$gTABTHREAD1$ppxRunParameters$ppyTestInputs$ppyOperationIndex']")).click( );
+			 driver.findElement(By.xpath("//select[@name='$PD_pzRunRecord$ppxRunWindow$gTABTHREAD1$ppxRunParameters$ppyTestInputs$ppyOperationIndex']")).sendKeys("Browse");
 			 Thread.sleep(6000);
 			 
-			 Thread.sleep(6000);
-			 driver.findElement(By.xpath("//text()[.='Truncate']")).click( );
-			 Thread.sleep(6000);
-		 
-			 Thread.sleep(6000);
-			 driver.findElement(By.xpath("//input[@type='checkbox'][@name='$PD_pzRunRecord$ppxRunWindow$gTABTHREAD1$ppxRunParameters$ppyTestInputs$ppyOperation$ppyTracingEnabled']")).click( );
-			 Thread.sleep(6000);
-			 
+			   
 			 
 			 Thread.sleep(6000);
-			 driver.findElement(By.xpath("(//text()[.='Run'])[3]")).click( );
+			 driver.findElement(By.xpath("(//div[@class='pzbtn-mid'])[2]")).click( );
 			 Thread.sleep(6000);
+ 
+			// display validation of the casandra data
+			 
+	 		 for(int i=0;i<30;i++){
+	 		 Thread.sleep(8000);
+	 		}
+	 
 		 
 			 
              driver.close();
 		     }
 		      }
 		     driver.switchTo().window(mainWindow);
-
-Thread.sleep(6000);
-driver.findElement(By.xpath("//text()[.='Browse']")).click( );
-Thread.sleep(6000);	  
+  
    }
 		    
 		      
