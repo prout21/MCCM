@@ -106,7 +106,7 @@ public class PageMrktEtoEFlowTest extends TestBase  {
 	  System.out.println("i am ineer frame no ");
 	  Thread.sleep(8000);
 	  
-	  driver.findElement(By.xpath("//input[@type='text'][@name='$PpyWorkPage$ppyLabel']")).sendKeys("NBABatchCampaig23");
+	  driver.findElement(By.xpath("//input[@type='text'][@name='$PpyWorkPage$ppyLabel']")).sendKeys("NBABatchCampaig234");
 	  Thread.sleep(8000);
       driver.findElement(By.xpath("//span[text()='Build']")).click( );
       Thread.sleep(8000);
@@ -275,8 +275,10 @@ public class PageMrktEtoEFlowTest extends TestBase  {
 	 FluentWait<WebDriver> wait = new FluentWait<WebDriver>(driver).withTimeout(15000, TimeUnit.SECONDS).pollingEvery(30, TimeUnit.SECONDS).ignoring(NoSuchElementException.class);
 	 
 	 WebElement ele = wait.until(new Function<WebDriver, WebElement>()
+	 
 
 	 {
+	 
 
 	 public WebElement apply(WebDriver driver)
 
@@ -301,6 +303,8 @@ public class PageMrktEtoEFlowTest extends TestBase  {
 	     	 WebElement element10 = driver.findElement(By.xpath("//span[text()='Completed']"));
 				
 		        getTextOnPage = element10.getText();
+		        
+		       // if(getTextOnPage.equals("COMPLETED"))break;
 		        			 
 			}catch(Exception e2){
 			e2.printStackTrace();
@@ -328,23 +332,35 @@ public class PageMrktEtoEFlowTest extends TestBase  {
 			e1.printStackTrace();{
 	                  	}
 	             }
-	 
+		{
+			for (int i = 1; i <= 5; i++) {
+				if (getTextOnPage.equals("COMPLETED")) {
+					 
+					break;
+				}
+			}
 	 if(getTextOnPage.equals("COMPLETED")) 
-		 
 	 {
+		 
+		 //break; 
+	 //}
+	          //   };
+	 
 
-	 System.out.println("Test Case Passed");
+	System.out.println("Test Case Passed");
 	 
 	Assert.assertEquals(getTextOnPage, "COMPLETED"); 
 	
-
-	 
-     System. exit(1);
-	// return HomePage11();
-	   return null;
-	 	 
- 	 }  
+ 
 	
+	// if(getTextOnPage.equals("COMPLETED"))break;
+	 
+   //  System. exit(1);
+	//  return HomePage11();
+	    return null;
+ 
+	 }
+	 
  
 	 else if (getTextOnPage1.equals("FAILED"))
 			 
@@ -375,28 +391,18 @@ public class PageMrktEtoEFlowTest extends TestBase  {
 	            	
 	            	 }
 	            	 }
+		
 	 
-	            	 });
+	            	 }});
 	 
-	 	 
+	
+	 
 	 // main code bracket below
       }
       }
       }
-//@Test
-//public WebElement HomePage11() {
-//	System.out.println("Execution stop");
-//	 System. exit(1);
-//	 
-//	 return element10;
-//	
 }
+ 
+ 
 
 
-//}
-
-
-    	
-   
-    
-   
