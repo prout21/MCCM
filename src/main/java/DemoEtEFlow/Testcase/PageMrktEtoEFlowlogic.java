@@ -18,6 +18,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.StaleElementReferenceException;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -106,7 +108,7 @@ public class PageMrktEtoEFlowlogic extends TestBase  {
 	  System.out.println("i am ineer frame no ");
 	  Thread.sleep(8000);
 	  
-	  driver.findElement(By.xpath("//input[@type='text'][@name='$PpyWorkPage$ppyLabel']")).sendKeys("NBABatcompltehlogic1");
+	  driver.findElement(By.xpath("//input[@type='text'][@name='$PpyWorkPage$ppyLabel']")).sendKeys("NBABatcompltehlogi121111");
 	  Thread.sleep(8000);
       driver.findElement(By.xpath("//span[text()='Build']")).click( );
       Thread.sleep(8000);
@@ -268,33 +270,70 @@ public class PageMrktEtoEFlowlogic extends TestBase  {
 	     JavascriptExecutor js5 = (JavascriptExecutor) driver;
 		 WebElement element6 = driver.findElement(By.xpath("//h2[text()='Run schedule']"));
 	     js5.executeScript("arguments[0].scrollIntoView();", element6);	
-	 
 	
 	///--------------------------------------------------------------------------------------------------------------//	 
+        FluentWait<WebDriver> wait = new FluentWait<WebDriver>(driver).withTimeout(15000, TimeUnit.SECONDS).pollingEvery(30, TimeUnit.SECONDS).ignoring(NoSuchElementException.class);
 		 
-	 FluentWait<WebDriver> wait = new FluentWait<WebDriver>(driver).withTimeout(15000, TimeUnit.SECONDS).pollingEvery(30, TimeUnit.SECONDS).ignoring(NoSuchElementException.class);
-	 {
-		 try
-		 {
-	 Boolean ele = wait.until(ExpectedConditions.or(
-			    ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[text()='Completed']")),
-			    ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[text()='Failed']")),
-			    ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[text()='Stopped']"))
-			    ));
-	 	 
-		 Thread.sleep(6000);
-		 driver.findElement(By.xpath("//*[@class='pi pi-refresh']")).click( );
-		 Thread.sleep(6000);
-		 JavascriptExecutor js6 = (JavascriptExecutor) driver;
-		 WebElement element7 = driver.findElement(By.xpath("//h2[text()='Run schedule']"));
-	     js6.executeScript("arguments[0].scrollIntoView();", element7);	
-		 }catch(Exception e){
-			 
-		 }
-         
-	             }
-	 }
-	 }
-      }
-      }
+		 WebElement ele = wait.until(new Function<WebDriver, WebElement>() {
 
+//	          // Create object of FluentWait class and pass webdriver as input
+//	          FluentWait<WebDriver> wait = new FluentWait<WebDriver>(driver);
+//
+//	           // It should poll webelement after every single second
+//	          wait.pollingEvery(10, TimeUnit.SECONDS);
+//
+//	          // Max time for wait- If conditions are not met within this time frame then it will fail the script
+//	          wait.withTimeout(1000, TimeUnit.SECONDS);
+//
+//	         // we are creating Function here which accept webdriver and output as WebElement-
+//	          WebElement element10 = wait.until(new Function<WebDriver, WebElement>() {
+
+	               // apply method- which accept webdriver as input
+	               @Override               
+	               public WebElement apply(WebDriver arg0) 
+	               {
+	            	   try
+	      			 {
+	      			 Thread.sleep(6000);
+	      			 driver.findElement(By.xpath("//*[@class='pi pi-refresh']")).click( );
+	      			 Thread.sleep(6000);
+	      			 JavascriptExecutor js6 = (JavascriptExecutor) driver;
+	      			 WebElement element7 = driver.findElement(By.xpath("//h2[text()='Run schedule']"));
+	      		     js6.executeScript("arguments[0].scrollIntoView();", element7);	
+	      			 }catch(Exception e){
+	      				 
+	      			 }
+	                    WebElement element = arg0.findElement(By.xpath("//span[text()='Completed']"));
+	                    
+	                    String getTextOnPage1 = "" ;
+	                    
+	                    getTextOnPage1 = element.getText();
+	                    
+	                    // If condition is true then it will return the element and wait will be over
+	                    if (getTextOnPage1.equalsIgnoreCase("COMPLETED")) 
+	                    {
+	                       System.out.println("Value is >>> " + getTextOnPage1);
+	                       
+	                       System.out.println("test1");
+	                       
+	                       return element;
+	                     }
+
+	                    // If condition is not true then it will return null and it will keep checking until condition is not true
+	                    else {
+	                       System.out.println("Value is >>> " + getTextOnPage1);
+	                       System.out.println("test2");
+	                       return null;
+	                    }
+	               }
+	          });
+
+	          // If element is found then it will display the status
+	          System.out.println("Final visible status is >>>>> " + element.isDisplayed());
+	     }
+      
+      
+      }
+      }  
+}
+ 

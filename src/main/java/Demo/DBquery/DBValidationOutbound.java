@@ -55,11 +55,11 @@ public class DBValidationOutbound {
 
 			
 				 
-				 assertEquals(status1,"04-AUG-20");
+			//	 assertEquals(status1,"04-AUG-20");
 				 
 				 assertEquals(status2,"Y");
 				 
-				 assertEquals(status,"DPF_MMC_NBA_ONB");
+			//	 assertEquals(status,"DPF_MMC_NBA_ONB");
 				 
 				 
 				}

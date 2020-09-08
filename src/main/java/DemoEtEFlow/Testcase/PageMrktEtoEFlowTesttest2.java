@@ -22,7 +22,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -33,7 +32,7 @@ import org.testng.asserts.SoftAssert;
 import Mccm.Pega.Outbound.PegaMain.HomePage;
 import Mccm.Pega.Outbound.PegaTestBase.TestBase;
 
-public class PageMrktEtoEFlowTest2 extends TestBase  {
+public class PageMrktEtoEFlowTesttest2 extends TestBase  {
  
 
 
@@ -107,7 +106,7 @@ public class PageMrktEtoEFlowTest2 extends TestBase  {
 	  System.out.println("i am ineer frame no ");
 	  Thread.sleep(8000);
 	  
-	  driver.findElement(By.xpath("//input[@type='text'][@name='$PpyWorkPage$ppyLabel']")).sendKeys("NBABatchCamp11");
+	  driver.findElement(By.xpath("//input[@type='text'][@name='$PpyWorkPage$ppyLabel']")).sendKeys("NBABatchCampaig23456");
 	  Thread.sleep(8000);
       driver.findElement(By.xpath("//span[text()='Build']")).click( );
       Thread.sleep(8000);
@@ -272,42 +271,83 @@ public class PageMrktEtoEFlowTest2 extends TestBase  {
 	 
 	
 	///--------------------------------------------------------------------------------------------------------------//	 
-	
-	     WebDriverWait wait = new WebDriverWait(driver, 6000);
-	     wait.withTimeout(60, TimeUnit.SECONDS);
-	     wait.pollingEvery(5, TimeUnit.SECONDS);
-	     wait.ignoring(NoSuchElementException.class);
-	     wait.until(new ExpectedCondition<Boolean>(){
-	         @Override
-	         public Boolean apply(WebDriver driver) {
-	        	 try
-	    		 {
-	    		 Thread.sleep(6000);
-	    		 driver.findElement(By.xpath("//*[@class='pi pi-refresh']")).click( );
-	    		 Thread.sleep(6000);
-	    		 JavascriptExecutor js6 = (JavascriptExecutor) driver;
-	    		 WebElement element7 = driver.findElement(By.xpath("//h2[text()='Run schedule']"));
-	    	     js6.executeScript("arguments[0].scrollIntoView();", element7);	
-	    		 }catch(Exception e){
-	    			 
-	    		 }
-	             WebElement ele=driver.findElement(By.xpath("//span[text()='Failed']"));
-	             if(ele==null)
-	                 return false;
-	             
-	             else
-	             {
-	                 System.out.println("found");
-	                 return true;
-	                               	             }  
-	             
-	         }
-	     });
-	     
-	     
-      }
-      }
-}
-}
-	     
+		 
+	 FluentWait<WebDriver> wait = new FluentWait<WebDriver>(driver).withTimeout(15000, TimeUnit.SECONDS).pollingEvery(30, TimeUnit.SECONDS).ignoring(NoSuchElementException.class);
 	 
+	 WebElement ele = wait.until(new Function<WebDriver, WebElement>() 
+	 
+  {
+	 
+
+//	 public WebElement apply(WebDriver driver)
+//
+              {  
+		 
+		 try
+		 {
+		 Thread.sleep(6000);
+		 driver.findElement(By.xpath("//*[@class='pi pi-refresh']")).click( );
+		 Thread.sleep(6000);
+		 JavascriptExecutor js6 = (JavascriptExecutor) driver;
+		 WebElement element7 = driver.findElement(By.xpath("//h2[text()='Run schedule']"));
+	     js6.executeScript("arguments[0].scrollIntoView();", element7);	
+		 }catch(Exception e){
+			 
+		 }
+         
+		String getTextOnPage1 = "";
+		
+	 
+		
+		try {
+			
+		
+		 WebElement element11 = driver.findElement(By.xpath("//span[text()='Failed']"));
+         	 
+	      getTextOnPage1 = element11.getText();
+		 
+		}catch(Exception e){
+		e.printStackTrace();
+		
+		}
+		
+		 		
+		{
+			for (int i = 1; i <= 5; i++) {
+				if (getTextOnPage1.equals("FAILED")) {
+					 
+					break;
+					 
+					
+				}
+			}
+		}
+              }
+  }
+		);
+		
+		
+	             }};
+	 }
+}
+    
+      
+	              
+	 
+ 
+  
+ 	 
+ 
+ 
+     
+  
+	 
+ 
+ 
+ 
+ 
+ 
+
+ 
+
+
