@@ -32,7 +32,7 @@ import org.testng.asserts.SoftAssert;
 import Mccm.Pega.Outbound.PegaMain.HomePage;
 import Mccm.Pega.Outbound.PegaTestBase.TestBase;
 
-public class PageMrktEtoEFlowTesttest extends TestBase  {
+public class PageMrktEtoEFlowFinalAll extends TestBase  {
  
 
 
@@ -106,7 +106,7 @@ public class PageMrktEtoEFlowTesttest extends TestBase  {
 	  System.out.println("i am ineer frame no ");
 	  Thread.sleep(8000);
 	  
-	  driver.findElement(By.xpath("//input[@type='text'][@name='$PpyWorkPage$ppyLabel']")).sendKeys("NBABatchCampaig2345");
+	  driver.findElement(By.xpath("//input[@type='text'][@name='$PpyWorkPage$ppyLabel']")).sendKeys("NBABathCampaig103456");
 	  Thread.sleep(8000);
       driver.findElement(By.xpath("//span[text()='Build']")).click( );
       Thread.sleep(8000);
@@ -115,10 +115,10 @@ public class PageMrktEtoEFlowTesttest extends TestBase  {
       
       
      // String xpath1 = "/html[1]/body[1]/div[2]/form[1]/div[3]/div[1]/section[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/span[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/span[1]/div[1]/div[1]/span[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/span[1]/button[1]";
-    //  driver.findElement(By.xpath(xpath1)).click( );
+    //  driver.findElement(By.xpath(xpath1)).click( );  VFTomcatDemo   Test Channel
 
         Thread.sleep(6000);
-    	  driver.findElement(By.xpath("//input[contains(@name,'pFilterCriteriaDisplay$ppyValue')]")).sendKeys("Test Channel");  
+    	  driver.findElement(By.xpath("//input[contains(@name,'pFilterCriteriaDisplay$ppyValue')]")).sendKeys("VFTomcatDemo");  
     	  Thread.sleep(6000);       
     	  driver.findElement(By.xpath("//*[contains(@class,'pi-search')]")).click( );
           
@@ -272,17 +272,10 @@ public class PageMrktEtoEFlowTesttest extends TestBase  {
 	
 	///--------------------------------------------------------------------------------------------------------------//	 
 		 
-	 FluentWait<WebDriver> wait = new FluentWait<WebDriver>(driver).withTimeout(15000, TimeUnit.SECONDS).pollingEvery(30, TimeUnit.SECONDS).ignoring(NoSuchElementException.class);
-	 
-	 WebElement ele = wait.until(new Function<WebDriver, WebElement>()
-	 
-
-	 {
-	 
-
-	 public WebElement apply(WebDriver driver)
-
-	             {  
+	     for(int i=0;i<50;i++)
+	     {
+	    	 
+	    	 Thread.sleep(6000);
 		 
 		 try
 		 {
@@ -296,25 +289,13 @@ public class PageMrktEtoEFlowTesttest extends TestBase  {
 			 
 		 }
          
-		String getTextOnPage1 = "",getTextOnPage2 = "",getTextOnPage = "";
-		
-		try {
-			
-	     	 WebElement element10 = driver.findElement(By.xpath("//span[text()='Completed']"));
-				
-		        getTextOnPage = element10.getText();
-		        
-		       // if(getTextOnPage.equals("COMPLETED"))break;
-		        			 
-			}catch(Exception e2){
-			e2.printStackTrace();
-		
-			}
+		 String getTextOnPage1 = "",getTextOnPage2 = "",getTextOnPage3 = "";
+		 
 		
 		try {
 			
 		
-		 WebElement element11 = driver.findElement(By.xpath("//span[text()='Failed']"));
+		 WebElement element11 = driver.findElement(By.xpath("//span[text()='Completed']"));
          	 
 	      getTextOnPage1 = element11.getText();
 		 
@@ -322,78 +303,82 @@ public class PageMrktEtoEFlowTesttest extends TestBase  {
 		e.printStackTrace();
 		
 		}
-		
-		try {
-			 WebElement element12 = driver.findElement(By.xpath("//span[text()='Stopped']"));
+		 try {
 
-			 getTextOnPage2 = element12.getText();
+
+			   WebElement element12 = driver.findElement(By.xpath("//span[text()='Failed']"));
+
+			   getTextOnPage2 = element12.getText();
+
+		   }catch(Exception e){
+			   e.printStackTrace();
+
+		   }
+
+		   try {
+			   WebElement element13 = driver.findElement(By.xpath("//span[text()='Stopped']"));
+
+			   getTextOnPage3 = element13.getText();
+
+		   }catch(Exception e1){
+			   e1.printStackTrace();{
+			   }
+		if (getTextOnPage1.equals("COMPLETED")){
 	 
-		}catch(Exception e1){
-			e1.printStackTrace();{
-	                  	}
-	             }
+			
+			System.out.println("Test Case Passed");
+
+			    			   
+			break;
+		}
+		 else if (getTextOnPage2.equals("FAILED")) {
+			 
+			 System.out.println("Test Case Failed");
+			 
+			 break;
+		   }
 		
-		
-		
+         else if (getTextOnPage2.equals("STOPPED")) {
+        	 
+        	 System.out.println("Test Case Stopped");
+			 
+			 break;
+		   }
+			
 		{
-			for (int i = 1; i <= 5; i++) {
-				if (getTextOnPage1.equals("FAILED")) {
-					 
-					break;
-				}
-			}
-	 if(getTextOnPage1.equals("FAILED")) 
-	 {
-		 
-		 //break; 
-	 //}
-	          //   };
-	 
+			continue;
+		}
+	     
+		
+	     }
+	     }
+	              
+		}
+	     }
+      }
+      
+}
 
- 
-	
- 
-	
-	// if(getTextOnPage.equals("COMPLETED"))break;
-	 
-   //  System. exit(1);
-	//  return HomePage11();
-	  return null;
- 
-	 }
 	 
   
- 		 
-     	 else if(getTextOnPage2.equals("STOPPED"))
-				 
-    	    {
-
-		 System.out.println("Test Case Stopped");
-	 
-	     Assert.assertEquals(getTextOnPage2, "COMPLETED"); 
-
-	    return null;
-		    
-		    } 
 		 
-	          else{
-	            	 System.out.println("Test Case Running");
-	            	 return null;
-	            	
-	            	 }
-	            	 }
-		
-	 
-	            	 }});
-	 
-	
-	 
-	 // main code bracket below
-      }
-      }
-      }
-}
  
+ 
+  
+    
+  
+ 	 
+ 
+ 
+     
+  
+	 
+ 
+ 
+ 
+ 
+ 
+
  
 
 
