@@ -371,120 +371,100 @@ public class PageAppEndToEndFlow {
 			   ///new code 	 
 			   ///--------------------------------------------------------------------------------------------------------------//	 
 
-			   FluentWait<WebDriver> wait = new FluentWait<WebDriver>(driver).withTimeout(15000, TimeUnit.SECONDS).pollingEvery(30, TimeUnit.SECONDS).ignoring(NoSuchElementException.class);
-
-			   WebElement ele = wait.until(new Function<WebDriver, WebElement>()
-
-			   {
-
-				   public WebElement apply(WebDriver driver)
-
-				   {  
-
-					   try
-					   {
-						   Thread.sleep(6000);
-						   driver.findElement(By.xpath("//*[@class='pi pi-refresh']")).click( );
-						   Thread.sleep(6000);
-						   JavascriptExecutor js6 = (JavascriptExecutor) driver;
-						   WebElement element7 = driver.findElement(By.xpath("//h2[text()='Run schedule']"));
-						   js6.executeScript("arguments[0].scrollIntoView();", element7);	
-					   }catch(Exception e){
-
-					   }
-
-					   String getTextOnPage1 = "",getTextOnPage2 = "",getTextOnPage = "";
-
-					   try {
-
-						   WebElement element10 = driver.findElement(By.xpath("//span[text()='Completed']"));
-
-						   getTextOnPage = element10.getText();
-
-					   }catch(Exception e2){
-						   e2.printStackTrace();
-
-					   }
-
-					   try {
+			   
+			     for(int i=0;i<50;i++)
+			     {
+			    	 
+			    	 Thread.sleep(6000);
+				 
+				 try
+				 {
+				 Thread.sleep(6000);
+				 driver.findElement(By.xpath("//*[@class='pi pi-refresh']")).click( );
+				 Thread.sleep(6000);
+				 JavascriptExecutor js6 = (JavascriptExecutor) driver;
+				 WebElement element7 = driver.findElement(By.xpath("//h2[text()='Run schedule']"));
+			     js6.executeScript("arguments[0].scrollIntoView();", element7);	
+				 }catch(Exception e){
+					 
+				 }
+		         
+				 String getTextOnPage1 = "",getTextOnPage2 = "",getTextOnPage3 = "";
+				 
+				
+				try {
+					
+				
+				 WebElement element111 = driver.findElement(By.xpath("//span[text()='Completed']"));
+		         	 
+			      getTextOnPage1 = element111.getText();
+				 
+				}catch(Exception e){
+				e.printStackTrace();
+				
+				}
+				 try {
 
 
-						   WebElement element11 = driver.findElement(By.xpath("//span[text()='Failed']"));
+					   WebElement element121 = driver.findElement(By.xpath("//span[text()='Failed']"));
 
-						   getTextOnPage1 = element11.getText();
+					   getTextOnPage2 = element121.getText();
+					   
+					 
+				   }catch(Exception e){
+					   e.printStackTrace();
 
-					   }catch(Exception e){
-						   e.printStackTrace();
-
-					   }
-
-					   try {
-						   WebElement element12 = driver.findElement(By.xpath("//span[text()='Stopped']"));
-
-						   getTextOnPage2 = element12.getText();
-
-					   }catch(Exception e1){
-						   e1.printStackTrace();{
-						   }
-					   }
-
-					   if(getTextOnPage.equals("COMPLETED")) 
-
-					   {
-
-						   System.out.println("Test Case Passed");
-
-						   Assert.assertEquals(getTextOnPage, "COMPLETED"); 
-
-
-						   System. exit(1);
-
-						   return null;
-
-					   }  
-
-
-					   else if (getTextOnPage1.equals("FAILED"))
-
-					   {
-
-						   System.out.println("Test Case Failed");
-
-						   Assert.assertEquals(getTextOnPage1, "COMPLETED"); 
-
-						   return null;
-					   }
-
-					   else if(getTextOnPage2.equals("STOPPED"))
-
-					   {
-
-						   System.out.println("Test Case Stopped");
-
-						   Assert.assertEquals(getTextOnPage2, "COMPLETED"); 
-
-						   return null;
-
-					   } 
-
-					   else{
-						   System.out.println("Test Case Running");
-						   return null;
-
-					   }
 				   }
 
-			   });
+				   try {
+					   WebElement element13 = driver.findElement(By.xpath("//span[text()='Stopped']"));
 
+					   getTextOnPage3 = element13.getText();
 
-			   // main code bracket below
-		   }
-	   }
-   }
+				   }catch(Exception e1){
+					   e1.printStackTrace();{
+					   }
+				if (getTextOnPage1.equals("COMPLETED")){
+			 
+					
+					System.out.println("Test Case Passed");
 
-}
+					    			   
+					break;
+				}
+				 else if (getTextOnPage2.equals("FAILED")) {
+					 
+					 System.out.println("Test Case Failed");
+					 
+					 Assert.assertEquals(getTextOnPage2, "COMPLETED"); 
+					 
+					 break;
+				   }
+				
+		         else if (getTextOnPage3.equals("STOPPED")) {
+		        	 
+		        	 System.out.println("Test Case Stopped");
+		        	 
+		        	 Assert.assertEquals(getTextOnPage3, "COMPLETED"); 
+					 
+					 break;
+				   }
+					
+				{
+					continue;
+				}
+			     
+				
+			     }
+			     }
+			              
+				}
+			     }
+		      }
+		      
+		}
 
-
+			 
 
 
 

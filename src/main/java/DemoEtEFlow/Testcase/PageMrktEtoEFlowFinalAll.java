@@ -106,7 +106,7 @@ public class PageMrktEtoEFlowFinalAll extends TestBase  {
 	  System.out.println("i am ineer frame no ");
 	  Thread.sleep(8000);
 	  
-	  driver.findElement(By.xpath("//input[@type='text'][@name='$PpyWorkPage$ppyLabel']")).sendKeys("NBABathCampaig103456");
+	  driver.findElement(By.xpath("//input[@type='text'][@name='$PpyWorkPage$ppyLabel']")).sendKeys("NBABathCampaig1034567");
 	  Thread.sleep(8000);
       driver.findElement(By.xpath("//span[text()='Build']")).click( );
       Thread.sleep(8000);
@@ -309,7 +309,8 @@ public class PageMrktEtoEFlowFinalAll extends TestBase  {
 			   WebElement element12 = driver.findElement(By.xpath("//span[text()='Failed']"));
 
 			   getTextOnPage2 = element12.getText();
-
+			   
+			 
 		   }catch(Exception e){
 			   e.printStackTrace();
 
@@ -335,12 +336,16 @@ public class PageMrktEtoEFlowFinalAll extends TestBase  {
 			 
 			 System.out.println("Test Case Failed");
 			 
+			 Assert.assertEquals(getTextOnPage2, "COMPLETED"); 
+			 
 			 break;
 		   }
 		
-         else if (getTextOnPage2.equals("STOPPED")) {
+         else if (getTextOnPage3.equals("STOPPED")) {
         	 
         	 System.out.println("Test Case Stopped");
+        	 
+        	 Assert.assertEquals(getTextOnPage3, "COMPLETED"); 
 			 
 			 break;
 		   }
