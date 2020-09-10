@@ -100,7 +100,7 @@ public void NBABatchCampaignSuccessfull() throws InterruptedException, AWTExcept
 
 
 			Thread.sleep(3000);
-			driver.findElement(By.xpath("//input[@type='text'][@name='$PTempModalCardContainerPage$pFilterCriteriaDisplay$ppyValue']")).sendKeys("NBABatchCampaign18");
+			driver.findElement(By.xpath("//input[@type='text'][@name='$PTempModalCardContainerPage$pFilterCriteriaDisplay$ppyValue']")).sendKeys("NBABatchCamp9");
 			Thread.sleep(3000);
 			driver.findElement(By.xpath("(//button[text()='View'])[1]")).click( );
 			Thread.sleep(8000);
@@ -128,14 +128,15 @@ public void NBABatchCampaignSuccessfull() throws InterruptedException, AWTExcept
 			Thread.sleep(3000);
 			System.out.println("i am in if---search-------------------");
 
+			Thread.sleep(8000);
 
 			driver.findElement(By.xpath("//span[text()='Reschedule']")).click( );
 			Thread.sleep(3000);
 
 			//configure Engagemant
-			JavascriptExecutor js2 = (JavascriptExecutor) driver;
-			WebElement element3 = driver.findElement(By.xpath("//div[text()='Engagement']"));
-			js2.executeScript("arguments[0].scrollIntoView();", element3);	
+//			JavascriptExecutor js2 = (JavascriptExecutor) driver;
+//			WebElement element3 = driver.findElement(By.xpath("//div[text()='Engagement']"));
+//			js2.executeScript("arguments[0].scrollIntoView();", element3);	
 			Thread.sleep(3000);
 
 			driver.findElement(By.xpath("//text()[.='Configure']/ancestor::div[1]")).click( );
@@ -162,7 +163,13 @@ public void NBABatchCampaignSuccessfull() throws InterruptedException, AWTExcept
 			driver.findElement(By.xpath("//button[text()='Confirm']")).click( );
 			Thread.sleep(3000);
 
-
+			 Thread.sleep(6000);
+		 	 driver.findElement(By.xpath("//button[@title='Refresh']")).click( );
+	//		 driver.navigate().refresh();
+			 Thread.sleep(6000);
+			 JavascriptExecutor js7= (JavascriptExecutor) driver;
+			 WebElement element8 = driver.findElement(By.xpath("//h2[text()='Run schedule']"));
+		     js7.executeScript("arguments[0].scrollIntoView();", element8);	
 
 			///--------------------------------------------------------------------------------------------------------------//	 
 
@@ -174,7 +181,7 @@ public void NBABatchCampaignSuccessfull() throws InterruptedException, AWTExcept
 				try
 				{
 					Thread.sleep(8000);
-					driver.findElement(By.xpath("//*[@class='pi pi-refresh']")).click( );
+				 	driver.findElement(By.xpath("//button[@title='Refresh']")).click( );
 					Thread.sleep(8000);
 					JavascriptExecutor js6 = (JavascriptExecutor) driver;
 					WebElement element7 = driver.findElement(By.xpath("//h2[text()='Run schedule']"));
@@ -251,10 +258,39 @@ public void NBABatchCampaignSuccessfull() throws InterruptedException, AWTExcept
 
 					}
 				}
+			
+			Thread.sleep(8000);
+		 	driver.findElement(By.xpath("//span[text()='Completed']")).click( );
+			Thread.sleep(8000);
+			
+			JavascriptExecutor js9 = (JavascriptExecutor) driver;
+			 WebElement element10 = driver.findElement(By.xpath("//span[text()='Completed']"));
+		     js9.executeScript("arguments[0].scrollIntoView();", element10);	
+			
+			Thread.sleep(8000);
+		 	driver.findElement(By.xpath("//*[@name='DataFlowRunDetails_pyWorkPage_3']")).click( );
+			Thread.sleep(8000);
+			
+			JavascriptExecutor js8 = (JavascriptExecutor) driver;
+			 WebElement element11 = driver.findElement(By.xpath("//span[text()='Campaign run ID']"));
+		     js8.executeScript("arguments[0].scrollIntoView();", element11);	
+			
+		   //Search the element by using starts-with
+		     WebElement w;
+		     
+		     w=driver.findElement(By.xpath("//span[.='Campaign run ID']/..//span[contains(.,'PR-')]"));
+	     	
+	     	 //Print the text of the searched element
+		        String CampRunID = w.getText();
+		        
+	        	System.out.println(w.getText());
+			 
 
 			}
 		}
 	}
+
+ 
 
 }
 

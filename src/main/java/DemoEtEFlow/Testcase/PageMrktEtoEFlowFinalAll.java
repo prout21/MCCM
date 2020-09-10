@@ -34,7 +34,7 @@ import Mccm.Pega.Outbound.PegaTestBase.TestBase;
 
 public class PageMrktEtoEFlowFinalAll extends TestBase  {
  
-
+  public static String CampRunID;
 
 
 //private static final WebElement element10 = null;
@@ -106,7 +106,7 @@ public class PageMrktEtoEFlowFinalAll extends TestBase  {
 	  System.out.println("i am ineer frame no ");
 	  Thread.sleep(8000);
 	  
-	  driver.findElement(By.xpath("//input[@type='text'][@name='$PpyWorkPage$ppyLabel']")).sendKeys("NBABathCampaig1034567");
+	  driver.findElement(By.xpath("//input[@type='text'][@name='$PpyWorkPage$ppyLabel']")).sendKeys("NBABathCampaigPdemo1");
 	  Thread.sleep(8000);
       driver.findElement(By.xpath("//span[text()='Build']")).click( );
       Thread.sleep(8000);
@@ -357,6 +357,32 @@ public class PageMrktEtoEFlowFinalAll extends TestBase  {
 		
 	     }
 	     }
+	       Thread.sleep(8000);
+		 	driver.findElement(By.xpath("//span[text()='Completed']")).click( );
+			Thread.sleep(8000);
+			
+			JavascriptExecutor js7 = (JavascriptExecutor) driver;
+			 WebElement element8 = driver.findElement(By.xpath("//span[text()='Completed']"));
+		     js7.executeScript("arguments[0].scrollIntoView();", element8);	
+			
+			Thread.sleep(8000);
+		 	driver.findElement(By.xpath("//*[@name='DataFlowRunDetails_pyWorkPage_3']")).click( );
+			Thread.sleep(8000);
+			
+			JavascriptExecutor js8 = (JavascriptExecutor) driver;
+			 WebElement element9 = driver.findElement(By.xpath("//span[text()='Campaign run ID']"));
+		     js8.executeScript("arguments[0].scrollIntoView();", element9);	
+			
+		   //Search the element by using starts-with
+		     WebElement w;
+		     
+		     w=driver.findElement(By.xpath("//span[.='Campaign run ID']/..//span[contains(.,'PR-')]"));
+	     	
+	     	 //Print the text of the searched element
+		        String CampRunID = w.getText();
+		        
+	        	System.out.println(w.getText());
+			 
 	              
 		}
 	     }

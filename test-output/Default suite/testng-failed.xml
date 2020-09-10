@@ -3,11 +3,11 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="DemoEtEFlow.Testcase.PageMrktEtoEFlowFinalAll">
+      <class name="DemoEtEFlow.Testcase.PageMrktEtoEFlowRSheduleOtbd">
         <methods>
           <include name="NBABatchCampaignSuccessfull"/>
         </methods>
-      </class> <!-- DemoEtEFlow.Testcase.PageMrktEtoEFlowFinalAll -->
+      </class> <!-- DemoEtEFlow.Testcase.PageMrktEtoEFlowRSheduleOtbd -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
