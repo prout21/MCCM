@@ -23,6 +23,8 @@ import Mccm.RESTful.APICall.DMPRTPNBAMobHash;
 public class TestBase {
 	public static WebDriver driver;
 	public static Properties prop;
+	
+	 public static String CampRunID;
 
 	
 	public TestBase()

@@ -35,9 +35,8 @@ import Mccm.Pega.Outbound.PegaTestBase.TestBase;
 public class PageMrktEtoEFlowFinalAll extends TestBase  {
  
   public static String CampRunID;
-
-
-//private static final WebElement element10 = null;
+  
+ 
 
 @Test  
      public void NBABatchCampaignSuccessfull() throws InterruptedException, AWTException {
@@ -106,7 +105,7 @@ public class PageMrktEtoEFlowFinalAll extends TestBase  {
 	  System.out.println("i am ineer frame no ");
 	  Thread.sleep(8000);
 	  
-	  driver.findElement(By.xpath("//input[@type='text'][@name='$PpyWorkPage$ppyLabel']")).sendKeys("NBABathCampaigPdemo1");
+	  driver.findElement(By.xpath("//input[@type='text'][@name='$PpyWorkPage$ppyLabel']")).sendKeys("NBABathCampaigPdemo3");
 	  Thread.sleep(8000);
       driver.findElement(By.xpath("//span[text()='Build']")).click( );
       Thread.sleep(8000);
@@ -379,10 +378,15 @@ public class PageMrktEtoEFlowFinalAll extends TestBase  {
 		     w=driver.findElement(By.xpath("//span[.='Campaign run ID']/..//span[contains(.,'PR-')]"));
 	     	
 	     	 //Print the text of the searched element
-		        String CampRunID = w.getText();
+		     //   String CampRunID = w.getText();
+		     
+		     String CampRunID = "jjj8";
+		     
+		     System.out.println(w.getText());
+		     
+		     
 		        
-	        	System.out.println(w.getText());
-			 
+	        	 
 	              
 		}
 	     }

@@ -3,11 +3,11 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="DemoEtEFlow.Testcase.PageMrktEtoEFlowRSheduleOtbd">
+      <class name="DemoEtEFlow.Testcase.PageDssEtoED_LatestNBACampaignFlag">
         <methods>
-          <include name="NBABatchCampaignSuccessfull"/>
+          <include name="lunchChromBrowser"/>
         </methods>
-      </class> <!-- DemoEtEFlow.Testcase.PageMrktEtoEFlowRSheduleOtbd -->
+      </class> <!-- DemoEtEFlow.Testcase.PageDssEtoED_LatestNBACampaignFlag -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
