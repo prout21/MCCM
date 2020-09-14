@@ -21,7 +21,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
-public class PageDssEtoEBrowse {
+public class PageDssEtoEGetDataExtractDetails {
    
    @Test  
     public void lunchChromBrowser() throws InterruptedException, AWTException {
@@ -56,7 +56,7 @@ public class PageDssEtoEBrowse {
 		     
 			 Thread.sleep(6000);
 			 
-			 driver.findElement(By.xpath("//input[@type='text'][@name='$PpyDisplayHarness$ppySearchText']")).sendKeys("LegacyChannelSnapshot");  
+			 driver.findElement(By.xpath("//input[@type='text'][@name='$PpyDisplayHarness$ppySearchText']")).sendKeys("GetDataExtractDetails");  
 			 Thread.sleep(6000); 
 			 
 			 driver.findElement(By.xpath("//*[@class='pi pi-search-2']")).click( );
@@ -120,7 +120,21 @@ public class PageDssEtoEBrowse {
 	 		 Thread.sleep(8000);
 	 		}
 	 
-		 
+	 		 Thread.sleep(6000);
+			 driver.findElement(By.xpath("(//a[@id=\"pui_colmenu\"])[3]")).click( );
+			 Thread.sleep(6000);
+			 
+			 Thread.sleep(6000);
+			 driver.findElement(By.xpath("(//span[@class=\"menu-item-title\"])[20]")).click( );
+			 Thread.sleep(6000);
+			 
+			  Thread.sleep(6000);
+			  WebElement element3 =  driver.findElement(By.xpath("//input[@type='text'][@name='$PpyFilterCriteria_pyReportContentPage_pxResults_pzRRListBody_1$ppyColumnFilterCriteria$gFileName1$ppySearchText']"));
+			  element3.sendKeys("DPF_MMC_NBA_ONB");
+			  Thread.sleep(6000);
+			 
+			 
+			  
 			 
              driver.close();
 		     }
@@ -129,11 +143,11 @@ public class PageDssEtoEBrowse {
   
    }
 		    
-		      
-		 
-
-
-
+        // (//a[@id="pui_colmenu"])[3] filter click
+   
+  //       (//span[@class="menu-item-title"])[20] select filter
+   
+   //input[@type='text'][@name='$PpyFilterCriteria_pyReportContentPage_pxResults_pzRRListBody_1$ppyColumnFilterCriteria$gFileName1$ppySearchText']
 
 }
 

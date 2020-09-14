@@ -1,47 +1,47 @@
 NBA Batch Outbound E2E flow :
+url:http://mccm-191102761.eu-central-1.elb.amazonaws.com:8573/prweb
 -----------------------------------------
 Step-1:dataload -oracle and Casandra load
 step-2:dev studio setup
-//comment //step-3:dev studio ->search the value -LegacyChannelSnapshot ->select dataset->action->run->drop down 
-       ->select truncate->click on run->close the window
-step-4:pega marketing part configuration
-step-5:capagin run and validation on completed successfully
-step-6:After captured the completed status of the NBA Campaign run. click on the completed status .then expand the run details.
+step-3:pega marketing part configuration
+step-4:capagin run and validation on completed successfully
+
+step-5:After captured the completed status of the NBA Campaign run. click on the completed status .then expand the run details.
        store the value of the Campaign run ID (PR-7801).later compare the same value with the Campaign run id in the datapage.
        d_latestdataloadFlag which will be searching in the dev studio for validation.
-// comment //step-6:dev studio ->search the value -LegacyChannelSnapshot ->select dataset->action->run->drop down 
-       ->select browse->click run->validation of the Casandra data ->wait for 2 min->close the window
-step-7:( Validation of configured DB table(MCCMLCOutbound)dev studio ->search the value -MCCMLCOUTBOUND ->select dataset->action->run->drop down 
+
+step-6:( Validation of configured DB table(MCCMLCOutbound)dev studio ->search the value -MCCMLCOUTBOUND ->select dataset->action->run->drop down 
        ->select browse->click run->validation of the MCCMLCOutbound ->wait for 2 min->close the window
-// comment //step-8:dev studio ->search the value -MasterLegacyChannelSnapshot  ->select dataset->action->run->drop down 
-        ->select truncate->click on run->close the window
-step-9:putty login run the wrapper script for 3 diff channels as mention below:
-sub steps:
-1. login into Putty as dxc_dev
-2. Run the Command ssh mccm02@10.0.4.99, Password: unix11
-3. Navigate to Extract path(Common for all NBA Channels):/opt/SP/mccm/SYSN/Extract
-4. Run the extract wrapper to generate each NBA Channel file using the Shell command with parameter passing as shown below:
--> ksh Data_Extract_wrapper.ksh NBA_ONB
--> ksh Data_Extract_wrapper.ksh NBA_KIASEPOS
--> ksh Data_Extract_wrapper.ksh NBA_DMP
- //comment//step-10:dev studio ->search the value -MasterLegacyChannelSnapshot ->select dataset->action->run->drop down 
-       ->select browse->click run->validation of the Casandra data ->wait for 2 min->close the window
-step-11: Go to PEGA and search GetDataExtractDetails ,click the report and data extraction ->action->run->drop down 
-       ->select browse->click on run->wait for 2 min -> close the window
-validate the below file name are available for report definition run.
+
+step-7:putty login run the wrapper script for 3 diff channels as mention below:
+    sub steps:
+   1. login into Putty as dxc_dev
+   2. Run the Command ssh mccm02@10.0.4.99, Password: unix11
+   3. Navigate to Extract path(Common for all NBA Channels):/opt/SP/mccm/SYSN/Extract
+   4. Run the extract wrapper to generate each NBA Channel file using the Shell command with parameter passing as shown below:
+  -> ksh Data_Extract_wrapper.ksh NBA_ONB
+  -> ksh Data_Extract_wrapper.ksh NBA_KIASEPOS
+  -> ksh Data_Extract_wrapper.ksh NBA_DMP
+ 
+step-8: Go to PEGA and search GetDataExtractDetails ,click the report and data extraction ->action->run->drop down 
+     ->select browse->click on run->wait for 2 min -> close the window
+      validate the below file name are available for report definition run.
       DPF_MMC_NBA_DMP_20191211055800.csv.gz 
       DPF_MMC_NBA_KIASEPOS_20191211055800.csv.gz 
       DPF_MMC_NBA_ONB_20191211055800.csv.gz 
-//comment//select * from MCCM_EXTRACT_HISTORY; 
- step-12: Go to PEGA and search D_LatestNBACampaignFlag  ,click the datapage ->action->run-> click on the flush->run 
-    compare the value Campaign run ID of Campaign and datapage.
-    please validate the below value if Campaign run id matches , this is value should be 'y'.  ActiveOfferCountCmpltd  - > Y
-//select * from MCCM_NBACAMPAIGN_FLAGS; 
-//     Result :Y
 
+step-9: Go to PEGA and search D_LatestNBACampaignFlag  ,click the datapage ->action->run-> click on the flush->run 
+      compare the value Campaign run ID of Campaign and datapage.
+      please validate the below value if Campaign run id matches , this is value should be 'y'.  ActiveOfferCountCmpltd  - > Y
 
-NBA Batch Outbound E2E Reschedule flow :
-----------------------------------------
-Step-1:dataload -oracle and Casandra load
-step-2:pega marketing part configuration
-step-3:capagin run and validation on completed successfully
+Pre-condition and Data setup before run the flow:
+-------------------------------------------------
+All-Config file->uid/pw/browser/folder path/etc need to check if req update it.
+1.Oracle load and Cansendra input file keep in respective path with current date file. ->Step no 1.
+2.Input excel sheet test data need to updated. -> Step no 2-4.
+3.Input excel sheet test data need to updated with current date/run date file -> Step no 8.
+
+Step vs Java script with folder location in workspace:
+------------------------------------------------------
+Test Suite Name:
+----------------
