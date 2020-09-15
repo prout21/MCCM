@@ -19,6 +19,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class PageDssEtoEGetDataExtractDetails {
@@ -62,22 +63,20 @@ public class PageDssEtoEGetDataExtractDetails {
 			 driver.findElement(By.xpath("//*[@class='pi pi-search-2']")).click( );
 			 Thread.sleep(6000);    
 			 
-			 driver.findElement(By.xpath("//a[text()='Data Set']")).click( );
+			 driver.findElement(By.xpath("//a[text()='Report definition']")).click( ); 
 			 Thread.sleep(6000);
 			 
-			 driver.findElement(By.xpath("//a[text()='LegacyChannelSnapshot']")).click( );
+			 driver.findElement(By.xpath("//a[text()='GetDataExtractDetails']")).click( );
 			 Thread.sleep(6000);
 			 
 			 driver.switchTo().defaultContent();
 			  Thread.sleep(8000);
 			  driver.switchTo().frame("PegaGadget1Ifr");
-			 
-			 
+			 	 
 			 
 			 driver.findElement(By.xpath("//*[@class='pi pi-caret-down margin-l-1x']")).click( );
 			 Thread.sleep(6000);
-			 
-			
+			 		
 			 String xpath2 = "(//text()[.='Run']/ancestor::a[1])[2]";
 			 WebElement element2 =  driver.findElement(By.xpath(xpath2));
 		     Actions  action = new Actions(driver);
@@ -102,54 +101,39 @@ public class PageDssEtoEGetDataExtractDetails {
 
 		   //  //Switching back to Parent Window  
 		  //   //driver.switchTo().window(Parent_Window);  
-			  
+		     driver.manage().window().maximize();
 		     Thread.sleep(6000);
-			 
-			 driver.findElement(By.xpath("//select[@name='$PD_pzRunRecord$ppxRunWindow$gTABTHREAD1$ppxRunParameters$ppyTestInputs$ppyOperationIndex']")).sendKeys("Browse");
+			 driver.findElement(By.xpath("(//a[@id=\"pui_colmenu\"])[1]")).click( );
 			 Thread.sleep(6000);
-			 
-			   
-			 
+			 driver.findElement(By.xpath("(//span[@class=\"menu-item-title\"])[1]")).click( );
 			 Thread.sleep(6000);
-			 driver.findElement(By.xpath("(//div[@class='pzbtn-mid'])[2]")).click( );
+		     WebElement element3= driver.findElement(By.xpath("//input[@type='text'][@name='$PpyFilterCriteria_pyReportContentPage_pxResults_pzRRListBody_1$ppyColumnFilterCriteria$gFileName1$ppySearchText']"));
+		     element3.sendKeys("DPF_MMC_NBA_ONB_20200804094200.csv");
 			 Thread.sleep(6000);
- 
-			// display validation of the casandra data
-			 
-	 		 for(int i=0;i<30;i++){
-	 		 Thread.sleep(8000);
-	 		}
-	 
-	 		 Thread.sleep(6000);
-			 driver.findElement(By.xpath("(//a[@id=\"pui_colmenu\"])[3]")).click( );
+			 driver.findElement(By.xpath("//button[text()='Apply']")).click( );
 			 Thread.sleep(6000);
-			 
-			 Thread.sleep(6000);
-			 driver.findElement(By.xpath("(//span[@class=\"menu-item-title\"])[20]")).click( );
-			 Thread.sleep(6000);
-			 
-			  Thread.sleep(6000);
-			  WebElement element3 =  driver.findElement(By.xpath("//input[@type='text'][@name='$PpyFilterCriteria_pyReportContentPage_pxResults_pzRRListBody_1$ppyColumnFilterCriteria$gFileName1$ppySearchText']"));
-			  element3.sendKeys("DPF_MMC_NBA_ONB");
-			  Thread.sleep(6000);
-			 
-			 
-			  
-			 
+			// display validation of the Flag id data
+
+				WebElement w4;
+
+				w4=driver.findElement(By.xpath("(//span[contains(.,'Y')])[7]"));
+
+				String EXTFLAG = w4.getText();
+
+				System.out.println(w4.getText());
+
+				Assert.assertEquals(EXTFLAG, "Y"); 
+		  			 			 
              driver.close();
 		     }
 		      }
 		     driver.switchTo().window(mainWindow);
   
    }
-		    
-        // (//a[@id="pui_colmenu"])[3] filter click
-   
-  //       (//span[@class="menu-item-title"])[20] select filter
-   
-   //input[@type='text'][@name='$PpyFilterCriteria_pyReportContentPage_pxResults_pzRRListBody_1$ppyColumnFilterCriteria$gFileName1$ppySearchText']
-
 }
+		    
+       
+ 
 
 
 

@@ -32,7 +32,7 @@ import org.testng.asserts.SoftAssert;
 import Mccm.Pega.Outbound.PegaMain.HomePage;
 import Mccm.Pega.Outbound.PegaTestBase.TestBase;
 
-public class PageMrktEtoEFlowRSheduleOtbd extends TestBase  {
+public class PageMrktEtoEFlowPreCheckNBACamp extends TestBase  {
 
 
 
@@ -102,7 +102,22 @@ public void NBABatchCampaignSuccessfull() throws InterruptedException, AWTExcept
 			Thread.sleep(3000);
 			driver.findElement(By.xpath("(//button[text()='View'])[1]")).click( );
 			Thread.sleep(8000);
-			driver.findElement(By.xpath("//div[@class='card-image no-image'][1]")).click( );
+			
+			// display validation of the Flag id data
+
+			WebElement w3;
+
+			w3=driver.findElement(By.xpath("//div[text()='There are no results returned, please try a new search term.']"));
+
+			String MSG = w3.getText();
+
+			System.out.println(w3.getText());
+
+			Assert.assertEquals(MSG, "There are no results returned, please try a new search term."); 
+			
+			
+			
+	 		driver.findElement(By.xpath("//div[@class='card-image no-image'][1]")).click( );
 			Thread.sleep(8000);
 			driver.switchTo().defaultContent();
 			System.out.println("I am in outer frame.......................");
@@ -111,6 +126,9 @@ public void NBABatchCampaignSuccessfull() throws InterruptedException, AWTExcept
 			driver.switchTo().frame(2);
 			System.out.println("i am ineer frame no ");
 			Thread.sleep(8000);
+
+
+
 			// click on the search button
 			System.out.println("i am in if----------------------");
 			Thread.sleep(3000);
