@@ -1,14 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Suite">
-
-<listeners>
-		<listener class-name="Mccm.ExtentReportListner.TestListener" />
-	</listeners>
-
-  <test name="Test">
+  <test thread-count="5" name="Test">
     <classes>
-      <class name="Mccm.PegaTest.Outbound.LoginPageTest"/>
+      <class name="Mccm.Unix.Inbound.FileExistChk_Inbound_DMP"/>
+      <class name="DemoEtEFlow.Testcase.PageDssEtoEBrowseMLChaSna"/>
+      <class name="DemoEtEFlow.Testcase.PageDssEtoEBrwMCCMLCOutbound"/>
+      <class name="DemoEtEFlow.Testcase.Page2ScaleEndToEndFlow"/>
+      <class name="Mccm.Unix.Outbound.Upload_Cassandra"/>
+      <class name="Mccm.Pega.Outbound.PegaTest.PegamarktingTest"/>
+      <class name="DemoEtEFlow.Testcase.PageMrktEtoEFlowFinalAll"/>
+      <class name="DemoEtEFlow.Testcase.PageMrktEtoEFlowIntraHistry"/>
+      <class name="DemoEtEFlow.Testcase.PageDssEtoEd_latestdataloadFlag"/>
+      <class name="Mccm.Unix.Outbound.FilesAvailabilityCheck_Cassandra"/>
+      <class name="Demo.APIRestful.DemoDMPRTProcessOfferResult"/>
+      <class name="DemoEtEFlow.Testcase.PageDssEtoETruncateMLChaSna"/>
+      <class name="Mccm.Unix.Inbound.FileExistChk_Inbound_KIASEPOS"/>
+      <class name="Demo.DBquery.DBValidationOutboundFLAG"/>
+      <class name="DemoEtEFlow.Testcase.PageDssEtoED_LatestNBACampaignFlag"/>
+      <class name="Mccm.Unix.Inbound.Upload_Inbound_DMP"/>
+      <class name="DemoEtEFlow.Testcase.PageDssEtoEFlow"/>
+      <class name="Mccm.Unix.Outbound.DBCheck_Cassandra"/>
+      <class name="DemoEtEFlow.Testcase.PageMrktEtoEFlowDmpRealTime"/>
+      <class name="DemoEtEFlow.Testcase.PageDssEtoEGetDataExtractDetails"/>
+      <class name="DemoEtEFlow.Testcase.PageMrktEtoEFlowFinal"/>
+      <class name="Mccm.Pega.DMPRealTime.PegaTest.PegamarktDMPrealtimeTest"/>
+      <class name="DemoEtEFlow.Testcase.PageMrktEtoEFlowPreCheckNBACamp"/>
+      <class name="Mccm.Pega.Outbound.PegaTest.HomePageTest"/>
+      <class name="DemoEtEFlow.Testcase.PageMrktEtoEFlowRSheduleOtbd"/>
+      <class name="DemoEtEFlow.Testcase.PageDssEtoETruncate"/>
+      <class name="Demo.APIRestful.DemoDMPRTNBARestAPI"/>
+      <class name="Mccm.Unix.Inbound.Upload_Inbound_KIASEPOS"/>
+      <class name="Demo.DBquery.DBValidationOutbound"/>
+      <class name="Mccm.Pega.Inbound.PegaTest.PegamarktIntrctnHistoryTest"/>
+      <class name="Mccm.Pega.Outbound.PegaTest.LoginPageTest"/>
+      <class name="Mccm.Unix.Outbound.Upload"/>
+      <class name="Mccm.Unix.Outbound.BaseClass"/>
+      <class name="DemoEtEFlow.Testcase.Page2ScaleDssStudio"/>
+      <class name="Demo.DBquery.DB2ScaleQuery"/>
+      <class name="Mccm.Unix.Inbound.Upload_Inbound_OnlineShop"/>
+      <class name="Mccm.Unix.Inbound.FileExistChk_Inbound_OnlineShop"/>
+      <class name="DemoEtEFlow.Testcase.PageAppEndToEndFlow"/>
+      <class name="Mccm.RESTful.APICall.DMPRTPNBAMobHash"/>
+      <class name="Mccm.Pega.DMPRealTime.PegaTest.DMPRTPNBAMobHash"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
