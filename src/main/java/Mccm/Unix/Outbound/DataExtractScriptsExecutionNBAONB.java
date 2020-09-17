@@ -9,7 +9,7 @@ import com.jcraft.jsch.ChannelExec;
 import com.jcraft.jsch.JSch;
 import com.jcraft.jsch.Session;
 
-public class DataExtractScriptsExecution  extends general_ReadProperty {
+public class DataExtractScriptsExecutionNBAONB  extends general_ReadProperty {
 	
 	public static String PROJECT_FOLDER_PATH1;
 	public static String TEST_ENV1;
@@ -43,7 +43,7 @@ public class DataExtractScriptsExecution  extends general_ReadProperty {
 		pass= readFile.getCellValue("EnvDetails", rowIndex, passwordColIndex);
 		host=readFile.getCellValue("EnvDetails", rowIndex, hostColIndex);
 
-		String command="ksh /opt/SP/mccm/SYSN/Extract/Data_Extract_wrapper.ksh";
+		String command="ksh /opt/SP/mccm/SYSN/Extract/Data_Extract_wrapper.ksh NBA_ONB";
 		try{
 			java.util.Properties config = new java.util.Properties(); 
 			config.put("StrictHostKeyChecking", "no");

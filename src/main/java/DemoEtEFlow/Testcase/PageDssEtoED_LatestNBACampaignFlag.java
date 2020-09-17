@@ -121,6 +121,20 @@ public class PageDssEtoED_LatestNBACampaignFlag extends TestBase {
 				Thread.sleep(6000);
 				driver.findElement(By.xpath("(//div[@class='pzbtn-mid'])[3]")).click( );
 				Thread.sleep(6000);
+				
+			//test	// display validation of the CmpgnDailyCycleCmpltd data
+
+				WebElement w5;
+
+				w5=driver.findElement(By.xpath("(//a[@href='#'])[5]//following::span[30]"));
+
+				String CmpgnDailyCycleCmpltd1 = w5.getText();
+
+				System.out.println(w5.getText());
+
+				Assert.assertEquals(CmpgnDailyCycleCmpltd1, "Y"); 
+				
+				
 
 				// display validation of the Camp RUN id data
 
@@ -139,24 +153,35 @@ public class PageDssEtoED_LatestNBACampaignFlag extends TestBase {
 
 				Assert.assertEquals(CampRunID, CampaigRUNid); 
 
-				// display validation of the Flag id data
+				// display validation of the ActiveOfferCountCmpltd data
 
 				WebElement w3;
 
-				w3=driver.findElement(By.xpath("(//span[contains(.,'N')])[14]"));
+				w3=driver.findElement(By.xpath("(//a[@href='#'])[3]//following::span[28]"));
 
-				String FlagID = w3.getText();
+				String ActiveOfferCountCmpltd = w3.getText();
 
 				System.out.println(w3.getText());
 
-				Assert.assertEquals(FlagID, "Y"); 
+				Assert.assertEquals(ActiveOfferCountCmpltd, "Y"); 
+				// display validation of the CmpgnDailyCycleCmpltd data
+
+				WebElement w4;
+
+				w4=driver.findElement(By.xpath("(//a[@href='#'])[5]//following::span[30]"));
+
+				String CmpgnDailyCycleCmpltd = w4.getText();
+
+				System.out.println(w4.getText());
+
+				Assert.assertEquals(CmpgnDailyCycleCmpltd, "Y"); 
 			}
 		}
 	}
 
 
 }
-
+//  (//span[contains(.,'N')])[15] 
 
 
 

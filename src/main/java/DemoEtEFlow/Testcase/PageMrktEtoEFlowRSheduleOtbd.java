@@ -98,7 +98,7 @@ public void NBABatchCampaignSuccessfull() throws InterruptedException, AWTExcept
 			driver.findElement(By.xpath("//*[@name='PortalCardListingHeader_pyLanding_264']")).click( );
 			Thread.sleep(3000);
 			Thread.sleep(3000);
-			driver.findElement(By.xpath("//input[@type='text'][@name='$PTempModalCardContainerPage$pFilterCriteriaDisplay$ppyValue']")).sendKeys("NBABatchCamp9");
+			driver.findElement(By.xpath("//input[@type='text'][@name='$PTempModalCardContainerPage$pFilterCriteriaDisplay$ppyValue']")).sendKeys("NBABatchCampaign64");
 			Thread.sleep(3000);
 			driver.findElement(By.xpath("(//button[text()='View'])[1]")).click( );
 			Thread.sleep(8000);
@@ -188,7 +188,7 @@ public void NBABatchCampaignSuccessfull() throws InterruptedException, AWTExcept
 				try {
 
 
-					WebElement element11 = driver.findElement(By.xpath("//span[text()='Completed']"));
+					WebElement element11 = driver.findElement(By.xpath("//h2[contains(text(),'Run schedule')]/following::span[contains(.,'Completed')][1]"));
 
 					getTextOnPage1 = element11.getText();
 
@@ -252,11 +252,11 @@ public void NBABatchCampaignSuccessfull() throws InterruptedException, AWTExcept
 				}
 			
 			Thread.sleep(8000);
-		 	driver.findElement(By.xpath("//span[text()='Completed']")).click( );
+		 	driver.findElement(By.xpath("//h2[contains(text(),'Run schedule')]/following::span[contains(.,'Completed')][1]")).click( );
 			Thread.sleep(8000);
 			
 			JavascriptExecutor js9 = (JavascriptExecutor) driver;
-			 WebElement element10 = driver.findElement(By.xpath("//span[text()='Completed']"));
+			 WebElement element10 = driver.findElement(By.xpath("//h2[contains(text(),'Run schedule')]/following::span[contains(.,'Completed')][1]"));
 		     js9.executeScript("arguments[0].scrollIntoView();", element10);	
 			
 			Thread.sleep(8000);

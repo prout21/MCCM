@@ -34,11 +34,7 @@ import Mccm.Pega.Outbound.PegaTestBase.TestBase;
 
 public class PageMrktEtoEFlowPreCheckNBACamp extends TestBase  {
 
-
-
-
-	//private static final WebElement element10 = null;
-
+ 
 @Test  
 public void NBABatchCampaignSuccessfull() throws InterruptedException, AWTException {
 	System.setProperty("webdriver.chrome.driver", "C:\\Users\\prout21\\Downloads\\chromedriver_win32\\chromedriver.exe");  
@@ -110,10 +106,12 @@ public void NBABatchCampaignSuccessfull() throws InterruptedException, AWTExcept
 			w3=driver.findElement(By.xpath("//div[text()='There are no results returned, please try a new search term.']"));
 
 			String MSG = w3.getText();
+			
+			String MSG1 = "There are no results returned, please try a new search term.";
 
 			System.out.println(w3.getText());
 
-			Assert.assertEquals(MSG, "There are no results returned, please try a new search term."); 
+			Assert.assertEquals(MSG, MSG1); 
 			
 			
 			
@@ -206,7 +204,7 @@ public void NBABatchCampaignSuccessfull() throws InterruptedException, AWTExcept
 				try {
 
 
-					WebElement element11 = driver.findElement(By.xpath("//span[text()='Completed']"));
+					WebElement element11 = driver.findElement(By.xpath("//h2[contains(text(),'Run schedule')]/following::span[contains(.,'Completed')][1]"));
 
 					getTextOnPage1 = element11.getText();
 
@@ -265,16 +263,15 @@ public void NBABatchCampaignSuccessfull() throws InterruptedException, AWTExcept
 							continue;
 						}
 
-
 					}
 				}
 			
 			Thread.sleep(8000);
-		 	driver.findElement(By.xpath("//span[text()='Completed']")).click( );
+		 	driver.findElement(By.xpath("//h2[contains(text(),'Run schedule')]/following::span[contains(.,'Completed')][1]")).click( );
 			Thread.sleep(8000);
 			
 			JavascriptExecutor js9 = (JavascriptExecutor) driver;
-			 WebElement element10 = driver.findElement(By.xpath("//span[text()='Completed']"));
+			 WebElement element10 = driver.findElement(By.xpath("//h2[contains(text(),'Run schedule')]/following::span[contains(.,'Completed')][1]"));
 		     js9.executeScript("arguments[0].scrollIntoView();", element10);	
 			
 			Thread.sleep(8000);
@@ -295,12 +292,9 @@ public void NBABatchCampaignSuccessfull() throws InterruptedException, AWTExcept
 		        
 	        	System.out.println(w.getText());
 			 
-
 			}
 		}
 	}
-
- 
 
 }
 

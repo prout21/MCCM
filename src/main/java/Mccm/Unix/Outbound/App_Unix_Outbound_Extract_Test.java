@@ -88,7 +88,7 @@
 	 
 	   		System.out.println("Extract script Load Started"); 
 	   		
-			DataExtractScriptsExecution.main(args); // Extraction script
+	   		DataExtractScriptsExecutionNBAONB.main(args); // Extraction script
 			 
 	
 			/**
