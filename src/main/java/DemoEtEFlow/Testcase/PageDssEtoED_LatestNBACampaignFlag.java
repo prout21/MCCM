@@ -94,11 +94,6 @@ public class PageDssEtoED_LatestNBACampaignFlag extends TestBase {
 		action.moveToElement(element2).click().build().perform();
 		Thread.sleep(6000);
 
-
-
-		//	// driver.switchTo().defaultContent();
-		//	//  Thread.sleep(8000);
-		//	//  driver.switchTo().frame("EXPAND-OUTERFRAME");
 		String mainWindow=driver.getWindowHandle();
 		Set<String> set =driver.getWindowHandles();
 		// Using Iterator to iterate with in windows
@@ -110,8 +105,6 @@ public class PageDssEtoED_LatestNBACampaignFlag extends TestBase {
 			if(!mainWindow.equals(childWindow)){
 				driver.switchTo().window(childWindow);
 
-				//  //Switching back to Parent Window  
-				//   //driver.switchTo().window(Parent_Window);  
 
 				Thread.sleep(6000);
 
@@ -120,21 +113,8 @@ public class PageDssEtoED_LatestNBACampaignFlag extends TestBase {
 
 				Thread.sleep(6000);
 				driver.findElement(By.xpath("(//div[@class='pzbtn-mid'])[3]")).click( );
-				Thread.sleep(6000);
-				
-			//test	// display validation of the CmpgnDailyCycleCmpltd data
+				Thread.sleep(8000);
 
-				WebElement w5;
-
-				w5=driver.findElement(By.xpath("(//a[@href='#'])[5]//following::span[30]"));
-
-				String CmpgnDailyCycleCmpltd1 = w5.getText();
-
-				System.out.println(w5.getText());
-
-				Assert.assertEquals(CmpgnDailyCycleCmpltd1, "Y"); 
-				
-				
 
 				// display validation of the Camp RUN id data
 
@@ -175,13 +155,97 @@ public class PageDssEtoED_LatestNBACampaignFlag extends TestBase {
 				System.out.println(w4.getText());
 
 				Assert.assertEquals(CmpgnDailyCycleCmpltd, "Y"); 
+
+				// display validation of the DataExpCmpltdDMP data
+
+				WebElement w5;
+
+				w5=driver.findElement(By.xpath("(//a[@href='#'])[25]//following::span[50]"));
+
+				String DataExpCmpltdDMP = w5.getText();
+
+				System.out.println(w5.getText());
+
+				Assert.assertEquals(DataExpCmpltdDMP, "Y"); 
+
+				// display validation of the DataExpCmpltdEDWH data
+
+				WebElement w6;
+
+				w6=driver.findElement(By.xpath("(//a[@href='#'])[27]//following::span[52]"));
+
+				String DataExpCmpltdEDWH = w6.getText();
+
+				System.out.println(w6.getText());
+
+				Assert.assertEquals(DataExpCmpltdEDWH, "Y"); 
+
+				// display validation of the DataExpCmpltdKIASEPOS data
+
+				WebElement w7;
+
+				w7=driver.findElement(By.xpath("(//a[@href='#'])[29]//following::span[54]"));
+
+				String DataExpCmpltdKIASEPOS = w7.getText();
+
+				System.out.println(w7.getText());
+
+				Assert.assertEquals(DataExpCmpltdKIASEPOS, "Y"); 
+
+				// display validation of the DataExpCmpltdMAMODB data
+
+				WebElement w8;
+
+				w8=driver.findElement(By.xpath("(//a[@href='#'])[31]//following::span[56]"));
+
+				String DataExpCmpltdMAMODB = w8.getText();
+
+				System.out.println(w8.getText());
+
+				Assert.assertEquals(DataExpCmpltdMAMODB, "Y"); 
+
+				// display validation of the DataExpCmpltdOS data
+
+				WebElement w9;
+
+				w9=driver.findElement(By.xpath("(//a[@href='#'])[33]//following::span[58]"));
+
+				String DataExpCmpltdOS = w9.getText();
+
+				System.out.println(w9.getText());
+
+				Assert.assertEquals(DataExpCmpltdOS, "Y"); 
+
+				// display validation of the IsCmpgnSuccess data
+
+				WebElement w10;
+
+				w10=driver.findElement(By.xpath("(//a[@href='#'])[37]//following::span[62]"));
+
+				String IsCmpgnSuccess = w10.getText();
+
+				System.out.println(w10.getText());
+
+				Assert.assertEquals(IsCmpgnSuccess, "Y"); 
+
+				// display validation of the SaveLCSSCmpltd data
+
+				WebElement w11;
+
+				w11=driver.findElement(By.xpath("(//a[@href='#'])[41]//following::span[66]"));
+
+				String SaveLCSSCmpltd = w11.getText();
+
+				System.out.println(w11.getText());
+
+				Assert.assertEquals(SaveLCSSCmpltd, "Y"); 
+
 			}
 		}
 	}
 
-
 }
-//  (//span[contains(.,'N')])[15] 
+
 
 
 
