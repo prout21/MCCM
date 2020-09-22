@@ -78,10 +78,18 @@ public class PegamarktingTest extends TestBase {
 	 pegamarketpage.ConfirmCampgn();
 	 pegamarketpage.RefreshCampgn();
 	 pegamarketpage.Runstatus();
-}
+	 pegamarketpage.CampRunIDCaptured();
+	}
 	 
-	 
-	 
+@AfterMethod
+
+ public void teardown() {
+
+    driver.quit();
+
+
+     System.out.println("Pega Markting Finished");  
+}	 
  }
  
 
