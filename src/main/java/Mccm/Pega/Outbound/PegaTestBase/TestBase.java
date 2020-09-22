@@ -12,6 +12,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import Mccm.Pega.DMP.RealTime.PegaMarktDMPRealTime;
+import Mccm.Pega.Outbound.PegaMain.DataLoadDetails;
 import Mccm.Pega.Outbound.PegaMain.HomePage;
 import Mccm.Pega.Outbound.PegaMain.PegaMarketPage;
 import Mccm.Pega.Outbound.PegaMain.HomePageDetails;
@@ -43,6 +44,8 @@ public class TestBase {
 	   HomePageDetails.ExcelFilePath = System.getProperty("user.dir");
 	   
 	   PegaMarktDMPRealTime.ExcelFilePath = System.getProperty("user.dir");
+	   
+	   DataLoadDetails.ExcelFilePath = System.getProperty("user.dir");
 	   
 	   
 	 

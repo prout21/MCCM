@@ -21,6 +21,13 @@ public class HomePage extends TestBase {
 	 public HomePage( ) {
     	PageFactory.initElements(driver, this);
     }
+	 
+	 public DataLoadDetails DataLoadValidation() throws InterruptedException {
+   	  Thread.sleep(8000);
+   	  Homepage.click();
+   	  Thread.sleep(8000);
+   	  return new DataLoadDetails();
+   } 
     
     public HomePageDetails ClickHomepage() throws InterruptedException {
     	  Thread.sleep(8000);
