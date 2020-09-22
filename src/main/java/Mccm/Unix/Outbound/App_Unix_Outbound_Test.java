@@ -305,7 +305,7 @@ public class App_Unix_Outbound_Test extends MyAutomationConstants {
 		 
 	        Upload_Cassandra.main(null);
 		  System.out.println("Case 2:"); 
-		  FilesAvailabilityCheck_Cassandra.main(null);
+		  FilesAvailabilityCheck_Cassandra1.main(null);
 	 
 		 
 			

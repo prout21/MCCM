@@ -76,6 +76,6 @@ public class general_ReadProperty {
 		}
 		return cell.toString().trim();
 	}
-
-
+	
+	
 }

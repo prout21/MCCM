@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="152049" started-at="2020-09-18T10:41:32 IST" finished-at="2020-09-18T10:44:04 IST">
+  <suite name="Default suite" duration-ms="149944" started-at="2020-09-22T12:56:47 IST" finished-at="2020-09-22T12:59:17 IST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="152049" started-at="2020-09-18T10:41:32 IST" finished-at="2020-09-18T10:44:04 IST">
-      <class name="DemoEtEFlow.Testcase.PageDssEtoED_LatestNBACampaignFlag">
-        <test-method status="FAIL" signature="lunchChromBrowser()[pri:0, instance:DemoEtEFlow.Testcase.PageDssEtoED_LatestNBACampaignFlag@6a1aab78]" name="lunchChromBrowser" duration-ms="151974" started-at="2020-09-18T10:41:32 IST" finished-at="2020-09-18T10:44:04 IST">
+    <test name="Default test" duration-ms="149944" started-at="2020-09-22T12:56:47 IST" finished-at="2020-09-22T12:59:17 IST">
+      <class name="DemoEtEFlow.Testcase.PageDssEtoEd_latestdataloadFlag">
+        <test-method status="FAIL" signature="lunchChromBrowser()[pri:0, instance:DemoEtEFlow.Testcase.PageDssEtoEd_latestdataloadFlag@74ad1f1f]" name="lunchChromBrowser" duration-ms="149887" started-at="2020-09-22T12:56:47 IST" finished-at="2020-09-22T12:59:17 IST">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[expected [Y] but found [N]]]>
@@ -19,7 +19,7 @@ at org.testng.Assert.assertEqualsImpl(Assert.java:136)
 at org.testng.Assert.assertEquals(Assert.java:118)
 at org.testng.Assert.assertEquals(Assert.java:575)
 at org.testng.Assert.assertEquals(Assert.java:585)
-at DemoEtEFlow.Testcase.PageDssEtoED_LatestNBACampaignFlag.lunchChromBrowser(PageDssEtoED_LatestNBACampaignFlag.java:135)
+at DemoEtEFlow.Testcase.PageDssEtoEd_latestdataloadFlag.lunchChromBrowser(PageDssEtoEd_latestdataloadFlag.java:118)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -54,7 +54,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- lunchChromBrowser -->
-      </class> <!-- DemoEtEFlow.Testcase.PageDssEtoED_LatestNBACampaignFlag -->
+      </class> <!-- DemoEtEFlow.Testcase.PageDssEtoEd_latestdataloadFlag -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
