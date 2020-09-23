@@ -429,6 +429,8 @@
 				//	WebElement element12 = driver.findElement(By.xpath("//span[text()='Failed']"));
 	
 					getTextOnPage2 = element12.getText();
+					
+					Assert.assertEquals(getTextOnPage2, "COMPLETED");
 	
 	
 				}catch(Exception e){
@@ -441,42 +443,42 @@
 				//	WebElement element13 = driver.findElement(By.xpath("//span[text()='Stopped']"));
 	
 					getTextOnPage3 = element13.getText();
+					
+					Assert.assertEquals(getTextOnPage3, "COMPLETED"); 
 	
 				}catch(Exception e1){
 					e1.printStackTrace();{
 					}
-					if (getTextOnPage1.equals("COMPLETED")){
+					if ((getTextOnPage1.equals("COMPLETED")) || (getTextOnPage2.equals("FAILED")) || (getTextOnPage3.equals("STOPPED"))) {
 	
 	
 						System.out.println("Test Case Passed");
-	
-	
+		
 						break;
 					}
-					else if (getTextOnPage2.equals("FAILED")) {
+//					else if (getTextOnPage2.equals("FAILED")) {
+//	
+//						System.out.println("Test Case Failed");
+//	
+//					// 	Assert.assertEquals(getTextOnPage2, "COMPLETED");  
+//	
+//					 break;
+//					}
+//	
+//					else if (getTextOnPage3.equals("STOPPED")) {
+//	
+//						System.out.println("Test Case Stopped");
+//	
+//				 	// 	Assert.assertEquals(getTextOnPage3, "COMPLETED"); 
+//	
+//					    break;
+//					}
 	
-						System.out.println("Test Case Failed");
+//					{
+//						continue;
+//					}
 	
-						Assert.assertEquals(getTextOnPage2, "COMPLETED"); 
-	
-						break;
-					}
-	
-					else if (getTextOnPage3.equals("STOPPED")) {
-	
-						System.out.println("Test Case Stopped");
-	
-						Assert.assertEquals(getTextOnPage3, "COMPLETED"); 
-	
-						break;
-					}
-	
-					{
-						continue;
-					}
-	
-	
-	
+		
 				}
 			}
 	
@@ -531,7 +533,6 @@
 					}catch (Exception e) {
 
 					}
-
 			
 		}
 	
@@ -542,11 +543,106 @@
 	
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
+//	public void Runstatus() throws InterruptedException
+//	{
+//
+//		for(int i=0;i<50;i++)
+//		{
+//
+//			Thread.sleep(6000);
+//
+//			try
+//			{
+//				Thread.sleep(6000);
+//			//	driver.findElement(By.xpath("//*[@class='pi pi-refresh']")).click( );
+//				RefreshCampgn.click( );
+//				Thread.sleep(6000);
+//				JavascriptExecutor js6 = (JavascriptExecutor) driver;
+//				WebElement element7 =Runschedule;
+//				//WebElement element7 = driver.findElement(By.xpath("//h2[text()='Run schedule']"));
+//				js6.executeScript("arguments[0].scrollIntoView();", element7);	
+//			}catch(Exception e){
+//
+//			}
+//
+//			String getTextOnPage1 = "",getTextOnPage2 = "",getTextOnPage3 = "";
+//
+//
+//			try {
+//
+//
+//				WebElement element11 = Completed;
+//				
+//			//	WebElement element11 = driver.findElement(By.xpath("//span[text()='Completed']"));
+//
+//				getTextOnPage1 = element11.getText();
+//
+//			}catch(Exception e){
+//				e.printStackTrace();
+//
+//			}
+//			try {
+//
+//
+//				WebElement element12 = Failed;
+//			//	WebElement element12 = driver.findElement(By.xpath("//span[text()='Failed']"));
+//
+//				getTextOnPage2 = element12.getText();
+//
+//
+//			}catch(Exception e){
+//				e.printStackTrace();
+//
+//			}
+//
+//			try {
+//				WebElement element13 = Stopped;
+//			//	WebElement element13 = driver.findElement(By.xpath("//span[text()='Stopped']"));
+//
+//				getTextOnPage3 = element13.getText();
+//
+//			}catch(Exception e1){
+//				e1.printStackTrace();{
+//				}
+//				if (getTextOnPage1.equals("COMPLETED")){
+//
+//
+//					System.out.println("Test Case Passed");
+//	
+//					break;
+//				}
+//				else if (getTextOnPage2.equals("FAILED")) {
+//
+//					System.out.println("Test Case Failed");
+//
+//				// 	Assert.assertEquals(getTextOnPage2, "COMPLETED");  
+//
+//				 break;
+//				}
+//
+//				else if (getTextOnPage3.equals("STOPPED")) {
+//
+//					System.out.println("Test Case Stopped");
+//
+//			 	// 	Assert.assertEquals(getTextOnPage3, "COMPLETED"); 
+//
+//				    break;
+//				}
+//
+////				{
+////					continue;
+////				}
+//
+//	
+//			}
+//		}
+//
+//	}
+//	
+//	
+//	
+//	
+//	
+//	
+//	
+//	
