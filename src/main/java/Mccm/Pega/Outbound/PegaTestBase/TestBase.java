@@ -14,6 +14,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import Mccm.Pega.DMP.RealTime.PegaMarktDMPRealTime;
 import Mccm.Pega.Outbound.PegaMain.DBConfigValdtn;
 import Mccm.Pega.Outbound.PegaMain.DataLoadDetails;
+import Mccm.Pega.Outbound.PegaMain.ExtractChannelFile;
 import Mccm.Pega.Outbound.PegaMain.HomePage;
 import Mccm.Pega.Outbound.PegaMain.PegaMarketPage;
 import Mccm.Pega.Outbound.PegaMain.HomePageDetails;
@@ -50,7 +51,7 @@ public class TestBase {
 	   
 	   DBConfigValdtn.ExcelFilePath = System.getProperty("user.dir");
 	   
-	   
+	   ExtractChannelFile.ExcelFilePath = System.getProperty("user.dir");
 	 
   	      
 		} catch (FileNotFoundException e) {

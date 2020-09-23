@@ -48,6 +48,12 @@ public class HomePage extends TestBase {
 	   	  Thread.sleep(8000);
 	   	  return new DBConfigValdtn();
 	   } 
+   public ExtractChannelFile ExtractChannelFile() throws InterruptedException {
+	   	  Thread.sleep(8000);
+	   	  Homepage.click();
+	   	  Thread.sleep(8000);
+	   	  return new ExtractChannelFile();
+	   } 
          
  
 }

@@ -107,11 +107,13 @@ public class PageDssEtoEGetDataExtractDetails {
 			 Thread.sleep(6000);
 			 driver.findElement(By.xpath("(//span[@class=\"menu-item-title\"])[1]")).click( );
 			 Thread.sleep(6000);
+			 
 		     WebElement element3= driver.findElement(By.xpath("//input[@type='text'][@name='$PpyFilterCriteria_pyReportContentPage_pxResults_pzRRListBody_1$ppyColumnFilterCriteria$gFileName1$ppySearchText']"));
 		     element3.sendKeys("DPF_MMC_NBA_ONB_20200918");
 			 Thread.sleep(6000);
 			 driver.findElement(By.xpath("//button[text()='Apply']")).click( );
 			 Thread.sleep(6000);
+			 
 			// display validation of the Flag id data
 
 				WebElement w4;
