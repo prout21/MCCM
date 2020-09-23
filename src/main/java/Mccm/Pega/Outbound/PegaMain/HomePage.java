@@ -42,7 +42,12 @@ public class HomePage extends TestBase {
 	     return new PegaMarketPage();
    }
 
-
+   public DBConfigValdtn DBConfigValidation() throws InterruptedException {
+	   	  Thread.sleep(8000);
+	   	  Homepage.click();
+	   	  Thread.sleep(8000);
+	   	  return new DBConfigValdtn();
+	   } 
          
  
 }
