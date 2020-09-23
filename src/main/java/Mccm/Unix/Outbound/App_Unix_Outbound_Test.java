@@ -61,7 +61,7 @@ public class App_Unix_Outbound_Test extends MyAutomationConstants {
   //  public static void main( String[] args )
 //	 {
 	
-	      public void VerifyDataLoadSuccessfully() throws InterruptedException, AWTException, SftpException {
+	      public void VerifyDBDataLoadedSuccessfully() throws InterruptedException, AWTException, SftpException {
 		//   public void main() throws InterruptedException, AWTException, SftpException {
 	//		public static void main() throws InterruptedException, AWTException {
 	
@@ -305,7 +305,7 @@ public class App_Unix_Outbound_Test extends MyAutomationConstants {
 		 
 	        Upload_Cassandra.main(null);
 		  System.out.println("Case 2:"); 
-		  FilesAvailabilityCheck_Cassandra1.main(null);
+		  FilesAvailabilityCheck_Cassandra.main(null);
 	 
 		 
 			

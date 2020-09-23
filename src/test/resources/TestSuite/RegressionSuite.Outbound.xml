@@ -6,22 +6,51 @@
 		<listener class-name="Mccm.Pega.ExtentReportListner.TestListener" />
 	</listeners>
 
-   <test name="Unix filechk and DB load Regression Test">
+   <test name="Unix filechk and DB loaded Regression Test">
     <classes>
       <class name="Mccm.Unix.Outbound.App_Unix_Outbound_Test"/> 
     </classes>
   </test> <!-- Test -->
+    <test name="Pega DB Loaded Completed Validation Regression Test">
+    <classes>
+      <class name="Mccm.Pega.Outbound.PegaTest.DataLoadDetailsTest"/> 
+      </classes>
+  </test> <!-- Test -->
   
-  <test name="Pega DSS Regression Test">
+  <test name="Pega Dynamic System Setting Regression Test">
     <classes>
       <class name="Mccm.Pega.Outbound.PegaTest.LoginPageTest"/> 
       <class name="Mccm.Pega.Outbound.PegaTest.HomePageTest"/>    
     </classes>
   </test> <!-- Test -->
   
-  <test name="Pega Marketing Regression Test">
+  <test name="Pega NBACampaign Run Marketing Completed Regression Test">
     <classes>
       <class name="Mccm.Pega.Outbound.PegaTest.PegamarktingTest"/>  
+    </classes>
+  </test> <!-- Test -->
+  
+  <test name="Pega NBA DB Config Completed Regression Test">
+    <classes>
+      <class name="Mccm.Pega.Outbound.PegaTest.DBConfigValdtnTest"/>  
+    </classes>
+  </test> <!-- Test -->
+  
+  <test name="Unix Extract NBA Channel File Regression Test">
+    <classes>
+      <class name="Mccm.Unix.Outbound.App_Unix_Outbound_Extract_Test"/> 
+    </classes>
+  </test> <!-- Test -->
+  
+  <test name="Pega Generated Extract Channel File Regression Test">
+    <classes>
+      <class name="Mccm.Pega.Outbound.PegaTest.ExtractChannelFileTest"/>  
+    </classes>
+  </test> <!-- Test -->
+  
+   <test name="Pega NBACampaign Batch Process Completed Regression Test">
+    <classes>
+      <class name="Mccm.Pega.Outbound.PegaTest.NBAOutboundValdtnTest"/>  
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

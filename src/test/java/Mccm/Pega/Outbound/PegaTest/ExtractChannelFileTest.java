@@ -36,7 +36,7 @@ public class ExtractChannelFileTest extends TestBase {
 	    ExtractChannelFile1=homepage.ExtractChannelFile();
  }
  @Test (priority=1)
- public void VerifyDBConfigurationSuccessfully() throws InterruptedException { 
+ public void VerifyExtractChannelFileCheckSuccessfully() throws InterruptedException { 
 	 ExtractChannelFile1.Recordclk();
 	 ExtractChannelFile1.SysAdmin();
 	 ExtractChannelFile1.javaexictor4();

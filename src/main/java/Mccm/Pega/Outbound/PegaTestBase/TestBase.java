@@ -18,6 +18,7 @@ import Mccm.Pega.Outbound.PegaMain.ExtractChannelFile;
 import Mccm.Pega.Outbound.PegaMain.HomePage;
 import Mccm.Pega.Outbound.PegaMain.PegaMarketPage;
 import Mccm.Pega.Outbound.PegaMain.HomePageDetails;
+import Mccm.Pega.Outbound.PegaMain.NBAOutboundValdtn;
 //import Mccm.Pega.Outbound.PegaSubClass.HomePageDetails;
 import Mccm.Pega.QAUtil.TestUtil;
 import Mccm.RESTful.APICall.DMPRTPNBAMobHash;
@@ -52,6 +53,8 @@ public class TestBase {
 	   DBConfigValdtn.ExcelFilePath = System.getProperty("user.dir");
 	   
 	   ExtractChannelFile.ExcelFilePath = System.getProperty("user.dir");
+	   
+	   NBAOutboundValdtn.ExcelFilePath = System.getProperty("user.dir");
 	 
   	      
 		} catch (FileNotFoundException e) {

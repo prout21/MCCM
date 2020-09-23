@@ -28,7 +28,7 @@ public class NBAOutboundValdtn extends TestBase {
 	WebElement webelement4;
 		
 	@FindBy(xpath="//input[@type='text'][@name='$PpyDisplayHarness$ppySearchText']")
-	WebElement d_latestdataloadFlag;
+	WebElement D_LatestNBACampaignFlag;
 	
 	@FindBy(xpath="//*[@class='pi pi-search-2']")
 	WebElement SerchClick;
@@ -36,12 +36,12 @@ public class NBAOutboundValdtn extends TestBase {
 	@FindBy(xpath="//a[text()='Data Page']")
 	WebElement ClickDataPage;
 	
-	@FindBy(xpath="//a[text()='D_LatestDataLoadFlag']")
-	WebElement Clickd_latestdataloadFlag;
+	@FindBy(xpath="//a[text()='D_LatestNBACampaignFlag']")
+	WebElement ClickD_LatestNBACampaignFlag;
 
 
 	@FindBy(xpath="//*[@class='pi pi-caret-down margin-l-1x']")
-	WebElement ActionClkd_latestdataloadFlag;
+	WebElement ActionClkD_LatestNBACampaignFlag;
 	 
 	@FindBy(xpath="(//text()[.='Run']/ancestor::a[1])[2]")
 	WebElement RunActionClk;
@@ -52,17 +52,44 @@ public class NBAOutboundValdtn extends TestBase {
 	@FindBy(xpath="(//div[@class='pzbtn-mid'])[3]")
 	WebElement RunFlushClk;
 	
-	@FindBy(xpath="(//a[@href='#'])[11]//following::span[31]")
-	WebElement DataLoadCmpltdCsndra;
+	@FindBy(xpath="(//span[contains(.,'PR-')])[3]")
+	WebElement CampRUNid;
 	
-	@FindBy(xpath="(//a[@href='#'])[13]//following::span[33]")
-	WebElement DataLoadCmpltdOracle;
+	@FindBy(xpath="(//a[@href='#'])[3]//following::span[28]")
+	WebElement ActiveOfferCountCmpltd;
+	
+	@FindBy(xpath="(//a[@href='#'])[5]//following::span[30]")
+	WebElement CmpgnDailyCycleCmpltd;
+	
+	@FindBy(xpath="(//a[@href='#'])[25]//following::span[50]")
+	WebElement DataExpCmpltdDMP;
+	
+	@FindBy(xpath="(//a[@href='#'])[27]//following::span[52]")
+	WebElement DataExpCmpltdEDWH;
+	
+	@FindBy(xpath="(//a[@href='#'])[29]//following::span[54]")
+	WebElement DataExpCmpltdKIASEPOS;
+	
+	@FindBy(xpath="(//a[@href='#'])[31]//following::span[56]")
+	WebElement DataExpCmpltdMAMODB;
+	
+	@FindBy(xpath="(//a[@href='#'])[33]//following::span[58]")
+	WebElement DataExpCmpltdOS;
+	
+	@FindBy(xpath="(//a[@href='#'])[37]//following::span[62]")
+	WebElement IsCmpgnSuccess;
+	
+	@FindBy(xpath="(//a[@href='#'])[41]//following::span[66]")
+	WebElement SaveLCSSCmpltd;
 	
 	 	
 	Excel_Reader obj= new Excel_Reader(ExcelFilePath+"/src/main/java/Mccm/Pega/TestData/PegaTestData.xlsx");
 			
-	String dlatestdataloadFlag = obj.getCellValue("PegaTestData", 1, 12);
+	String DLatestNBACampaignFlagIN = obj.getCellValue("PegaTestData", 1, 17);
 	
+	Excel_Reader obj1= new Excel_Reader(ExcelFilePath+"/src/main/java/Mccm/Pega/TestData/PegaOutputData.xlsx");
+
+	String CampaigRUNid = obj1.getCellValue("PegaOutputData", 1, 0);
 	
 	
 	public NBAOutboundValdtn( ) {
@@ -93,10 +120,10 @@ public class NBAOutboundValdtn extends TestBase {
 		Thread.sleep(6000);
 	}
 		
-	public void d_latestdataloadFlag() throws InterruptedException
+	public void D_LatestNBACampaignFlag() throws InterruptedException
 	{
 		Thread.sleep(6000);
-		d_latestdataloadFlag.sendKeys(dlatestdataloadFlag);
+		D_LatestNBACampaignFlag.sendKeys(DLatestNBACampaignFlagIN);
         Thread.sleep(6000);
 	}
 	
@@ -106,18 +133,18 @@ public class NBAOutboundValdtn extends TestBase {
 		SerchClick.click( );
         Thread.sleep(6000);
 	}
-	public void Clickd_latestdataloadFlag() throws InterruptedException
+	public void ClickD_LatestNBACampaignFlag() throws InterruptedException
 	{
 		Thread.sleep(6000);
 		ClickDataPage.click();
 		Thread.sleep(6000);
-		Clickd_latestdataloadFlag.click( );
+		ClickD_LatestNBACampaignFlag.click( );
         Thread.sleep(6000);
 	}
-	public void ActionClkd_latestdataloadFlag() throws InterruptedException
+	public void ActionClkD_LatestNBACampaignFlag() throws InterruptedException
 	{
 		Thread.sleep(6000);
-		ActionClkd_latestdataloadFlag.click( );
+		ActionClkD_LatestNBACampaignFlag.click( );
         Thread.sleep(6000);
 	}
 	
@@ -148,39 +175,148 @@ public class NBAOutboundValdtn extends TestBase {
   
 	}
 	}
-	// display validation of the DataLoadCmpltdCsndra data
 	
-	public void DataLoadCmpltdCsndra() throws InterruptedException
+	// display validation of the Camp RUN id data
+	
+	public void CampRUNid() throws InterruptedException
+	{
+		WebElement w2=CampRUNid;
+		
+	//	w2=driver.findElement(By.xpath("(//span[contains(.,'PR-')])[3]"));
+
+		String CampRunID = w2.getText();
+
+		System.out.println(CampRunID);
+  
+		System.out.println(CampaigRUNid);
+
+		Assert.assertEquals(CampRunID, CampaigRUNid); 
+	}
+
+		// display validation of the ActiveOfferCountCmpltd data
+	public void ActiveOfferCountCmpltd() throws InterruptedException
+	{
+		WebElement w3=ActiveOfferCountCmpltd;
+
+	//	w3=driver.findElement(By.xpath("(//a[@href='#'])[3]//following::span[28]"));
+
+		String ActiveOfferCountCmpltd = w3.getText();
+
+		System.out.println(w3.getText());
+
+		Assert.assertEquals(ActiveOfferCountCmpltd, "Y"); 
+	}
+		// display validation of the CmpgnDailyCycleCmpltd data
+	public void CmpgnDailyCycleCmpltd() throws InterruptedException
 	{
 
-	WebElement w3;
+		WebElement w4= CmpgnDailyCycleCmpltd;
 
-//	w3=driver.findElement(By.xpath("(//a[@href='#'])[11]//following::span[31]"));
-	w3=DataLoadCmpltdCsndra;
+	//	w4=driver.findElement(By.xpath("(//a[@href='#'])[5]//following::span[30]"));
 
-	String DataLoadCmpltdCsndra = w3.getText();
+		String CmpgnDailyCycleCmpltd = w4.getText();
 
-	System.out.println(w3.getText());
+		System.out.println(w4.getText());
 
-	Assert.assertEquals(DataLoadCmpltdCsndra, "Y"); 
-	
+		Assert.assertEquals(CmpgnDailyCycleCmpltd, "Y"); 
 	}
-	
-	// display validation of the DataLoadCmpltdOracle data
-	
-	public void DataLoadCmpltdOracle() throws InterruptedException
+
+		// display validation of the DataExpCmpltdDMP data
+	public void DataExpCmpltdDMP() throws InterruptedException
+	{
+		WebElement w5=DataExpCmpltdDMP;
+
+	//	w5=driver.findElement(By.xpath("(//a[@href='#'])[25]//following::span[50]"));
+
+		String DataExpCmpltdDMP = w5.getText();
+
+		System.out.println(w5.getText());
+
+		Assert.assertEquals(DataExpCmpltdDMP, "Y"); 
+	}
+
+		// display validation of the DataExpCmpltdEDWH data
+	public void DataExpCmpltdEDWH() throws InterruptedException
 	{
 
-	WebElement w4;
-	
-	w4=DataLoadCmpltdOracle;
+		WebElement w6=DataExpCmpltdEDWH;
 
-//	w4=driver.findElement(By.xpath("(//a[@href='#'])[13]//following::span[33]"));
+	//	w6=driver.findElement(By.xpath("(//a[@href='#'])[27]//following::span[52]"));
 
-	String DataLoadCmpltdOracle = w4.getText();
+		String DataExpCmpltdEDWH = w6.getText();
 
-	System.out.println(w4.getText());
+		System.out.println(w6.getText());
 
-	Assert.assertEquals(DataLoadCmpltdOracle, "Y"); 
+		Assert.assertEquals(DataExpCmpltdEDWH, "Y"); 
 	}
-}
+
+		// display validation of the DataExpCmpltdKIASEPOS data
+	public void DataExpCmpltdKIASEPOS() throws InterruptedException
+	{
+		WebElement w7=DataExpCmpltdKIASEPOS;
+
+//		w7=driver.findElement(By.xpath("(//a[@href='#'])[29]//following::span[54]"));
+
+		String DataExpCmpltdKIASEPOS = w7.getText();
+
+		System.out.println(w7.getText());
+
+		Assert.assertEquals(DataExpCmpltdKIASEPOS, "Y"); 
+	}
+
+		// display validation of the DataExpCmpltdMAMODB data
+	public void DataExpCmpltdMAMODB() throws InterruptedException
+	{
+		WebElement w8=DataExpCmpltdMAMODB;
+
+	//	w8=driver.findElement(By.xpath("(//a[@href='#'])[31]//following::span[56]"));
+
+		String DataExpCmpltdMAMODB = w8.getText();
+
+		System.out.println(w8.getText());
+
+		Assert.assertEquals(DataExpCmpltdMAMODB, "Y"); 
+	}
+
+		// display validation of the DataExpCmpltdOS data
+	public void DataExpCmpltdOS() throws InterruptedException
+	{
+		WebElement w9=DataExpCmpltdOS;
+
+		//w9=driver.findElement(By.xpath("(//a[@href='#'])[33]//following::span[58]"));
+
+		String DataExpCmpltdOS = w9.getText();
+
+		System.out.println(w9.getText());
+
+		Assert.assertEquals(DataExpCmpltdOS, "Y"); 
+	}
+
+		// display validation of the IsCmpgnSuccess data
+	public void IsCmpgnSuccess() throws InterruptedException
+	{
+		WebElement w10=IsCmpgnSuccess;
+
+	//	w10=driver.findElement(By.xpath("(//a[@href='#'])[37]//following::span[62]"));
+
+		String IsCmpgnSuccess = w10.getText();
+
+		System.out.println(w10.getText());
+
+		Assert.assertEquals(IsCmpgnSuccess, "Y"); 
+	}
+
+		// display validation of the SaveLCSSCmpltd data
+	public void SaveLCSSCmpltd() throws InterruptedException
+	{
+		WebElement w11=SaveLCSSCmpltd;
+
+	//	w11=driver.findElement(By.xpath("(//a[@href='#'])[41]//following::span[66]"));
+
+		String SaveLCSSCmpltd = w11.getText();
+
+		System.out.println(w11.getText());
+
+		Assert.assertEquals(SaveLCSSCmpltd, "Y"); 
+	}
+	}

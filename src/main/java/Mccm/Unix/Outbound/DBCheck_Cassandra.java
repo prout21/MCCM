@@ -37,7 +37,9 @@ import org.apache.commons.io.IOUtils;
 
 public class DBCheck_Cassandra extends App_Unix_Outbound_Test {
 
-
+	  public static String FCA;
+	  public static String SCA;
+	  
 	/**
 	 	 */
 @Test	
@@ -52,10 +54,12 @@ public class DBCheck_Cassandra extends App_Unix_Outbound_Test {
 //pr        String FCA="FCA_cass_20200707010201.csv";
 //pr        String SCA="SCA_cass_20200707010201.csv";
         
-        String FCA="FCA_cass_20200922010201.csv";
-        String SCA="SCA_cass_20200922010201.csv";
+//        String FCA="FCA_cass_20200922010201.csv";
+//        String SCA="SCA_cass_20200922010201.csv";
         
- 
+        String FCA = general_ReadProperty("File_NameFCA");
+        String SCA = general_ReadProperty("File_NameSCA");
+        
 	   String command="sh /opt/SP/data/mccm02/temp/cassandra.sh";
 	 
 
