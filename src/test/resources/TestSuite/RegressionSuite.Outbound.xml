@@ -11,15 +11,12 @@
       <class name="Mccm.Unix.Outbound.App_Unix_Outbound_Test"/> 
     </classes>
   </test> <!-- Test -->
-   
-    <test name="Pega DB Loaded Completed Validation Regression Test">
-    <classes>
-      <class name="Mccm.Pega.Outbound.PegaTest.DataLoadDetailsTest"/> 
-      </classes>
-  </test> <!-- Test -->  
+       
+  
   <test name="Pega Dynamic System Setting Regression Test">
     <classes>
       <class name="Mccm.Pega.Outbound.PegaTest.LoginPageTest"/> 
+      <class name="Mccm.Pega.Outbound.PegaTest.DataLoadDetailsTest"/> 
       <class name="Mccm.Pega.Outbound.PegaTest.HomePageTest"/>    
     </classes>
   </test> <!-- Test -->

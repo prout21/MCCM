@@ -81,15 +81,15 @@ public class PegamarktingTest extends TestBase {
 	 pegamarketpage.CampRunIDCaptured();
 	}
 	 
-//@AfterMethod
-//
-// public void teardown() {
-//
-//    driver.quit();
-//
-//
-//     System.out.println("Pega Markting Finished");  
-//}	 
+@AfterMethod
+
+ public void teardown() {
+
+    driver.quit();
+
+
+     System.out.println("Pega Markting Finished");  
+}	 
  }
  
 
