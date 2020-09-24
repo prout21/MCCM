@@ -22,6 +22,7 @@ public class DMPRTPNBAMobHash extends TestBase  {
 	public static String port;
 	public static String Keystorepassword;
 	public static String json;
+	
  
 	
 	@Test
@@ -33,11 +34,12 @@ public class DMPRTPNBAMobHash extends TestBase  {
 		try {
 			//          String hostName="mccm-191102761.eu-central-1.elb.amazonaws.com";
 			//          String hostName = "192.57.138.25";
-			//          String port = "18576";// 8573
+			//          String port = "18576";// 8573 String	port="8573";
 
 
-			hostName=general_ReadProperty("NBA_hostName");
-			port=general_ReadProperty("NBA_port");
+		     hostName=general_ReadProperty("NBA_hostName");
+		     port=general_ReadProperty("NBA_port");
+		
 			KeystorePath=general_ReadProperty("KeystorePath");
 			Keystorepassword=general_ReadProperty("Keystorepassword");
 			

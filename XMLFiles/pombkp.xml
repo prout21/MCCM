@@ -14,7 +14,7 @@
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<!-- This property will be set by the Maven Dependency plugin -->
-<!-- 		<annotatedJdk>${org.checkerframework:jdk8:jar}</annotatedJdk> -->
+		<annotatedJdk>${org.checkerframework:jdk8:jar}</annotatedJdk>
 	</properties>
 
 
@@ -99,14 +99,14 @@
 					<source>1.8</source>
 					<target>1.8</target>
 					<fork>true</fork>
-<!-- 					Add all the checkers you want to enable here -->
-<!-- 					<annotationProcessors> -->
-<!-- 						<annotationProcessor>org.checkerframework.checker.nullness.NullnessChecker</annotationProcessor> -->
-<!-- 					</annotationProcessors> -->
-<!-- 					<compilerArgs> -->
-<!-- 						location of the annotated JDK, which comes from a Maven dependency -->
-<!-- 						<arg>-Xbootclasspath/p:${annotatedJdk}</arg> -->
-<!-- 					</compilerArgs> -->
+					<!-- Add all the checkers you want to enable here -->
+					<annotationProcessors>
+						<annotationProcessor>org.checkerframework.checker.nullness.NullnessChecker</annotationProcessor>
+					</annotationProcessors>
+					<compilerArgs>
+						<!-- location of the annotated JDK, which comes from a Maven dependency -->
+						<arg>-Xbootclasspath/p:${annotatedJdk}</arg>
+					</compilerArgs>
 				</configuration>
 			</plugin>
 		</plugins>
@@ -213,16 +213,16 @@
 			<version>4.11</version>
 			<scope></scope>
 		</dependency>
-<!-- 		<dependency> -->
-<!-- 			<groupId>org.checkerframework</groupId> -->
-<!-- 			<artifactId>checker</artifactId> -->
-<!-- 			<version>1.9.4</version> -->
-<!-- 		</dependency> -->
-<!-- 		<dependency> -->
-<!-- 			<groupId>org.checkerframework</groupId> -->
-<!-- 			<artifactId>checker-qual</artifactId> -->
-<!-- 			<version>1.9.4</version> -->
-<!-- 		</dependency> -->
+		<dependency>
+			<groupId>org.checkerframework</groupId>
+			<artifactId>checker</artifactId>
+			<version>1.9.4</version>
+		</dependency>
+		<dependency>
+			<groupId>org.checkerframework</groupId>
+			<artifactId>checker-qual</artifactId>
+			<version>1.9.4</version>
+		</dependency>
 		<dependency>
 			<groupId>org.checkerframework</groupId>
 			<artifactId>jdk8</artifactId>
@@ -337,6 +337,7 @@
 			<version>1.2.1</version>
 		</dependency>
 
+
 		<!-- https://mvnrepository.com/artifact/net.java.dev.jna/jna-platform -->
 		<dependency>
 			<groupId>net.java.dev.jna</groupId>
@@ -363,6 +364,10 @@
 			<artifactId>keystore-api</artifactId>
 			<version>0.1.0</version>
 		</dependency>
+
+
+
+
 		<!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-resources-plugin -->
 		<dependency>
 			<groupId>org.apache.maven.plugins</groupId>
