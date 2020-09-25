@@ -15,16 +15,14 @@ import Mccm.Pega.Outbound.PegaTestBase.TestBase;
 import Mccm.Pega.excel.utility.Excel_Reader;
 
 
-public class DMPRTPNBAMobHash extends TestBase  {
+public class DMPRTPNBAMobHashTest extends TestBase  {
 
 	public static String KeystorePath;
 	public static String hostName;
 	public static String port;
 	public static String Keystorepassword;
 	public static String json;
-	
- 
-	
+		
 	@Test
 
 	public void VerifyDMPRTPNBAMobHashedAPIcallSuccessfully() {
@@ -35,7 +33,6 @@ public class DMPRTPNBAMobHash extends TestBase  {
 			//          String hostName="mccm-191102761.eu-central-1.elb.amazonaws.com";
 			//          String hostName = "192.57.138.25";
 			//          String port = "18576";// 8573 String	port="8573";
-
 
 		     hostName=general_ReadProperty("NBA_hostName");
 		     port=general_ReadProperty("NBA_port");

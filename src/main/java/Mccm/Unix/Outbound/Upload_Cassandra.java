@@ -33,9 +33,9 @@ import com.jcraft.jsch.SftpProgressMonitor;
 		
 	   // static String name = " ";
 
-    public static void main( String[] args )
-	    	    {
-
+    public static void main( String[] args )   {
+       
+		PROJECT_FOLDER_PATH1=general_ReadProperty("PROJECT_FOLDER_PATH");
 	    	    		    	
 	    	 try { 	
 	        //Object myObject = null;
@@ -67,7 +67,9 @@ import com.jcraft.jsch.SftpProgressMonitor;
 //	           		}
 	           //String curDir=("C:\\oracle\\");
 	             File f = null;
-	           File curDir = new File("C:\\toupload_cassandra");
+	      //     File curDir = new File("C:\\toupload_cassandra");
+	             File curDir = new File(PROJECT_FOLDER_PATH1+"\\DBLoadInFile\\toupload_cassandra");
+	                 
 	           File[] filesList1 = curDir.listFiles();
 	           for(File f1 : filesList1){
 //	               if(f.isDirectory())
@@ -87,7 +89,8 @@ import com.jcraft.jsch.SftpProgressMonitor;
 	           {
 	        	   boolean  filefound = false;
 	            int k;
-		           File curDir2 = new File("C:\\toupload_cassandra");
+		    //       File curDir2 = new File("C:\\toupload_cassandra");
+		           File curDir2 = new File(PROJECT_FOLDER_PATH1+"\\DBLoadInFile\\toupload_cassandra");
 		           File[] filesList2 = curDir2.listFiles();
 		           //File f2 = new File(".");
 //	            String filename1 = "";

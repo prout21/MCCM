@@ -74,7 +74,8 @@ import com.jcraft.jsch.SftpProgressMonitor;
 //	           		}
 	           //String curDir=("C:\\oracle\\");
 	             File f = null;
-	           File curDir = new File("C:\\toupload_oracle");
+	      //     File curDir = new File("C:\\toupload_oracle");
+	           File curDir = new File(PROJECT_FOLDER_PATH1+"\\DBLoadInFile\\toupload_oracle");
 	           File[] filesList1 = curDir.listFiles();
 	           for(File f1 : filesList1){
 //	               if(f.isDirectory())
@@ -94,7 +95,8 @@ import com.jcraft.jsch.SftpProgressMonitor;
 	           {
 	        	   boolean  filefound = false;
 	            int k;
-		           File curDir2 = new File("C:\\toupload_oracle");
+		      //     File curDir2 = new File("C:\\toupload_oracle");
+		           File curDir2 = new File(PROJECT_FOLDER_PATH1+"\\DBLoadInFile\\toupload_oracle");
 		           File[] filesList2 = curDir2.listFiles();
 		           //File f2 = new File(".");
 //	            String filename1 = "";

@@ -73,14 +73,14 @@ Pre-condition and Data setup:
 -----------------------------
 1.External Excel Input/Output test data file setup data based on the Requirment.
   location:user.dir(in Config file)\MCCM\src\main\java\Mccm\Pega\TestData
-  Used Step No:
+  Used Step No:2-8 and 10,11
 2.Config file setup the data based on the Requirment/Server system config.
   Config location:user.dir(in Config file)MCCM\src\main\java\Mccm\Pega\ConfigPega\Config.properties
           :user.dir(in Config file)MCCM\configurationFile.properties
-  Used Step No:
+  Used Step No:2-8 and 10,11
 3.Report location: user.dir(in Config file)MCCM\TestReport\Test-Automaton-Report.html
-4.Input Oracle and Casedra data file
-  location:C:\toupload_cassandra,C:\toupload_oracle (C: drive in system)
+4.Change the current date in the config file for cassandra data file
+  location:project path\toupload_cassandra,C:\toupload_oracle (Current date change)
   Used Step No:1
   Script:Mccm.Unix.Outbound: Upload_Cassandra,Upload
   

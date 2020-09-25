@@ -1,58 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Mccm NBA Outbound Automation Regression Suite]">
-  <listeners>
-    <listener class-name="Mccm.Pega.ExtentReportListner.TestListener"/>
-  </listeners>
-  <test thread-count="5" name="Pega Dynamic System Setting Regression Test(failed)">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Mccm.Pega.Outbound.PegaTest.DataLoadDetailsTest">
+      <class name="Mccm.Pega.DMPRealTime.PegaTest.DMPRTPNBAMobHashTest">
         <methods>
-          <include name="setup"/>
-          <include name="VerifyOracleCansadraDataLoadedSuccessfully"/>
-          <include name="teardown"/>
+          <include name="VerifyDMPRTPNBAMobHashedAPIcallSuccessfully"/>
         </methods>
-      </class> <!-- Mccm.Pega.Outbound.PegaTest.DataLoadDetailsTest -->
-      <class name="Mccm.Pega.Outbound.PegaTest.HomePageTest">
-        <methods>
-          <include name="VerifyDynamicSystemSettingSuccessfully"/>
-          <include name="teardown"/>
-          <include name="setup"/>
-        </methods>
-      </class> <!-- Mccm.Pega.Outbound.PegaTest.HomePageTest -->
+      </class> <!-- Mccm.Pega.DMPRealTime.PegaTest.DMPRTPNBAMobHashTest -->
     </classes>
-  </test> <!-- Pega Dynamic System Setting Regression Test(failed) -->
-  <test thread-count="5" name="Pega NBACampaign Run Marketing Completed Regression Test(failed)">
-    <classes>
-      <class name="Mccm.Pega.Outbound.PegaTest.PegamarktingTest">
-        <methods>
-          <include name="teardown"/>
-          <include name="VerifyNBACampaignRunSuccessfully"/>
-          <include name="setup"/>
-        </methods>
-      </class> <!-- Mccm.Pega.Outbound.PegaTest.PegamarktingTest -->
-    </classes>
-  </test> <!-- Pega NBACampaign Run Marketing Completed Regression Test(failed) -->
-  <test thread-count="5" name="Pega NBA DB Config Completed Regression Test(failed)">
-    <classes>
-      <class name="Mccm.Pega.Outbound.PegaTest.DBConfigValdtnTest">
-        <methods>
-          <include name="VerifyDBConfigurationSuccessfully"/>
-          <include name="setup"/>
-          <include name="teardown"/>
-        </methods>
-      </class> <!-- Mccm.Pega.Outbound.PegaTest.DBConfigValdtnTest -->
-    </classes>
-  </test> <!-- Pega NBA DB Config Completed Regression Test(failed) -->
-  <test thread-count="5" name="Pega NBACampaign Batch Process Completed Regression Test(failed)">
-    <classes>
-      <class name="Mccm.Pega.Outbound.PegaTest.NBAOutboundValdtnTest">
-        <methods>
-          <include name="VerifyNBABatchProcessCompletedSuccessfully"/>
-          <include name="teardown"/>
-          <include name="setup"/>
-        </methods>
-      </class> <!-- Mccm.Pega.Outbound.PegaTest.NBAOutboundValdtnTest -->
-    </classes>
-  </test> <!-- Pega NBACampaign Batch Process Completed Regression Test(failed) -->
-</suite> <!-- Failed suite [Mccm NBA Outbound Automation Regression Suite] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->
