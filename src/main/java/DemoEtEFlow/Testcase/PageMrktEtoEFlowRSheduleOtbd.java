@@ -6,6 +6,8 @@ import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.sql.Date;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -14,6 +16,8 @@ import java.util.Set;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
 
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -34,29 +38,26 @@ import Mccm.Pega.Outbound.PegaTestBase.TestBase;
 
 public class PageMrktEtoEFlowRSheduleOtbd extends TestBase  {
 
-
-
-
 	//private static final WebElement element10 = null;
 
 @Test  
 public void NBABatchCampaignSuccessfull() throws InterruptedException, AWTException {
 	System.setProperty("webdriver.chrome.driver", "C:\\Users\\prout21\\Downloads\\chromedriver_win32\\chromedriver.exe");  
-	WebDriver driver = new ChromeDriver();
-	driver.get("http://mccm-191102761.eu-central-1.elb.amazonaws.com:8573/prweb");
-	driver.findElement(By.xpath("//input[@id='txtUserID']")).sendKeys("prafulla" );
-	driver.findElement(By.xpath("//input[@id='txtPassword']")).sendKeys("rules" );
-	driver.findElement(By.xpath("//span[@class='loginButtonText']")).click( );
-	Thread.sleep(3000);
-
-	String xpath = "(//i[@class='pi pi-caret-down'])[2]";
-	WebElement element =  driver.findElement(By.xpath(xpath));
-	Actions  action = new Actions(driver);
-	action.moveToElement(element).click().build().perform();
-	Thread.sleep(3000);
-	String  s1 = "(//span[@class='menu-item-title'])[5]";
-	driver.findElement(By.xpath(s1)).click( );
-	Thread.sleep(3000);
+	 WebDriver driver = new ChromeDriver();
+	 driver.get("http://mccm-191102761.eu-central-1.elb.amazonaws.com:8573/prweb");
+	 driver.findElement(By.xpath("//input[@id='txtUserID']")).sendKeys("prafulla" );
+	 driver.findElement(By.xpath("//input[@id='txtPassword']")).sendKeys("rules" );
+	 driver.findElement(By.xpath("//span[@class='loginButtonText']")).click( );
+	 Thread.sleep(8000);
+	 
+	 String xpath = "(//i[@class='pi pi-caret-down'])[2]";
+	 WebElement element =  driver.findElement(By.xpath(xpath));
+    Actions  action = new Actions(driver);
+    action.moveToElement(element).click().build().perform();
+    Thread.sleep(6000);
+    String  s1 = "(//span[@class='menu-item-title'])[5]";
+     driver.findElement(By.xpath(s1)).click( );
+     Thread.sleep(8000);
 	String mainWindow=driver.getWindowHandle();
 	System.out.println(mainWindow);
 	// It returns no. of windows opened by WebDriver and will return Set of Strings
@@ -91,14 +92,11 @@ public void NBABatchCampaignSuccessfull() throws InterruptedException, AWTExcept
 			robot.mouseMove(200,70);
 
 			actions.click().build().perform();
-
-
-
 			Thread.sleep(3000);
 			driver.findElement(By.xpath("//*[@name='PortalCardListingHeader_pyLanding_264']")).click( );
 			Thread.sleep(3000);
 			Thread.sleep(3000);
-			driver.findElement(By.xpath("//input[@type='text'][@name='$PTempModalCardContainerPage$pFilterCriteriaDisplay$ppyValue']")).sendKeys("NBABatchCampaign64");
+			driver.findElement(By.xpath("//input[@type='text'][@name='$PTempModalCardContainerPage$pFilterCriteriaDisplay$ppyValue']")).sendKeys("ProdLiveTest19");
 			Thread.sleep(3000);
 			driver.findElement(By.xpath("(//button[text()='View'])[1]")).click( );
 			Thread.sleep(8000);
@@ -136,8 +134,8 @@ public void NBABatchCampaignSuccessfull() throws InterruptedException, AWTExcept
 			Thread.sleep(3000);
 			//			 WebElement checkbox =  driver.findElement(By.xpath("//input[@type='checkbox'][@name='$PpyWorkPage$pEnableScheduling']"));
 			//			 checkbox.click( );
-			WebElement radio1 =  driver.findElement(By.xpath("//label[text()='Recurring']"));
-			radio1.click( );
+		//	WebElement radio1 =  driver.findElement(By.xpath("//label[text()='Recurring']"));
+		//	radio1.click( );
 
 			driver.findElement(By.xpath("//img[@name='CalendarImg-1d3ff703']")).click( );
 			Thread.sleep(3000);
@@ -162,129 +160,174 @@ public void NBABatchCampaignSuccessfull() throws InterruptedException, AWTExcept
 			 JavascriptExecutor js7= (JavascriptExecutor) driver;
 			 WebElement element8 = driver.findElement(By.xpath("//h2[text()='Run schedule']"));
 		     js7.executeScript("arguments[0].scrollIntoView();", element8);	
+		     
+////				// display run completed  successfully
+// 			 
+// 			 for(int i=0;i<50;i++){
+// 			 Thread.sleep(6000);
+//  		}
+// 	     driver.findElement(By.xpath("//*[@class='pi pi-refresh']")).click( );
+// 		 JavascriptExecutor js18 = (JavascriptExecutor) driver;
+// 		 WebElement element19 = driver.findElement(By.xpath("//h2[text()='Run schedule']"));
+// 		 js18.executeScript("arguments[0].scrollIntoView();", element19);	
 
 			///--------------------------------------------------------------------------------------------------------------//	 
-
-			for(int i=0;i<50;i++)
-			{
-
-				Thread.sleep(8000);
-
-				try
+		     for(int i=0;i<50;i++)
 				{
-					Thread.sleep(8000);
-				 	driver.findElement(By.xpath("//button[@title='Refresh']")).click( );
-					Thread.sleep(8000);
-					JavascriptExecutor js6 = (JavascriptExecutor) driver;
-					WebElement element7 = driver.findElement(By.xpath("//h2[text()='Run schedule']"));
-					js6.executeScript("arguments[0].scrollIntoView();", element7);	
-				}catch(Exception e){
-
-				}
-
-				String getTextOnPage1 = "",getTextOnPage2 = "",getTextOnPage3 = "";
-
-
-				try {
-
-
-					WebElement element11 = driver.findElement(By.xpath("//h2[contains(text(),'Run schedule')]/following::span[contains(.,'Completed')][1]"));
-
-					getTextOnPage1 = element11.getText();
-
-				}catch(Exception e){
-					e.printStackTrace();
-
-				}
-				try {
-
-
-					WebElement element12 = driver.findElement(By.xpath("//span[text()='Failed']"));
-
-					getTextOnPage2 = element12.getText();
-
-
-				}catch(Exception e){
-					e.printStackTrace();
-
-				}
-
-				try {
-					WebElement element13 = driver.findElement(By.xpath("//span[text()='Stopped']"));
-
-					getTextOnPage3 = element13.getText();
-
-				}catch(Exception e1){
-					e1.printStackTrace();{
+		
+					Thread.sleep(6000);
+		
+					try
+					{
+						Thread.sleep(6000);
+				 	driver.findElement(By.xpath("//*[@class='pi pi-refresh']")).click( );
+					//	RefreshCampgn.click( );
+						Thread.sleep(6000);
+						JavascriptExecutor js6 = (JavascriptExecutor) driver;
+					//	WebElement element7 =Runschedule;
+						WebElement element7 = driver.findElement(By.xpath("//h2[text()='Run schedule']"));
+						js6.executeScript("arguments[0].scrollIntoView();", element7);	
+					}catch(Exception e){
+		
 					}
-					if (getTextOnPage1.equals("COMPLETED")){
-
-
-						System.out.println("Test Case Passed");
-
-
-						break;
+		
+					String getTextOnPage1 = "",getTextOnPage2 = "",getTextOnPage3 = "";
+		
+		
+					try {
+		
+		
+					//	WebElement element11 = Completed;
+						
+						WebElement element11 = driver.findElement(By.xpath("//h2[.='Run schedule']//following::span[8]"));
+		
+						getTextOnPage1 = element11.getText();
+		
+					}catch(Exception e){
+						e.printStackTrace();
+		
 					}
-					else if (getTextOnPage2.equals("FAILED")) {
-
-						System.out.println("Test Case Failed");
-
-						Assert.assertEquals(getTextOnPage2, "COMPLETED"); 
-
-						break;
-					}
-
-					else if (getTextOnPage3.equals("STOPPED")) {
-
-						System.out.println("Test Case Stopped");
-
-						Assert.assertEquals(getTextOnPage3, "COMPLETED"); 
-
+//					try {
+//		
+//		
+//				//		WebElement element12 = Failed;
+//					 	WebElement element12 = driver.findElement(By.xpath("//h2[.='Run schedule']//following::span[8]"));
+//		
+//						getTextOnPage2 = element12.getText();
+//						
+//			 	//	Assert.assertEquals(getTextOnPage2, "COMPLETED");
+//		
+//		
+//					}catch(Exception e){
+//						e.printStackTrace();
+//		
+//					}
+//		
+//					try {
+//					//	WebElement element13 = Stopped;
+//					 	WebElement element13 = driver.findElement(By.xpath("//h2[.='Run schedule']//following::span[8]"));
+//		
+//						getTextOnPage3 = element13.getText();
+//						
+//			//	 	Assert.assertEquals(getTextOnPage3, "COMPLETED"); 
+//		
+//					}catch(Exception e1){
+//						e1.printStackTrace();{
+//						}
+			 			if ((getTextOnPage1.equals("COMPLETED")) || (getTextOnPage1.equals("FAILED")) || (getTextOnPage1.equals("STOPPED"))) {
+						
+				    	System.out.println("Test Case Passed");
+			
 							break;
+			 
 						}
+					}
+				
+		 
+		Thread.sleep(8000);
+	 	driver.findElement(By.xpath("//h2[contains(text(),'Run schedule')]/following::span[contains(.,'Completed')][1]")).click( );
+		Thread.sleep(8000);
+		
+		JavascriptExecutor js9 = (JavascriptExecutor) driver;
+		 WebElement element10 = driver.findElement(By.xpath("//h2[contains(text(),'Run schedule')]/following::span[contains(.,'Completed')][1]"));
+	     js9.executeScript("arguments[0].scrollIntoView();", element10);	
+		
+		Thread.sleep(8000);
+	 	driver.findElement(By.xpath("//*[@name='DataFlowRunDetails_pyWorkPage_3']")).click( );
+		Thread.sleep(8000);
+		
+		JavascriptExecutor js8 = (JavascriptExecutor) driver;
+		 WebElement element11 = driver.findElement(By.xpath("//span[text()='Campaign run ID']"));
+	     js8.executeScript("arguments[0].scrollIntoView();", element11);
 
-						{
-							continue;
-						}
+			//Search the element by using starts-with
+			WebElement w;
 
+			w=driver.findElement(By.xpath("//span[.='Campaign run ID']/..//span[contains(.,'PR-')]"));
+
+			//Print the text of the searched element
+
+			String CampRunID = w.getText();
+
+
+
+			System.out.println(w.getText());
+
+			File file = new File("C:\\Users\\prout21\\git\\Automation_Framework\\MCCM\\MCCM\\src\\main\\java\\Mccm\\Pega\\TestData\\PegaOutputData.xlsx");
+			XSSFWorkbook wb = new XSSFWorkbook();
+
+			XSSFSheet sh = wb.createSheet("PegaOutputData");
+
+			sh.createRow(0).createCell(0).setCellValue("CampRunID");
+
+					sh.createRow(1).createCell(0).setCellValue(CampRunID);
+
+					try {
+						FileOutputStream fos = new FileOutputStream(file);
+						wb.write(fos);
+					}catch (Exception e) {
 
 					}
-				}
-			
-			Thread.sleep(8000);
-		 	driver.findElement(By.xpath("//h2[contains(text(),'Run schedule')]/following::span[contains(.,'Completed')][1]")).click( );
-			Thread.sleep(8000);
-			
-			JavascriptExecutor js9 = (JavascriptExecutor) driver;
-			 WebElement element10 = driver.findElement(By.xpath("//h2[contains(text(),'Run schedule')]/following::span[contains(.,'Completed')][1]"));
-		     js9.executeScript("arguments[0].scrollIntoView();", element10);	
-			
-			Thread.sleep(8000);
-		 	driver.findElement(By.xpath("//*[@name='DataFlowRunDetails_pyWorkPage_3']")).click( );
-			Thread.sleep(8000);
-			
-			JavascriptExecutor js8 = (JavascriptExecutor) driver;
-			 WebElement element11 = driver.findElement(By.xpath("//span[text()='Campaign run ID']"));
-		     js8.executeScript("arguments[0].scrollIntoView();", element11);	
-			
-		   //Search the element by using starts-with
-		     WebElement w;
-		     
-		     w=driver.findElement(By.xpath("//span[.='Campaign run ID']/..//span[contains(.,'PR-')]"));
-	     	
-	     	 //Print the text of the searched element
-		        String CampRunID = w.getText();
-		        
-	        	System.out.println(w.getText());
-			 
-
-			}
+					
+				      
+}
+}
 		}
-	}
 
+ }
+//======
+                //h2[.='Run schedule']//following::span[8]
+			
+//			Thread.sleep(8000);
+//		 	driver.findElement(By.xpath("//h2[contains(text(),'Run schedule')]/following::span[contains(.,'Completed')][1]")).click( );
+//			Thread.sleep(8000);
+//			
+//			JavascriptExecutor js9 = (JavascriptExecutor) driver;
+//			 WebElement element10 = driver.findElement(By.xpath("//h2[contains(text(),'Run schedule')]/following::span[contains(.,'Completed')][1]"));
+//		     js9.executeScript("arguments[0].scrollIntoView();", element10);	
+//			
+//			Thread.sleep(8000);
+//		 	driver.findElement(By.xpath("//*[@name='DataFlowRunDetails_pyWorkPage_3']")).click( );
+//			Thread.sleep(8000);
+//			
+//			JavascriptExecutor js8 = (JavascriptExecutor) driver;
+//			 WebElement element11 = driver.findElement(By.xpath("//span[text()='Campaign run ID']"));
+//		     js8.executeScript("arguments[0].scrollIntoView();", element11);	
+//			
+//		   //Search the element by using starts-with
+//		     WebElement w;
+//		     
+//		     w=driver.findElement(By.xpath("//span[.='Campaign run ID']/..//span[contains(.,'PR-')]"));
+//	     	
+//	     	 //Print the text of the searched element
+//		        String CampRunID = w.getText();
+//		        
+//	        	System.out.println(w.getText());
+			 
+ 
  
 
-}
+
 
 
 
