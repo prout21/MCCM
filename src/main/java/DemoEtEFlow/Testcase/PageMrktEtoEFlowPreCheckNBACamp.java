@@ -6,6 +6,8 @@ import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.sql.Date;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -14,6 +16,8 @@ import java.util.Set;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
 
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -78,22 +82,25 @@ public class PageMrktEtoEFlowPreCheckNBACamp   {
 
 		WebElement w3=driver.findElement(By.xpath("//input[@type='text'][@name='$PRH_1$ppySetting']"));
 	 
-		String NBACampaignNamevalue = w3.getText();
+		String NBACampaignNamevalue = w3.getAttribute("value");
 
 		System.out.println(NBACampaignNamevalue);
-		
-		 Thread.sleep(6000);
-		    driver.findElement(By.xpath("//button[text()='Save']")).click( );
-			Thread.sleep(6000);
-			 driver.switchTo().defaultContent();
-			  Thread.sleep(8000);
-			  driver.switchTo().frame("PegaGadget1Ifr");
-			  Thread.sleep(8000);
-			  WebElement w4=driver.findElement(By.xpath("//input[@type='text'][@name='$PRH_1$ppySetting']"));
-				 
-				String NBACampaignNamevalue1 = w4.getText();
+		File file = new File("C:\\Users\\prout21\\git\\Automation_Framework\\MCCM\\MCCM\\src\\main\\java\\Mccm\\Pega\\TestData\\PegaOutputData1.xlsx");
+		XSSFWorkbook wb = new XSSFWorkbook();
 
-				System.out.println(NBACampaignNamevalue1);
+		XSSFSheet sh = wb.createSheet("PegaOutputData");
+
+		sh.createRow(1).createCell(0).setCellValue(NBACampaignNamevalue);
+
+				sh.createRow(0).createCell(0).setCellValue("NBACampaignNamevalue");
+
+				try {
+					FileOutputStream fos = new FileOutputStream(file);
+					wb.write(fos);
+				}catch (Exception e) {
+
+				}
+		 
 	 
 	}
 }
