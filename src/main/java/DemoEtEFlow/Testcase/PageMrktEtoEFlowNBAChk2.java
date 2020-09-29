@@ -33,7 +33,7 @@ import Mccm.Pega.Outbound.PegaMain.HomePage;
 import Mccm.Pega.Outbound.PegaTestBase.TestBase;
 import Mccm.Pega.excel.utility.Excel_Reader;
 
-public class PageMrktEtoEFlowNBAChk  {
+public class PageMrktEtoEFlowNBAChk2  {
  
 
 
@@ -76,59 +76,42 @@ public class PageMrktEtoEFlowNBAChk  {
 			 /////**laptop  
 			 
 			 
-				Thread.sleep(3000);
-				driver.findElement(By.xpath("//a[@id='appview-nav-toggle-one']")).click( );
-				Thread.sleep(3000);
-				driver.findElement(By.xpath("//span[text()='Campaigns']")).click( );
-				Thread.sleep(3000);
-				int size = driver.findElements(By.tagName("iframe")).size();
-				System.out.println(size);
-
-				driver.switchTo().frame(1);
-
-				Actions actions = new Actions(driver);
-
-				Robot robot = new Robot();
-
-				robot.mouseMove(50,50);
-
-				actions.click().build().perform();
-
-				robot.mouseMove(200,70);
-
-				actions.click().build().perform();
-				Thread.sleep(3000);
-				driver.findElement(By.xpath("//*[@name='PortalCardListingHeader_pyLanding_264']")).click( );
-				Thread.sleep(3000);
-				
-				Excel_Reader obj= new Excel_Reader("C:\\Users\\prout21\\git\\Automation_Framework\\MCCM\\MCCM\\src\\main\\java\\Mccm\\Pega\\TestData\\PegaOutputData1.xlsx");
+//				Thread.sleep(3000);
+//				driver.findElement(By.xpath("//a[@id='appview-nav-toggle-one']")).click( );
+//				Thread.sleep(3000);
+//				driver.findElement(By.xpath("//span[text()='Campaigns']")).click( );
+//				Thread.sleep(3000);
+//				int size = driver.findElements(By.tagName("iframe")).size();
+//				System.out.println(size);
+  	 
+ 
+ 			 Excel_Reader obj= new Excel_Reader("C:\\Users\\prout21\\git\\Automation_Framework\\MCCM\\MCCM\\src\\main\\java\\Mccm\\Pega\\TestData\\PegaOutputData1.xlsx");
 
 				String NBACampValue = obj.getCellValue("PegaOutputData", 1, 0);
 				
 				Thread.sleep(3000);
 				System.out.print(NBACampValue);
-				Thread.sleep(3000);
-				driver.findElement(By.xpath("//input[@type='text'][@name='$PTempModalCardContainerPage$pFilterCriteriaDisplay$ppyValue']")).sendKeys(NBACampValue);
-				Thread.sleep(3000);
-				
-				driver.findElement(By.xpath("(//button[text()='View'])[1]")).click( );
+ 			
+ 			 driver.findElement(By.xpath("//input[@type='text'][@name='$PpyDisplayHarness$ppySearchText']")).sendKeys(NBACampValue);
+ 				
+ 				 driver.findElement(By.xpath("//i[@class='icons pi pi-search']")).click( );
+ 			
+ 				driver.findElement(By.xpath("//div[text()='No matching search results found.']")).click();			 
+    		//	WebElement w2=driver.findElement(By.xpath("//div[text()='No matching search results found.']"));
+ 				 
+ 				
+ 				
 				Thread.sleep(8000);
-				WebElement w2=driver.findElement(By.xpath("//div[text()='There are no results returned, please try a new search term.']"));
-				Thread.sleep(8000);
-				String NBACampValueExits= w2.getText();
+			//	String NBACampValueExits= w2.getText();
 				
-				System.out.println(NBACampValueExits);
+			//	System.out.println(NBACampValueExits);
 				
-				Assert.assertEquals(NBACampValueExits, "There are no results returned, please try a new search term.");
+			//	Assert.assertEquals(NBACampValueExits, "No matching search results found.");
 				
 				System.out.println(NBACampValue + " is not present");
-//				
-//				driver.findElement(By.xpath("//div[@class='card-image no-image'][1]")).click( );
-//				Thread.sleep(8000);
+ 
 				
-	//			System.out.println(NBACampValue + " is present");
-		
-
+		      
   
 }
 }
