@@ -95,7 +95,6 @@ public void NBABatchCampaignSuccessfull() throws InterruptedException, AWTExcept
 			Thread.sleep(3000);
 			driver.findElement(By.xpath("//*[@name='PortalCardListingHeader_pyLanding_264']")).click( );
 			Thread.sleep(3000);
-			Thread.sleep(3000);
 			driver.findElement(By.xpath("//input[@type='text'][@name='$PTempModalCardContainerPage$pFilterCriteriaDisplay$ppyValue']")).sendKeys("ProdLiveTest19");
 			Thread.sleep(3000);
 			driver.findElement(By.xpath("(//button[text()='View'])[1]")).click( );
