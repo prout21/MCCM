@@ -3,11 +3,11 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="DemoEtEFlow.Testcase.PageMrktEtoEFlowNBAChk2">
+      <class name="Demo.APIRestful.DemoDMPRTNBARestAPI">
         <methods>
-          <include name="NBACampValueTestSuccessfull"/>
+          <include name="test"/>
         </methods>
-      </class> <!-- DemoEtEFlow.Testcase.PageMrktEtoEFlowNBAChk2 -->
+      </class> <!-- Demo.APIRestful.DemoDMPRTNBARestAPI -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
