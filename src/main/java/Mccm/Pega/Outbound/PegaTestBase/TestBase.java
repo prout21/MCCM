@@ -70,7 +70,7 @@ public class TestBase {
     	String chromedriverPath = prop.getProperty("chromedriver.dir");
     	if(browserName.equals("chrome")) {
     	System.setProperty("webdriver.chrome.driver", chromedriverPath+"/chromedriver.exe");  
-    	driver = new ChromeDriver();
+    	driver = new ChromeDriver();                   
     	
     	}
     	
