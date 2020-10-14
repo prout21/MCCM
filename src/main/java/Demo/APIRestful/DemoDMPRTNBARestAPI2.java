@@ -11,7 +11,7 @@ import javax.net.ssl.SSLSession;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class DemoDMPRTNBARestAPI {
+public class DemoDMPRTNBARestAPI2 {
 	
 	@Test
 	
