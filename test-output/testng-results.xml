@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="2944" started-at="2020-10-01T16:44:48 IST" finished-at="2020-10-01T16:44:51 IST">
+  <suite name="Default suite" duration-ms="3534" started-at="2020-10-05T18:30:16 IST" finished-at="2020-10-05T18:30:19 IST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="2944" started-at="2020-10-01T16:44:48 IST" finished-at="2020-10-01T16:44:51 IST">
+    <test name="Default test" duration-ms="3534" started-at="2020-10-05T18:30:16 IST" finished-at="2020-10-05T18:30:19 IST">
       <class name="Demo.APIRestful.DemoDMPRTNBARestAPI">
-        <test-method status="FAIL" signature="test()[pri:0, instance:Demo.APIRestful.DemoDMPRTNBARestAPI@4eb7f003]" name="test" duration-ms="2881" started-at="2020-10-01T16:44:48 IST" finished-at="2020-10-01T16:44:51 IST">
+        <test-method status="FAIL" signature="test()[pri:0, instance:Demo.APIRestful.DemoDMPRTNBARestAPI@4eb7f003]" name="test" duration-ms="3473" started-at="2020-10-05T18:30:16 IST" finished-at="2020-10-05T18:30:19 IST">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[Status code is not 200 expected [200] but found [400]]]>

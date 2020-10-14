@@ -37,7 +37,9 @@ public class DemoDMPRTProcessOfferResult {
          System.setProperty("javax.net.ssl.trustStorePassword", "password");
          System.setProperty("javax.net.ssl.trustStoreType", "JKS");
 
-         String json = "{ \"parts\" : {\"campaign\":{\"container\":\"CSM\"},\"subscription\":{\"id\":[{\"value\":\"8cd536xz3001\",\"schemeID\":\"MobileHashed\"}]}}}";
+   //       String json = "{ \"parts\" : {\"campaign\":{\"container\":\"CSM\"},\"subscription\":{\"id\":[{\"value\":\"8cd536xz3001\",\"schemeID\":\"MobileHashed\"}]}}}";
+          
+          String json = "{ \"parts\" : {\"campaign\":{\"container\":\"CSM\"},\"subscription\":{\"id\":[{\"value\":\"8cd536xz3001\",\"schemeID\":\"MobileHashed\"}]}}}";
 
          // Create all-trusting host name verifier
          HostnameVerifier allHostsValid = new HostnameVerifier() {
@@ -83,4 +85,7 @@ public class DemoDMPRTProcessOfferResult {
        }
 
 }
+
+
+
 
